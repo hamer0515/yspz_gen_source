@@ -1,0 +1,25 @@
+{
+	success : true,
+	total : 3,
+	data : [{
+				filename : "F0003-20140303.src",
+				total : 25,
+				good : 20,
+				bad : 5,
+				// 1: 处理中
+				// 2：处理完成
+				status : 1
+			}, {
+				filename : "F0003-20140302.src",
+				total : 5,
+				good : 3,
+				bad : 2,
+				status : 2
+			}, {
+				filename : "F0003-20140301.src",
+				total : 3,
+				good : 3,
+				bad : 0,
+				status : 2
+			}]
+}

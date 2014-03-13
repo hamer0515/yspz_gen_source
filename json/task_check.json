@@ -1,0 +1,54 @@
+{
+	success : true,
+	total : 8,
+	data : [{
+				id : 1,
+				path : "/data/ftp/2014-04-08/ck/0055.txt",
+				ys_id : "0055",
+				date : "2014-04-08",
+				status : -1,
+				error : "数据库链接失败"
+			}, {
+				id : 2,
+				path : "/data/ftp/2014-04-08/ck/0002.txt",
+				ys_id : "0002",
+				date : "2014-04-08",
+				status : 1
+			}, {
+				id : 3,
+				path : "/data/ftp/2014-04-08/ck/0003.txt",
+				ys_id : "0003",
+				date : "2014-04-08",
+				status : 2
+			}, {
+				id : 4,
+				path : "/data/ftp/2014-04-08/ck/0016.txt",
+				ys_id : "0016",
+				date : "2014-04-08",
+				status : 3
+			}, {
+				id : 5,
+				path : "/data/ftp/2014-04-08/ck/0017.txt",
+				ys_id : "0017",
+				date : "2014-04-08",
+				status : 4
+			}, {
+				id : 6,
+				path : "/data/ftp/2014-04-08/ck/F0001.txt",
+				ys_id : "F0001",
+				date : "2014-04-08",
+				status : 5
+			}, {
+				id : 7,
+				path : "/data/ftp/2014-04-08/ck/F0002.txt",
+				ys_id : "F0002",
+				date : "2014-04-08",
+				status : 6
+			}, {
+				id : 8,
+				path : "/data/ftp/2014-04-08/ck/F0032.txt",
+				ys_id : "F0032",
+				date : "2014-04-08",
+				status : 7
+			}]
+}

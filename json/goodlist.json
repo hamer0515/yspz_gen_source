@@ -1,0 +1,38 @@
+{
+	success : true,
+	total : 3,
+	data : [{
+				clear_date : '2014-03-03',
+				fch : 'ch0001',
+				fyw_type : 1,
+				ftx_date : '2014-03-02',
+				fhw_type : 2,
+				f_rate : 0.97,
+				f_ssn : 123456,
+				ftx_amt : 200,
+				fch_amt : 100,
+				chtx_amt : 97
+			}, {
+				clear_date : '2014-03-03',
+				fch : 'ch0002',
+				fyw_type : 1,
+				ftx_date : '2014-03-02',
+				fhw_type : 2,
+				f_rate : 0.97,
+				f_ssn : 123456,
+				ftx_amt : 200,
+				fch_amt : 100,
+				chtx_amt : 97
+			}, {
+				clear_date : '2014-03-03',
+				fch : 'ch0003',
+				fyw_type : 1,
+				ftx_date : '2014-03-02',
+				fhw_type : 2,
+				f_rate : 0.97,
+				f_ssn : 123456,
+				ftx_amt : 200,
+				fch_amt : 100,
+				chtx_amt : 97
+			}]
+}

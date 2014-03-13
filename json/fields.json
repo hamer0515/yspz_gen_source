@@ -1,0 +1,16 @@
+{
+	success : true,
+	data : {
+		'key' : "Key",
+		'clear_date' : "业务处理日期",
+		'fch' : "销卡通道编号",
+		'fyw_type' : "业务类型",
+		'ftx_date' : "交易日期",
+		'fhw_type' : "货物类型",
+		'f_rate' : "销卡结算折扣率",
+		'f_ssn' : "唯一销卡编号",
+		'ftx_amt' : "卡真实面值",
+		'fch_amt' : "销卡通道结算面值",
+		'chtx_amt' : "销卡通道结算金额"
+	}
+}

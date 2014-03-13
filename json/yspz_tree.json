@@ -1,0 +1,76 @@
+[{
+			"checked" : false,
+			"text" : "易宝支付帐套",
+			"children" : [{
+						"checked" : false,
+						"text" : "基金线原始凭证",
+						"children" : [{
+									"checked" : false,
+									"text" : "0002基金线-委托收款勾兑成功",
+									"ys_id" : "0002",
+									"leaf" : true
+								}, {
+									"checked" : false,
+									"text" : "0003基金线-委托收款勾兑不成功（我有银无）",
+									"ys_id" : "0003",
+									"leaf" : true
+								}],
+						"leaf" : false
+					}, {
+						"checked" : false,
+						"text" : "湖南POS原始凭证",
+						"children" : [{
+									"checked" : false,
+									"text" : "0016直联POS代清算收款勾兑成功",
+									"ys_id" : "0016",
+									"leaf" : true
+								}, {
+									"checked" : false,
+									"text" : "0017直联POS代清算收款反向交易勾兑成功",
+									"ys_id" : "0017",
+									"leaf" : true
+								}],
+						"leaf" : false
+					}],
+			"leaf" : false
+		}, {
+			"checked" : false,
+			"text" : "富汇益达帐套",
+			"children" : [{
+						"checked" : false,
+						"text" : "非银行卡原始凭证",
+						"children" : [{
+									"checked" : false,
+									"text" : "F0001非银行卡协助持卡人卖卡成功",
+									"ys_id" : "F0001",
+									"leaf" : true
+								}, {
+									"checked" : false,
+									"text" : "F0002与销卡渠道方交易勾兑成功",
+									"ys_id" : "F0002",
+									"leaf" : true
+								}],
+						"leaf" : false
+					}, {
+						"checked" : false,
+						"text" : "电话充值卡原始凭证",
+						"children" : [{
+									"checked" : false,
+									"text" : "F0022预付购卡渠道方交易款项，易宝托付成功",
+									"ys_id" : "F0022",
+									"leaf" : true
+								}, {
+									"checked" : false,
+									"text" : "F0023线上易宝托收成功",
+									"ys_id" : "F0023",
+									"leaf" : true
+								}, {
+									"checked" : false,
+									"text" : "F0024线下预收买卡人货款",
+									"ys_id" : "F0024",
+									"leaf" : true
+								}],
+						"leaf" : false
+					}],
+			"leaf" : false
+		}]

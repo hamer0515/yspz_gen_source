@@ -1,0 +1,26 @@
+{
+	success : true,
+	total : 3,
+	data : [{
+				fch : 'ch0001',
+				fyw_type : 1,
+				fhw_type : 2,
+				ftx_amt : 200,
+				fch_amt : 100,
+				chtx_amt : 97
+			}, {
+				fch : 'ch0002',
+				fyw_type : 1,
+				fhw_type : 2,
+				ftx_amt : 200,
+				fch_amt : 100,
+				chtx_amt : 97
+			}, {
+				fch : 'ch0003',
+				fyw_type : 1,
+				fhw_type : 2,
+				ftx_amt : 200,
+				fch_amt : 100,
+				chtx_amt : 97
+			}]
+}
