@@ -1,4 +1,4 @@
-Ext.define('demo.view.component.yspzDict', {
+Ext.define('yspz_gen.view.component.yspzDict', {
 			extend : 'Ext.panel.Panel',
 			alias : 'widget.yspz_dict',
 

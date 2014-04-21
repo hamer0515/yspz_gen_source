@@ -1,4 +1,4 @@
-Ext.define('demo.view.South', {
+Ext.define('yspz_gen.view.South', {
 			extend : 'Ext.panel.Panel',
 			alias : 'widget.south',
 			layout : 'fit',

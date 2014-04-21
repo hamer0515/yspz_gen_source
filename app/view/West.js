@@ -1,4 +1,4 @@
-Ext.define('demo.view.West', {
+Ext.define('yspz_gen.view.West', {
 	extend : 'Ext.tree.Panel',
 	alias : 'widget.west',
 	width : 200,
@@ -22,6 +22,22 @@ Ext.define('demo.view.West', {
 									text : "查询导入任务",
 									url : "task_list",
 									leaf : true
+								}, {
+									text : "汇总查询",
+									expanded : true,
+									children : [{
+												text : "F0002与销卡渠道方交易勾兑成功",
+												url : "yspz_sum_f0002",
+												leaf : true
+											}]
+								}, {
+									text : "原始凭证",
+									expanded : true,
+									children : [{
+												text : "凭证生成",
+												url : "yspz_gen",
+												leaf : true
+											}]
 								}]
 					}
 				});

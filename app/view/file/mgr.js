@@ -1,5 +1,5 @@
-Ext.define('demo.view.file.mgr', {
-	extend : 'demo.view.Panel',
+Ext.define('yspz_gen.view.file.mgr', {
+	extend : 'yspz_gen.view.Panel',
 	alias : 'widget.file_mgr',
 	initComponent : function() {
 		var me = this, cls = Ext.getClassName(me).split('.').pop(), gcolumns = [

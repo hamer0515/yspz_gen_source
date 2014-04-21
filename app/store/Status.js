@@ -1,5 +1,5 @@
-Ext.define('demo.store.Status', {
-			extend : 'demo.store.CBase',
+Ext.define('yspz_gen.store.Status', {
+			extend : 'yspz_gen.store.CBase',
 			data : [{
 						id : 1,
 						name : '处理中'

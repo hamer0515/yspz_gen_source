@@ -2,25 +2,16 @@
 	success : true,
 	total : 3,
 	data : [{
-				fch : 'ch0001',
-				fyw_type : 1,
-				fhw_type : 2,
-				ftx_amt : 200,
-				fch_amt : 100,
-				chtx_amt : 97
+				"business_date" : "CMBCHINA_NET_B2C_ZHBM1020",
+				"fch" : "10000516346",
+				"business_type" : "15",
+				"goods_type" : "420.00",
+				"success_money" : "1.13"
 			}, {
-				fch : 'ch0002',
-				fyw_type : 1,
-				fhw_type : 2,
-				ftx_amt : 200,
-				fch_amt : 100,
-				chtx_amt : 97
-			}, {
-				fch : 'ch0003',
-				fyw_type : 1,
-				fhw_type : 2,
-				ftx_amt : 200,
-				fch_amt : 100,
-				chtx_amt : 97
+				"business_date" : "CMBCHINA_NET_B2C_ZHBM1020",
+				"fch" : "123456",
+				"business_type" : "15",
+				"goods_type" : "50.00",
+				"success_money" : "0.15"
 			}]
 }

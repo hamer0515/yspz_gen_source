@@ -7,12 +7,12 @@
 						"children" : [{
 									"checked" : false,
 									"text" : "0002基金线-委托收款勾兑成功",
-									"credentialCode" : "0002",
+									"ys_id" : "0002",
 									"leaf" : true
 								}, {
 									"checked" : false,
 									"text" : "0003基金线-委托收款勾兑不成功（我有银无）",
-									"credentialCode" : "0003",
+									"ys_id" : "0003",
 									"leaf" : true
 								}],
 						"leaf" : false
@@ -22,12 +22,12 @@
 						"children" : [{
 									"checked" : false,
 									"text" : "0016直联POS代清算收款勾兑成功",
-									"credentialCode" : "0016",
+									"ys_id" : "0016",
 									"leaf" : true
 								}, {
 									"checked" : false,
 									"text" : "0017直联POS代清算收款反向交易勾兑成功",
-									"credentialCode" : "0017",
+									"ys_id" : "0017",
 									"leaf" : true
 								}],
 						"leaf" : false
@@ -42,12 +42,12 @@
 						"children" : [{
 									"checked" : false,
 									"text" : "F0001非银行卡协助持卡人卖卡成功",
-									"credentialCode" : "F0001",
+									"ys_id" : "F0001",
 									"leaf" : true
 								}, {
 									"checked" : false,
 									"text" : "F0002与销卡渠道方交易勾兑成功",
-									"credentialCode" : "F0002",
+									"ys_id" : "F0002",
 									"leaf" : true
 								}],
 						"leaf" : false
@@ -57,17 +57,17 @@
 						"children" : [{
 									"checked" : false,
 									"text" : "F0022预付购卡渠道方交易款项，易宝托付成功",
-									"credentialCode" : "F0022",
+									"ys_id" : "F0022",
 									"leaf" : true
 								}, {
 									"checked" : false,
 									"text" : "F0023线上易宝托收成功",
-									"credentialCode" : "F0023",
+									"ys_id" : "F0023",
 									"leaf" : true
 								}, {
 									"checked" : false,
 									"text" : "F0024线下预收买卡人货款",
-									"credentialCode" : "F0024",
+									"ys_id" : "F0024",
 									"leaf" : true
 								}],
 						"leaf" : false

@@ -1,4 +1,4 @@
-Ext.define('demo.view.component.QueryForm', {
+Ext.define('yspz_gen.view.component.QueryForm', {
 			extend : 'Ext.form.Panel',
 			alias : 'widget.queryform',
 			title : '查询',

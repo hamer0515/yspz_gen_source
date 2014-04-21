@@ -1,5 +1,5 @@
-Ext.define('demo.Application', {
-			name : 'demo',
+Ext.define('yspz_gen.Application', {
+			name : 'yspz_gen',
 			minHeight : 768,
 			minWidth : 1024,
 			extend : 'Ext.app.Application',

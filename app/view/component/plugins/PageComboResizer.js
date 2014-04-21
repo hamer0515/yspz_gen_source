@@ -1,4 +1,4 @@
-Ext.define('demo.view.component.plugins.PageComboResizer', {
+Ext.define('yspz_gen.view.component.plugins.PageComboResizer', {
 			extend : 'Ext.Base',
 			pageSizes : [50, 100, 200, 500, 1000],
 			prefixText : '每页显示 ',
@@ -6,7 +6,7 @@ Ext.define('demo.view.component.plugins.PageComboResizer', {
 
 			constructor : function(config) {
 				Ext.apply(this, config);
-				demo.view.component.plugins.PageComboResizer.superclass.constructor
+				yspz_gen.view.component.plugins.PageComboResizer.superclass.constructor
 						.call(this, config);
 			},
 

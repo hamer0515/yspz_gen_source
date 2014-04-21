@@ -1,41 +1,13 @@
 {
 	success : true,
-	total : 3,
+	total : 1,
 	data : [{
-				key : 1,
-				clear_date : '2014-03-03',
-				fch : 'ch0001',
-				fyw_type : 1,
-				ftx_date : '2014-03-02',
-				fhw_type : 0,
-				f_rate : 0.97,
-				f_ssn : 123456,
-				ftx_amt : 200,
-				fch_amt : 100,
-				chtx_amt : 97
-			}, {
-				key : 2,
-				clear_date : '2014-03-03',
-				fch : 'ch0002',
-				fyw_type : 0,
-				ftx_date : '2014-03-02',
-				fhw_type : 2,
-				f_rate : 0.97,
-				f_ssn : 123456,
-				ftx_amt : 200,
-				fch_amt : 100,
-				chtx_amt : 97
-			}, {
-				key : 3,
-				clear_date : '2014-03-03',
-				fch : 'ch0003',
-				fyw_type : 1,
-				ftx_date : '2014-03-02',
-				fhw_type : 2,
-				f_rate : 0.97,
-				f_ssn : 123456,
-				ftx_amt : 0,
-				fch_amt : 0,
-				chtx_amt : 0
-			}]
+		"id" : 7499,
+		"credentialId" : 41,
+		"importDate" : "2014-03-23",
+		"lineNu" : "3",
+		"lineData" : "CMBCHINA_NET_B2C_ZHBM1020|2013-11-05 20:36:33|||15|50.00|0.15|0.00||CMBCHINA_NET_B2C_ZHBM1020|2279613008|2013-11-05 00:00:00|2013-11-05||2013-11-06 16:57:37",
+		"errorMsg" : "数据不完整"
+	}]
+
 }

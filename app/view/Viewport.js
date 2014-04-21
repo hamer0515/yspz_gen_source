@@ -1,4 +1,4 @@
-Ext.define('demo.view.Viewport', {
+Ext.define('yspz_gen.view.Viewport', {
 			extend : 'Ext.container.Viewport',
 			requires : ['Ext.Date', 'Ext.Action', 'Ext.util.History',
 					'Ext.data.TreeStore', 'Ext.grid.property.Grid',
@@ -14,7 +14,9 @@ Ext.define('demo.view.Viewport', {
 					'overrides.RowExpander', 'overrides.Gridpanel',
 					'overrides.Paging', 'overrides.Treepanel',
 					'overrides.Connection', 'overrides.DateField',
-					'Ext.form.field.Display', 'Ext.form.CheckboxGroup'],
+					'Ext.form.field.Display', 'overrides.RowEditor',
+					'Ext.form.CheckboxGroup', 'Ext.grid.plugin.DragDrop',
+					'Ext.grid.column.RowNumberer'],
 
 			layout : {
 				type : 'border'

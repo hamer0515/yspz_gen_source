@@ -1,4 +1,4 @@
-Ext.define('demo.view.component.MyStore', {
+Ext.define('yspz_gen.view.component.MyStore', {
 			extend : 'Ext.data.Store',
 			alias : 'widget.mystore',
 			pageSize : 50,

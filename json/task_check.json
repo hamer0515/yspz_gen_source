@@ -1,54 +1,66 @@
-{
-	success : true,
-	total : 8,
-	data : [{
-				id : 1,
-				path : "/data/ftp/2014-04-08/ck/0055.txt",
-				ys_id : "0055",
-				date : "2014-04-08",
-				status : -1,
-				error : "数据库链接失败"
-			}, {
-				id : 2,
-				path : "/data/ftp/2014-04-08/ck/0002.txt",
-				ys_id : "0002",
-				date : "2014-04-08",
-				status : 1
-			}, {
-				id : 3,
-				path : "/data/ftp/2014-04-08/ck/0003.txt",
-				ys_id : "0003",
-				date : "2014-04-08",
-				status : 2
-			}, {
-				id : 4,
-				path : "/data/ftp/2014-04-08/ck/0016.txt",
-				ys_id : "0016",
-				date : "2014-04-08",
-				status : 3
-			}, {
-				id : 5,
-				path : "/data/ftp/2014-04-08/ck/0017.txt",
-				ys_id : "0017",
-				date : "2014-04-08",
-				status : 4
-			}, {
-				id : 6,
-				path : "/data/ftp/2014-04-08/ck/F0001.txt",
-				ys_id : "F0001",
-				date : "2014-04-08",
-				status : 5
-			}, {
-				id : 7,
-				path : "/data/ftp/2014-04-08/ck/F0002.txt",
-				ys_id : "F0002",
-				date : "2014-04-08",
-				status : 6
-			}, {
-				id : 8,
-				path : "/data/ftp/2014-04-08/ck/F0032.txt",
-				ys_id : "F0032",
-				date : "2014-04-08",
-				status : 7
-			}]
-}
+[{
+			"allCount" : 0,
+			"badCount" : 0,
+			"code" : "0017",
+			"credentialId" : 1,
+			"credentialPath" : "/data/ftp/2014-03-24/ck/1.txt",
+			"endTime" : null,
+			"goodCount" : 0,
+			"id" : 1,
+			"importDate" : "2014-03-24",
+			"lastModfiedTime" : "2014-03-24 09:38:19",
+			"startTime" : null,
+			"status" : 2,
+			"suitId" : 0,
+			"tradeId" : 0,
+			"userid" : 0
+		}, {
+			"allCount" : 0,
+			"badCount" : 0,
+			"code" : "0016",
+			"credentialId" : 4,
+			"credentialPath" : "/data/ftp/2014-03-24/ck/4.txt",
+			"endTime" : null,
+			"goodCount" : 0,
+			"id" : 2,
+			"importDate" : "2014-03-24",
+			"lastModfiedTime" : "2014-03-24 09:38:19",
+			"startTime" : null,
+			"status" : 1,
+			"suitId" : 0,
+			"tradeId" : 0,
+			"userid" : 0
+		}, {
+			"allCount" : 0,
+			"badCount" : 0,
+			"code" : "0002",
+			"credentialId" : 2,
+			"credentialPath" : "/data/ftp/2014-03-24/ck/2.txt",
+			"endTime" : null,
+			"goodCount" : 0,
+			"id" : 4,
+			"importDate" : "2014-03-24",
+			"lastModfiedTime" : "2014-03-24 09:38:19",
+			"startTime" : null,
+			"status" : 3,
+			"suitId" : 0,
+			"tradeId" : 0,
+			"userid" : 0
+		}, {
+			"allCount" : 0,
+			"badCount" : 0,
+			"code" : "0003",
+			"credentialId" : 3,
+			"credentialPath" : "/data/ftp/2014-03-24/ck/3.txt",
+			"endTime" : null,
+			"goodCount" : 0,
+			"id" : 5,
+			"importDate" : "2014-03-24",
+			"lastModfiedTime" : "2014-03-24 09:38:20",
+			"startTime" : null,
+			"status" : -1,
+			"suitId" : 0,
+			"tradeId" : 0,
+			"userid" : 0,
+			"error" : "aaaa"
+		}]

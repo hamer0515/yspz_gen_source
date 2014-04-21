@@ -1,4 +1,4 @@
-Ext.define('demo.view.Center', {
+Ext.define('yspz_gen.view.Center', {
 			extend : 'Ext.tab.Panel',
 			alias : 'widget.center',
 			enableTabScroll : true,

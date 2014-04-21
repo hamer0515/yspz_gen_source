@@ -1,0 +1,33 @@
+{
+	"success" : {
+		"wlzj_type" : "往来资金类型",
+		"fyp_acct" : "易宝中间账户号",
+		"fm" : "商户编号",
+		"fcg_date" : "商品采购日期",
+		"fp" : "周期确认规则",
+		"f_ssn" : "唯一销卡编号",
+		"acct" : "资金账号， 包括自有资金与备付金账号",
+		"f_dcn" : "代充通道编号",
+		"f_agm" : "代理商编号",
+		"cust_proto" : "客户协议",
+		"fc" : "客户编号",
+		"zjbd_date" : "资金变动日期",
+		"bi" : "银行接口编号",
+		"amt" : "金额",
+		"fyw_type" : "业务类型id",
+		"fch" : "渠道方编号",
+		"zjbd_type" : "资金变动类型",
+		"bfj_acct" : "备付金账号id",
+		"tx_date" : "交易日期",
+		"period" : "期间日期",
+		"fhyd_acct" : "富汇易达银行账户号",
+		"fe_date" : "差错日期",
+		"fhw_type" : "货物类型id",
+		"ftx_date" : "交易日期",
+		"p" : "产品id",
+		"c" : "客户id",
+		"zyzj_acct" : "自有资金账号id",
+		"yw_type" : "业务类型",
+		"e_date" : "差错日期"
+	}
+}

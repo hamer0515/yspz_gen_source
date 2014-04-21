@@ -1,4 +1,4 @@
-Ext.define('demo.store.CBase', {
+Ext.define('yspz_gen.store.CBase', {
 			extend : 'Ext.data.Store',
 			fields : ['id', 'name'],
 

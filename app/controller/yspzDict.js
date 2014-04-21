@@ -1,4 +1,4 @@
-Ext.define('demo.controller.yspzDict', {
+Ext.define('yspz_gen.controller.yspzDict', {
 			extend : 'Ext.app.Controller',
 			views : ['component.yspzDict'],
 

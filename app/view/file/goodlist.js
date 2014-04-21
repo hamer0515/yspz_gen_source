@@ -1,4 +1,4 @@
-Ext.define('demo.view.file.goodlist', {
+Ext.define('yspz_gen.view.file.goodlist', {
 			extend : 'Ext.grid.Panel',
 			alias : 'widget.goodlist',
 			border : true,

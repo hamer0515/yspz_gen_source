@@ -1,4 +1,4 @@
-Ext.define('demo.view.Panel', {
+Ext.define('yspz_gen.view.Panel', {
 	extend : 'Ext.panel.Panel',
 	/*
 	 * _columns(object):科目汇总时候需要的列

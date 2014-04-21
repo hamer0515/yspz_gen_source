@@ -1,14 +1,14 @@
-Ext.define('demo.view.task.gen', {
-	extend : 'demo.view.Panel',
+Ext.define('yspz_gen.view.task.gen', {
+	extend : 'yspz_gen.view.Panel',
 	alias : 'widget.task_gen',
 	initComponent : function() {
 		var me = this, cls = Ext.getClassName(me).split('.').pop(), store = new Ext.data.TreeStore(
 				{
 					autoLoad : true,
-					fields : ['text', 'ys_id'],
+					fields : ['text', 'credentialCode'],
 					proxy : {
 						type : 'ajax',
-						url : 'base/yspz_tree'
+						url : 'credential/CredentialServlet.action?method=getCredentailTree'
 					}
 				}), gcolumns = [{
 					text : "编号",
@@ -16,18 +16,18 @@ Ext.define('demo.view.task.gen', {
 					flex : 1
 				}, {
 					text : "流水文件来源",
-					dataIndex : 'path',
+					dataIndex : 'credentialPath',
 					editor : {
 						allowBlank : false
 					},
 					flex : 1
 				}, {
 					text : "凭证编号",
-					dataIndex : 'ys_id',
+					dataIndex : 'code',
 					flex : 1
 				}, {
 					text : "生成日期",
-					dataIndex : 'date',
+					dataIndex : 'importDate',
 					flex : 1
 				}, {
 					text : "文件状态",
@@ -59,7 +59,8 @@ Ext.define('demo.view.task.gen', {
 								anchor : '100%',
 								store : store
 							}]
-				}], fields = ['id', 'path', 'ys_id', 'date', 'status', 'error'];
+				}], fields = ['id', 'credentialPath', 'code', 'importDate',
+				'status', 'error'];
 		Ext.apply(me, {
 			formConfig : {
 				formCheck : function() {
@@ -79,7 +80,9 @@ Ext.define('demo.view.task.gen', {
 					var me = this, values = me.getValues();
 					var items = [], records = me.down('treepanel').getChecked();
 					records.forEach(function(element, index, array) {
-								items.push(element.data.ys_id);
+								element.data.credentialCode
+										&& items
+												.push(element.data.credentialCode);
 							});
 					return Ext.Object.merge(values, {
 								items : items
@@ -99,7 +102,7 @@ Ext.define('demo.view.task.gen', {
 				viewConfig : {
 					stripeRows : true,
 					getRowClass : function(record) {
-						var color, status = parseInt(record.data.status);
+						var color, status = record.data.status;
 						if (status == 1) {
 							color = 'red';
 						}
@@ -120,21 +123,26 @@ Ext.define('demo.view.task.gen', {
 						rows.forEach(function(element, index, array) {
 									items.push(element.data.id);
 								});
-						Ext.asyncRequest('task/start', {
-									task : items
-								}, function(response) {
-									var res = Ext.decode(response.responseText);
-									if (res.success) {
-										Ext.info('消息', '任务提交成功', Ext.Msg.OK,
-												function() {
-													me.down('grid').store
-															.reload();
-												});
-									} else {
-										Ext.error('错误', '任务提交失败:' + res.msg,
-												Ext.Msg.OK);
-									}
-								});
+						Ext
+								.asyncRequest(
+										'credential/CredentialServlet.action?method=optionCredential',
+										{
+											task : items
+										}, function(response) {
+											var res = Ext
+													.decode(response.responseText);
+											if (res.success) {
+												Ext.info('消息', '任务提交成功',
+														Ext.Msg.OK, function() {
+															me.down('grid').store
+																	.reload();
+														});
+											} else {
+												Ext.error('错误', '任务提交失败:'
+																+ res.msg,
+														Ext.Msg.OK);
+											}
+										});
 					}
 				}],
 				listeners : {
@@ -161,7 +169,7 @@ Ext.define('demo.view.task.gen', {
 					}
 				}
 			},
-			_url : 'task/check',
+			_url : 'credential/CredentialServlet.action?method=getCredentialStatus',
 			_fields : fields,
 			_items : items,
 			_gcolumns : gcolumns
