@@ -2,10 +2,10 @@
 			"name" : "1002.01-银行存款-备付金存款",
 			"id" : "14",
 			"set" : "1",
-			"dims" : "zjbd_date,zjbd_type,zyzj_acct"
+			"checkingList" : "zjbd_date,zjbd_type,zyzj_acct"
 		}, {
 			"name" : "1002.02-银行存款-自有资金存款",
 			"id" : "15",
 			"set" : "1",
-			"dims" : "bfj_acct,zjbd_date,zjbd_type"
+			"checkingList" : "bfj_acct,zjbd_date,zjbd_type"
 		}]

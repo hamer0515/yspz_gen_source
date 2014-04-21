@@ -8,9 +8,9 @@
 //@require @packageOverrides
 
 Ext.application({
-    name: 'demo',
+    name: 'yspz_gen',
 
-    extend: 'demo.Application',
+    extend: 'yspz_gen.Application',
     
     autoCreateViewport: true
 });

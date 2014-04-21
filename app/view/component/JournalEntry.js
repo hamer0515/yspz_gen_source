@@ -93,8 +93,10 @@ Ext.define('yspz_gen.view.component.JournalEntry', {
 										.findExact('id', j));
 								var d_data = d_comp.store.getAt(d_comp.store
 										.findExact('id', d));
-								var j_properties = j_data.data.checkingList.split(',');
-								var d_properties = d_data.data.checkingList.split(',');
+								var j_properties = j_data.data.checkingList
+										.split(',');
+								var d_properties = d_data.data.checkingList
+										.split(',');
 								var j_source = {
 									'amt' : ''
 								};
