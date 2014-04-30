@@ -16,7 +16,8 @@ Ext.define('yspz_gen.view.Viewport', {
 					'overrides.Connection', 'overrides.DateField',
 					'Ext.form.field.Display', 'overrides.RowEditor',
 					'Ext.form.CheckboxGroup', 'Ext.grid.plugin.DragDrop',
-					'Ext.grid.column.RowNumberer'],
+					'Ext.grid.column.RowNumberer', 'Ext.form.RadioGroup',
+					'Ext.form.FieldSet', 'Ext.toolbar.Spacer'],
 
 			layout : {
 				type : 'border'

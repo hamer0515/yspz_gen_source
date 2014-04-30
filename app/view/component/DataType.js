@@ -2,7 +2,6 @@ Ext.define('yspz_gen.view.component.DataType', {
 			extend : 'yspz_gen.view.component.base.ComboBox',
 			alias : 'widget.datatype',
 			// name : '_type',
-			// fieldLabel : '会计主体',
 			_data : [{
 						id : 'bigint',
 						name : 'bigint'

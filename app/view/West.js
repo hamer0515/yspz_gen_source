@@ -38,6 +38,10 @@ Ext.define('yspz_gen.view.West', {
 												url : "yspz_gen",
 												leaf : true
 											}]
+								}, {
+									text : "银行接口配置",
+									url : "bilist",
+									leaf : true
 								}]
 					}
 				});
@@ -52,6 +56,7 @@ Ext.define('yspz_gen.view.West', {
 					center.add({
 								closable : true,
 								xtype : 'panel',
+								layout : 'fit',
 								items : {
 									xtype : rec.data.url
 								},

@@ -46,6 +46,7 @@ Ext.define('yspz_gen.view.component.JournalEntry', {
 						layout : 'hbox',
 						items : [{
 									xtype : 'books',
+									width : 516,
 									margin : '0 10 0 0',
 									id : 'journalentry_jbook' + suffix,
 									submitValue : false,
@@ -54,6 +55,7 @@ Ext.define('yspz_gen.view.component.JournalEntry', {
 									fieldLabel : '借方科目'
 								}, {
 									xtype : 'books',
+									width : 516,
 									submitValue : false,
 									_set : me._set,
 									allowBlank : false,

@@ -36,6 +36,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.locale.zh_CN.form.field.Date": [],
   "Ext.ux.ajax.DataSimlet": [],
   "Ext.ux.grid.TransformGrid": [],
+  "yspz_gen.view.bi.BiBrowser": [],
   "yspz_gen.view.component.Books": [],
   "yspz_gen.view.component.Validation": [],
   "Ext.locale.zh_CN.form.field.VTypes": [],
@@ -46,6 +47,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.component.JournalEntry": [],
   "Ext.ux.grid.menu.ListMenu": [],
   "Ext.locale.zh_CN.grid.header.Container": [],
+  "yspz_gen.view.component.Preprocess": [],
   "overrides.RowExpander": [],
   "Ext.locale.zh_CN.window.MessageBox": [],
   "overrides.Ext": [],
@@ -56,6 +58,7 @@ Ext.ClassManager.addNameAlternateMappings({
   ],
   "yspz_gen.controller.Index": [],
   "Ext.locale.zh_CN.view.View": [],
+  "yspz_gen.view.bi.InfoPanel": [],
   "yspz_gen.view.yspz_sum.f0002": [],
   "Ext.locale.zh_CN.picker.Month": [],
   "Ext.ux.PreviewPlugin": [],
@@ -65,6 +68,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.event.RecorderManager": [],
   "Ext.ux.ProgressBarPager": [],
   "Ext.locale.zh_CN.form.field.HtmlEditor": [],
+  "yspz_gen.view.bi.List": [],
   "Ext.ux.CellDragDrop": [],
   "Ext.locale.zh_CN.view.AbstractView": [],
   "yspz_gen.store.CBase": [],
@@ -75,6 +79,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.grid.filter.NumericFilter": [],
   "yspz_gen.view.Viewport": [],
   "overrides.Gridpanel": [],
+  "yspz_gen.view.component.base.CheckBoxGroupSingle": [],
   "Ext.locale.zh_CN.form.field.Text": [],
   "Ext.ux.event.Recorder": [],
   "overrides.TabCloseMenu": [],
@@ -93,6 +98,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.dd.CellFieldDropZone": [],
   "Ext.ux.LiveSearchGridPanel": [],
   "Ext.ux.grid.filter.DateFilter": [],
+  "yspz_gen.view.yspz.input": [],
   "Ext.ux.TreePicker": [],
   "yspz_gen.view.North": [],
   "yspz_gen.view.Center": [],
@@ -110,9 +116,10 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.locale.zh_CN.grid.plugin.DragDrop": [],
   "yspz_gen.view.component.MyStore": [],
   "Ext.ux.dd.PanelFieldDragZone": [],
+  "yspz_gen.view.task.gsum": [],
   "yspz_gen.controller.yspzDict": [],
-  "Ext.ux.GMapPanel": [],
   "yspz_gen.view.component.Line": [],
+  "Ext.ux.GMapPanel": [],
   "yspz_gen.view.yspz.gen": [],
   "Ext.ux.GroupTabPanel": [],
   "Ext.ux.DataView.LabelEditor": [],
@@ -140,6 +147,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.event.Maker": [],
   "yspz_gen.view.component.Set": [],
   "yspz_gen.view.component.QueryForm": [],
+  "yspz_gen.view.component.calcValue": [],
   "Ext.ux.DataView.Draggable": [],
   "Ext.locale.zh_CN.form.field.ComboBox": [],
   "Ext.ux.TabCloseMenu": [],
@@ -160,6 +168,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.locale.zh_CN.form.field.Date": [],
   "Ext.ux.ajax.DataSimlet": [],
   "Ext.ux.grid.TransformGrid": [],
+  "yspz_gen.view.bi.BiBrowser": [
+    "widget.bibrowser"
+  ],
   "yspz_gen.view.component.Books": [
     "widget.books"
   ],
@@ -178,6 +189,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Ext.ux.grid.menu.ListMenu": [],
   "Ext.locale.zh_CN.grid.header.Container": [],
+  "yspz_gen.view.component.Preprocess": [
+    "widget.preprocess"
+  ],
   "overrides.RowExpander": [],
   "Ext.locale.zh_CN.window.MessageBox": [],
   "overrides.Ext": [],
@@ -191,6 +205,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "yspz_gen.controller.Index": [],
   "Ext.locale.zh_CN.view.View": [],
+  "yspz_gen.view.bi.InfoPanel": [
+    "widget.infopanel"
+  ],
   "yspz_gen.view.yspz_sum.f0002": [
     "widget.yspz_sum_f0002"
   ],
@@ -210,6 +227,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Ext.ux.ProgressBarPager": [],
   "Ext.locale.zh_CN.form.field.HtmlEditor": [],
+  "yspz_gen.view.bi.List": [
+    "widget.bilist"
+  ],
   "Ext.ux.CellDragDrop": [
     "plugin.celldragdrop"
   ],
@@ -226,6 +246,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "yspz_gen.view.Viewport": [],
   "overrides.Gridpanel": [],
+  "yspz_gen.view.component.base.CheckBoxGroupSingle": [
+    "widget.checkboxgroupsingle"
+  ],
   "Ext.locale.zh_CN.form.field.Text": [],
   "Ext.ux.event.Recorder": [],
   "overrides.TabCloseMenu": [],
@@ -260,6 +283,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.grid.filter.DateFilter": [
     "gridfilter.date"
   ],
+  "yspz_gen.view.yspz.input": [
+    "widget.yspz_input"
+  ],
   "Ext.ux.TreePicker": [
     "widget.treepicker"
   ],
@@ -291,12 +317,15 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.mystore"
   ],
   "Ext.ux.dd.PanelFieldDragZone": [],
-  "yspz_gen.controller.yspzDict": [],
-  "Ext.ux.GMapPanel": [
-    "widget.gmappanel"
+  "yspz_gen.view.task.gsum": [
+    "widget.task_gsum"
   ],
+  "yspz_gen.controller.yspzDict": [],
   "yspz_gen.view.component.Line": [
     "widget.lines"
+  ],
+  "Ext.ux.GMapPanel": [
+    "widget.gmappanel"
   ],
   "yspz_gen.view.yspz.gen": [
     "widget.yspz_gen"
@@ -342,6 +371,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "yspz_gen.view.component.QueryForm": [
     "widget.queryform"
+  ],
+  "yspz_gen.view.component.calcValue": [
+    "widget.calcvalue"
   ],
   "Ext.ux.DataView.Draggable": [],
   "Ext.locale.zh_CN.form.field.ComboBox": [],

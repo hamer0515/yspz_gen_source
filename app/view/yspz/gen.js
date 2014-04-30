@@ -2,8 +2,7 @@ Ext.define('yspz_gen.view.yspz.gen', {
 	extend : 'Ext.window.Window',
 	alias : 'widget.yspz_gen',
 	title : '原始凭证',
-	height : 175,
-	width : 300,
+	// width : 300,
 	layout : 'fit',
 	closable : false,
 	modal : true,
@@ -11,7 +10,6 @@ Ext.define('yspz_gen.view.yspz.gen', {
 	items : {
 		xtype : 'form',
 		bodyPadding : 5,
-		width : 350,
 		layout : 'anchor',
 		defaults : {
 			anchor : '100%'

@@ -1,7 +1,7 @@
 Ext.define('yspz_gen.view.component.base.ComboBox', {
 			extend : 'Ext.form.ComboBox',
-			width : 516,
-			margin : '0 10 0 0',
+			// width : 516,
+			// margin : '0 10 0 0',
 			queryMode : 'local',
 			anyMatch : true,
 			listeners : {

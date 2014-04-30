@@ -127,31 +127,59 @@ Ext.define('yspz_gen.view.task.list', {
 								if (optional == 'yes') {
 									Ext
 											.asyncRequest(
-													'credential/CredentialServlet.action?method=sumCredential',
+													'credential/CredentialServlet.action?method=getCredentialMeta',
 													{
-														credentialId : rec.data.credentialId,
-														importDate : rec.data.importDate,
-														id : rec.data.id
+														credentialId : rec.data.credentialId
 													}, function(response) {
 														var res = Ext
 																.decode(response.responseText);
-														if (res.success) {
-															Ext.info('消息',
-																	'汇总生成提交成功',
-																	Ext.Msg.OK,
-																	function() {
-																		grid.store
-																				.reload();
-																	});
+														if (Object.keys(res).length > 0) {
+															Ext
+																	.widget(
+																			'task_gsum',
+																			{
+																				_rec : rec,
+																				_grid : grid,
+																				_items : res
+																			});
 														} else {
 															Ext
 																	.error(
 																			'错误',
-																			'汇总生成提交失败:'
+																			'获取凭证定义失败:'
 																					+ res.msg,
 																			Ext.Msg.OK);
 														}
 													});
+
+									// Ext
+									// .asyncRequest(
+									// 'credential/CredentialServlet.action?method=sumCredential',
+									// {
+									// credentialId :
+									// rec.data.credentialId,
+									// importDate : rec.data.importDate,
+									// id : rec.data.id
+									// }, function(response) {
+									// var res = Ext
+									// .decode(response.responseText);
+									// if (res.success) {
+									// Ext.info('消息',
+									// '汇总生成提交成功',
+									// Ext.Msg.OK,
+									// function() {
+									// grid.store
+									// .reload();
+									// });
+									// } else {
+									// Ext
+									// .error(
+									// '错误',
+									// '汇总生成提交失败:'
+									// + res.msg,
+									// Ext.Msg.OK);
+									// }
+									// });
 								}
 							});
 						}
