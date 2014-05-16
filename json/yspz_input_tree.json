@@ -1,0 +1,73 @@
+[{
+			"text" : "易宝支付",
+			"leaf" : false,
+			"children" : [{
+						"text" : "客户备付金",
+						"leaf" : false,
+						"children" : [{
+									"text" : "备付金",
+									"leaf" : true,
+									"id" : 9
+								}, {
+									"text" : "自付备付金",
+									"leaf" : true,
+									"id" : 10
+								}]
+					}, {
+						"text" : "我方支付记录",
+						"leaf" : false,
+						"children" : [{
+									"text" : "备付金",
+									"leaf" : true,
+									"id" : 11
+								}, {
+									"text" : "自付备付金",
+									"leaf" : true,
+									"id" : 12
+								}]
+					}, {
+						"text" : "银行支付记录",
+						"leaf" : false,
+						"children" : [{
+									"text" : "备付金",
+									"leaf" : true,
+									"id" : 13
+								}, {
+									"text" : "自付备付金",
+									"leaf" : true,
+									"id" : 14
+								}]
+					}, {
+						"text" : "资金对账",
+						"leaf" : false,
+						"children" : [{
+									"text" : "备付金",
+									"leaf" : true,
+									"id" : 15
+								}, {
+									"text" : "自付备付金",
+									"leaf" : true,
+									"id" : 16
+								}]
+					}, {
+						"text" : "特殊类",
+						"leaf" : false,
+						"children" : [{
+									"text" : "备付金",
+									"leaf" : true,
+									"id" : 17
+								}, {
+									"text" : "自付备付金",
+									"leaf" : true,
+									"id" : 18
+								}]
+					}]
+		}, {
+			"text" : "富汇益达",
+			"leaf" : true,
+			"id" : 2
+		}, {
+			"text" : "天津保里",
+			"leaf" : true,
+			"id" : 3
+		}]

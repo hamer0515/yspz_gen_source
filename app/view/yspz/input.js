@@ -26,7 +26,6 @@ Ext.define('yspz_gen.view.yspz.input', {
 					layout : 'anchor',
 					items : [{
 								fieldLabel : '列名',
-								// emptyText : "对应列在表中的名称(bfj_acct)",
 								allowBlank : false,
 								validator : function(v) {
 									if (v != '') {
@@ -42,7 +41,6 @@ Ext.define('yspz_gen.view.yspz.input', {
 								name : 'colname'
 							}, {
 								fieldLabel : '数据类型',
-								// emptyText : "对应列在表中的数据类型",
 								xtype : 'datatype',
 								name : 'type',
 								allowBlank : false
@@ -66,60 +64,12 @@ Ext.define('yspz_gen.view.yspz.input', {
 										}]
 							}, {
 								fieldLabel : '备注',
-								// emptyText : "对应列在表中的备注",
 								name : 'comment'
 							}, {
 								fieldLabel : '显示为',
-								// emptyText : "界面上显示的名称(银行接口)",
 								name : 'text',
 								allowBlank : false
-							}
-					// , {
-					// xtype : 'checkboxgroupsingle',
-					// fieldLabel : '汇总、求和',
-					// columns : 2,
-					// vertical : true,
-					// items : [{
-					// boxLabel : '汇总',
-					// inputValue : true,
-					// uncheckedValue : false,
-					// name : 'group',
-					// listeners : {
-					// change : function(me, newValue) {
-					// if (newValue) {
-					// var group = me.up('checkboxgroup');
-					// if (group) {
-					// group.items.each(function(i) {
-					// if (i.getName() != me.getName()) {
-					// i.setValue(false);
-					// }
-					// });
-					// }
-					// }
-					// }
-					// }
-					// }, {
-					// boxLabel : '求和',
-					// name : 'sum',
-					// inputValue : true,
-					// uncheckedValue : false,
-					// listeners : {
-					// change : function(me, newValue) {
-					// if (newValue) {
-					// var group = me.up('checkboxgroup');
-					// if (group) {
-					// group.items.each(function(i) {
-					// if (i.getName() != me.getName()) {
-					// i.setValue(false);
-					// }
-					// });
-					// }
-					// }
-					// }
-					// }
-					// }]
-					// }
-					]
+							}]
 				}, {
 					xtype : 'fieldset',
 					columnWidth : 0.5,
@@ -129,6 +79,21 @@ Ext.define('yspz_gen.view.yspz.input', {
 					},
 					layout : 'anchor',
 					items : [{
+								xtype : 'radiogroup',
+								columns : 2,
+								fieldLabel : '是否为金额',
+								vertical : true,
+								items : [{
+											boxLabel : '否',
+											name : "isMoney",
+											inputValue : false,
+											checked : true
+										}, {
+											boxLabel : '是',
+											name : "isMoney",
+											inputValue : true
+										}]
+							}, {
 								xtype : 'textfield',
 								fieldLabel : '默认值',
 								name : 'default'
@@ -178,7 +143,6 @@ Ext.define('yspz_gen.view.yspz.input', {
 							}, {
 								xtype : 'numberfield',
 								fieldLabel : '值',
-								// emptyText : "对应流水中的列(1)",
 								id : 'vfrom_1',
 								anchor : '100%',
 								maxValue : 99,
@@ -188,7 +152,6 @@ Ext.define('yspz_gen.view.yspz.input', {
 							}, {
 								xtype : 'calcvalue',
 								fieldLabel : '值',
-								// emptyText : "从计费模块中得到的值",
 								id : 'vfrom_2',
 								allowBlank : false,
 								hidden : true,
@@ -207,14 +170,12 @@ Ext.define('yspz_gen.view.yspz.input', {
 								xtype : 'validation',
 								id : 'vfrom_4',
 								fieldLabel : '流水校验规则',
-								// emptyText : "取值流水时的校验规则",
 								name : 'validation',
 								allowBlank : false
 							}, {
 								xtype : 'preprocess',
 								id : 'vfrom_5',
 								fieldLabel : '处理方式',
-								// emptyText : "流水数据的预处理方式",
 								name : 'preprocess'
 							}]
 				}],

@@ -88,27 +88,14 @@ Ext.define('yspz_gen.view.verify.yspz_list', {
 						handler : function(grid, rowIndex, colIndex) {
 							var rec = grid.getStore().getAt(rowIndex), msg = "确定[开始校验]";
 							Ext.Msg.confirm('警告', msg, function(optional) {
-								if (optional == 'yes') {
-									Ext.asyncRequest('action/ksjy', {
-												id : rec.data.id
-											}, function(response) {
-												var res = Ext
-														.decode(response.responseText);
-												if (res.success) {
-													Ext.info('消息', '开始校验提交成功',
-															Ext.Msg.OK,
-															function() {
-																grid.store
-																		.reload();
-															});
-												} else {
-													Ext.error('错误', '开始校验提交失败:'
-																	+ res.msg,
-															Ext.Msg.OK);
-												}
-											});
-								}
-							});
+										if (optional == 'yes') {
+											Ext.asyncRequest('action/ksjy', {
+														id : rec.data.id
+													}, function() {
+														grid.store.reload();
+													});
+										}
+									});
 						}
 					}, {
 						tooltip : '汇总生成',
@@ -126,27 +113,14 @@ Ext.define('yspz_gen.view.verify.yspz_list', {
 										+ "]条bad数据没有处理，是否要忽略";
 							}
 							Ext.Msg.confirm('警告', msg, function(optional) {
-								if (optional == 'yes') {
-									Ext.asyncRequest('action/hzsc', {
-												id : rec.data.id
-											}, function(response) {
-												var res = Ext
-														.decode(response.responseText);
-												if (res.success) {
-													Ext.info('消息', '汇总生成提交成功',
-															Ext.Msg.OK,
-															function() {
-																grid.store
-																		.reload();
-															});
-												} else {
-													Ext.error('错误', '汇总生成提交失败:'
-																	+ res.msg,
-															Ext.Msg.OK);
-												}
-											});
-								}
-							});
+										if (optional == 'yes') {
+											Ext.asyncRequest('action/hzsc', {
+														id : rec.data.id
+													}, function() {
+														grid.store.reload();
+													});
+										}
+									});
 						}
 					}, {
 						tooltip : 'Bad列表',

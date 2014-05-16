@@ -12,12 +12,11 @@ Ext.define('yspz_gen.view.component.JournalEntry', {
 	},
 	bodyPadding : 10,
 	initComponent : function() {
-		var me = this, suffix = me._set.toString() + me._line.toString()
-				+ me._code.toString(), editor = "Ext.create('yspz_gen.view.component.base.ComboBox', {store : me._store,valueField : 'colname',displayField : 'text', submitValue : false})", amt_editor = "Ext.createByAlias('widget.money', {submitValue : false})";
+		var me = this, suffix = me._type.toString() + me._code.toString(), editor = "Ext.create('yspz_gen.view.component.base.ComboBox', {store : me._store,valueField : 'colname',displayField : 'text', submitValue : false})", amt_editor = "Ext.createByAlias('widget.money', {submitValue : false})";
 		me.fields = [];
 		Ext.Ajax.request({
 					async : false,
-					url : 'checking_findAllChecking.action',
+					url : Ext.urls.GET_ALL_ENTRIES,
 					success : function(response) {
 						me.names = Ext.decode(response.responseText).success;
 					}
@@ -222,8 +221,9 @@ Ext.define('yspz_gen.view.component.JournalEntry', {
 													var sendData = {};
 													sendData["entrys"] = data;
 													sendData["items"] = ys_data;
-													sendData["set"] = me._set;
-													sendData["line"] = me._line;
+													// sendData["set"] =
+													// me._set;
+													sendData["type"] = me._type;
 													sendData["code"] = me._code;
 													sendData["name"] = me._name;
 													me
@@ -231,12 +231,12 @@ Ext.define('yspz_gen.view.component.JournalEntry', {
 															.setValues(sendData);
 													me.getForm().submit({
 														clientValidation : true,
-														url : 'credential_createCredentialAudit.action',
+														url : Ext.urls.SUBMIT_CREDENTIAL_META,
 														params : {
 															data : Ext.JSON
 																	.encode(sendData),
-															set : me._set,
-															line : me._line,
+															// set : me._set,
+															type : me._type,
 															code : me._code,
 															name : me._name
 														},

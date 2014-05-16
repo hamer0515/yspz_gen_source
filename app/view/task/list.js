@@ -129,8 +129,9 @@ Ext.define('yspz_gen.view.task.list', {
 											.asyncRequest(
 													'credential/CredentialServlet.action?method=getCredentialMeta',
 													{
-														credentialId : rec.data.credentialId
-													}, function(response) {
+														code : rec.data.code
+													}, undefined, undefined,
+													function(response) {
 														var res = Ext
 																.decode(response.responseText);
 														if (Object.keys(res).length > 0) {
@@ -144,42 +145,11 @@ Ext.define('yspz_gen.view.task.list', {
 																			});
 														} else {
 															Ext
-																	.error(
-																			'错误',
-																			'获取凭证定义失败:'
-																					+ res.msg,
-																			Ext.Msg.OK);
+																	.error('获取凭证定义失败:'
+																			+ res.msg);
 														}
 													});
 
-									// Ext
-									// .asyncRequest(
-									// 'credential/CredentialServlet.action?method=sumCredential',
-									// {
-									// credentialId :
-									// rec.data.credentialId,
-									// importDate : rec.data.importDate,
-									// id : rec.data.id
-									// }, function(response) {
-									// var res = Ext
-									// .decode(response.responseText);
-									// if (res.success) {
-									// Ext.info('消息',
-									// '汇总生成提交成功',
-									// Ext.Msg.OK,
-									// function() {
-									// grid.store
-									// .reload();
-									// });
-									// } else {
-									// Ext
-									// .error(
-									// '错误',
-									// '汇总生成提交失败:'
-									// + res.msg,
-									// Ext.Msg.OK);
-									// }
-									// });
 								}
 							});
 						}
@@ -223,13 +193,13 @@ Ext.define('yspz_gen.view.task.list', {
 				'code', 'status', 'allCount', 'goodCount', 'badCount',
 				'percent', 'error', 'sumMoney', 'id'];
 		Ext.apply(me, {
-			storeConfig : {
-				autoLoad : true
-			},
-			_url : 'credential/CredentialServlet.action?method=getCredentialStatusList',
-			_fields : fields,
-			_gcolumns : gcolumns
-		})
+					storeConfig : {
+						autoLoad : true
+					},
+					_url : Ext.urls.GET_ALL_TASK_STATUS,
+					_fields : fields,
+					_gcolumns : gcolumns
+				})
 		me.callParent(arguments);
 	}
 });

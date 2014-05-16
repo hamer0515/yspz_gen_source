@@ -23,30 +23,49 @@ Ext.define('overrides.Ext', {
 		}
 		return index == -1 ? '无效的数据(' + value + ')' : ds.getAt(index).data.name;
 	},
-	asyncRequest : function(url, params, success) {
+	asyncRequest : function(url, params, successCallback, failCallback, success) {
 		Ext.Ajax.request({
 					async : false,
 					url : url,
 					params : params,
-					success : success
+					success : success || function(response, opts) {
+						var res = Ext.decode(response.responseText);
+						if (res.success) {
+							Ext.info('请求提交成功', successCallback);
+						} else {
+							Ext.error('请求提交失败:' + res.msg, failCallback);
+						}
+					}
 				});
 	},
-	info : function(title, msg, button, fn) {
+	info : function(msg, callback) {
 		Ext.Msg.show({
-					title : title,
+					title : "消息",
 					msg : msg,
-					buttons : button,
+					buttons : Ext.Msg.YES,
 					icon : Ext.Msg.INFO,
-					fn : fn
+					fn : callback
 				});
 	},
-	error : function(title, msg, button, fn) {
+	error : function(msg, callback) {
 		Ext.Msg.show({
-					title : title,
+					title : "警告",
 					msg : msg,
-					buttons : button,
+					buttons : Ext.Msg.YES,
 					icon : Ext.Msg.ERROR,
-					fn : fn
+					fn : callback
 				});
+	},
+	urls : {
+		GET_ALL_CREDENTIAL_TYPES : "credential/credentialAction_getCredentialComboxTree.action",// 获得原始凭证类别
+		GET_ALL_ENTRIES : "credential/checking_findAllChecking.action", // 获得所有核算项
+		GET_ALL_BOOKS : "credential/book_findAllBookBySuit.action",// 获得所有的科目信息（用于科目的擦combo控件）
+		GET_CREDENTIAL_TREE : "credential/credentialAction_getCredentialTree.action", // 获取原始凭证树型控件数据
+		GET_ALL_BAD_RECORDS : "credential/credentialAction_getUpdateCredential.action",// 获得相关任务的bad记录
+		GET_ALL_TASK_STATUS : "credential/credentialAction_getCredentialStatusList.action",// 获得所有导入任务的状态(查询导入任务界面发起)
+		QUERY_TASK_STATUS : "credential/credentialAction_getCredentialStatus.action", // 查询原始凭证状态(用于生成导入任务的查询按钮)
+		SUBMIT_FIXED_BAD_RECORD : "credential/credentialAction_updateCredential.action",// 提交更改过的bad记录
+		SUBMIT_TASK_START_FOR_CHECK : "credential/credentialAction_optionCredential.action",// 提交原始凭证导入任务，开始校验
+		SUBMIT_CREDENTIAL_META : "credential/meta_createCredential.action"// 提交原始凭证元数据
 	}
 });

@@ -7,8 +7,12 @@ Ext.define('yspz_gen.controller.Index', {
 					'component.base.CheckBoxGroupSingle', 'component.Books',
 					'component.Set', 'component.Validation', 'component.Line',
 					'component.JournalEntry', 'component.calcValue',
-					'component.Preprocess', 'yspz.edit', 'yspz.gen',
-					'yspz.input', 'component.DataType', 'yspz_sum.f0002',
-					'bi.BiBrowser', 'bi.InfoPanel', 'bi.List'],
+					'component.Preprocess', 'yspz.edit', 'yspz.input',
+					'component.DataType', 'component.pay_cycle',
+					'component.bfj_acct', 'yspz_sum.f0002', 'bi.BiBrowser',
+					'bi.InfoPanel', 'bi.List', 'bi.BiPanel', 'bi.ProtoPanel',
+					'bi.DeptAddPanel', 'bi.BiAddPanel', 'bi.ProtoAddPanel',
+					'bi.RuleInputPanel', 'bi.FeeInputPanel',
+					'component.bfj_acct'],
 			stores : ['CBase', 'FStatus']
 		});

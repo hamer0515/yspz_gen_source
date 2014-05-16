@@ -33,15 +33,20 @@ Ext.Loader.addClassPathMappings({
 Ext.ClassManager.addNameAlternateMappings({
   "Ext.locale.zh_CN.toolbar.Paging": [],
   "overrides.Treepanel": [],
+  "yspz_gen.view.bi.ProtoPanel": [],
   "Ext.locale.zh_CN.form.field.Date": [],
   "Ext.ux.ajax.DataSimlet": [],
   "Ext.ux.grid.TransformGrid": [],
+  "yspz_gen.view.bi.RuleInputPanel": [],
   "yspz_gen.view.bi.BiBrowser": [],
   "yspz_gen.view.component.Books": [],
+  "yspz_gen.view.bi.FeeInputPanel": [],
   "yspz_gen.view.component.Validation": [],
   "Ext.locale.zh_CN.form.field.VTypes": [],
+  "overrides.TreeField": [],
   "Ext.ux.ajax.XmlSimlet": [],
   "Ext.ux.event.Driver": [],
+  "yspz_gen.view.bi.DeptAddPanel": [],
   "overrides.Paging": [],
   "Ext.ux.DataView.DragSelector": [],
   "yspz_gen.view.component.JournalEntry": [],
@@ -58,8 +63,10 @@ Ext.ClassManager.addNameAlternateMappings({
   ],
   "yspz_gen.controller.Index": [],
   "Ext.locale.zh_CN.view.View": [],
+  "yspz_gen.view.bi.ItemSelectPanel": [],
   "yspz_gen.view.bi.InfoPanel": [],
   "yspz_gen.view.yspz_sum.f0002": [],
+  "overrides.TabBar": [],
   "Ext.locale.zh_CN.picker.Month": [],
   "Ext.ux.PreviewPlugin": [],
   "yspz_gen.view.task.gen": [],
@@ -77,6 +84,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.locale.zh_CN.Component": [],
   "Ext.ux.TabReorderer": [],
   "Ext.ux.grid.filter.NumericFilter": [],
+  "yspz_gen.view.bi.BiAddPanel": [],
   "yspz_gen.view.Viewport": [],
   "overrides.Gridpanel": [],
   "yspz_gen.view.component.base.CheckBoxGroupSingle": [],
@@ -118,9 +126,12 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.dd.PanelFieldDragZone": [],
   "yspz_gen.view.task.gsum": [],
   "yspz_gen.controller.yspzDict": [],
+  "yspz_gen.view.bi.ProtoAddPanel": [],
+  "yspz_gen.view.component.bfj_acct": [],
   "yspz_gen.view.component.Line": [],
   "Ext.ux.GMapPanel": [],
   "yspz_gen.view.yspz.gen": [],
+  "yspz_gen.view.component.pay_cycle": [],
   "Ext.ux.GroupTabPanel": [],
   "Ext.ux.DataView.LabelEditor": [],
   "Ext.ux.grid.filter.StringFilter": [],
@@ -129,6 +140,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.layout.Center": [],
   "yspz_gen.view.Panel": [],
   "Ext.ux.DataView.Animated": [],
+  "yspz_gen.view.bi.BiPanel": [],
   "overrides.DateField": [],
   "Ext.ux.statusbar.StatusBar": [
     "Ext.ux.StatusBar"
@@ -165,23 +177,36 @@ Ext.ClassManager.addNameAlternateMappings({
 Ext.ClassManager.addNameAliasMappings({
   "Ext.locale.zh_CN.toolbar.Paging": [],
   "overrides.Treepanel": [],
+  "yspz_gen.view.bi.ProtoPanel": [
+    "widget.protopanel"
+  ],
   "Ext.locale.zh_CN.form.field.Date": [],
   "Ext.ux.ajax.DataSimlet": [],
   "Ext.ux.grid.TransformGrid": [],
+  "yspz_gen.view.bi.RuleInputPanel": [
+    "widget.bi_ruleinputpanel"
+  ],
   "yspz_gen.view.bi.BiBrowser": [
     "widget.bibrowser"
   ],
   "yspz_gen.view.component.Books": [
     "widget.books"
   ],
+  "yspz_gen.view.bi.FeeInputPanel": [
+    "widget.bi_feeinputpanel"
+  ],
   "yspz_gen.view.component.Validation": [
     "widget.validation"
   ],
   "Ext.locale.zh_CN.form.field.VTypes": [],
+  "overrides.TreeField": [],
   "Ext.ux.ajax.XmlSimlet": [
     "simlet.xml"
   ],
   "Ext.ux.event.Driver": [],
+  "yspz_gen.view.bi.DeptAddPanel": [
+    "widget.dept_add"
+  ],
   "overrides.Paging": [],
   "Ext.ux.DataView.DragSelector": [],
   "yspz_gen.view.component.JournalEntry": [
@@ -205,12 +230,16 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "yspz_gen.controller.Index": [],
   "Ext.locale.zh_CN.view.View": [],
+  "yspz_gen.view.bi.ItemSelectPanel": [
+    "widget.bi_itemselectpanel"
+  ],
   "yspz_gen.view.bi.InfoPanel": [
     "widget.infopanel"
   ],
   "yspz_gen.view.yspz_sum.f0002": [
     "widget.yspz_sum_f0002"
   ],
+  "overrides.TabBar": [],
   "Ext.locale.zh_CN.picker.Month": [],
   "Ext.ux.PreviewPlugin": [
     "plugin.preview"
@@ -243,6 +272,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.TabReorderer": [],
   "Ext.ux.grid.filter.NumericFilter": [
     "gridfilter.numeric"
+  ],
+  "yspz_gen.view.bi.BiAddPanel": [
+    "widget.bi_add"
   ],
   "yspz_gen.view.Viewport": [],
   "overrides.Gridpanel": [],
@@ -321,6 +353,12 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.task_gsum"
   ],
   "yspz_gen.controller.yspzDict": [],
+  "yspz_gen.view.bi.ProtoAddPanel": [
+    "widget.proto_add"
+  ],
+  "yspz_gen.view.component.bfj_acct": [
+    "widget.bfj_acct"
+  ],
   "yspz_gen.view.component.Line": [
     "widget.lines"
   ],
@@ -329,6 +367,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "yspz_gen.view.yspz.gen": [
     "widget.yspz_gen"
+  ],
+  "yspz_gen.view.component.pay_cycle": [
+    "widget.pay_cycle"
   ],
   "Ext.ux.GroupTabPanel": [
     "widget.grouptabpanel"
@@ -344,6 +385,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "yspz_gen.view.Panel": [],
   "Ext.ux.DataView.Animated": [],
+  "yspz_gen.view.bi.BiPanel": [
+    "widget.bipanel"
+  ],
   "overrides.DateField": [],
   "Ext.ux.statusbar.StatusBar": [
     "widget.statusbar"

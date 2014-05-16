@@ -7,84 +7,80 @@ Ext.define('yspz_gen.view.yspz.gen', {
 	closable : false,
 	modal : true,
 	autoShow : true,
-	items : {
-		xtype : 'form',
-		bodyPadding : 5,
-		layout : 'anchor',
-		defaults : {
-			anchor : '100%'
-		},
-		defaultType : 'textfield',
-		items : [{
-			xtype : 'sets',
-			margin : '0 0 0 0',
-			listeners : {
-				blur : function(me, The, eOpts) {
-					var value = me.getValue(), result = me.getStore().queryBy(
-							function(record) {
-								if (record.data.id == value) {
-									return true;
-								}
-								return false;
-							});
-					if (result.length == 0) {
-						me.setValue('');
-					}
-					if (me.getValue()) {
-						me.up('form').down('lines').store.load({
-									params : {
-										suitid : me.getValue()
-									}
-								});
-					}
-				}
+
+	initComponent : function() {
+		this.items = {
+			xtype : 'form',
+			bodyPadding : 5,
+			layout : 'anchor',
+			defaults : {
+				anchor : '100%'
 			},
-			allowBlank : false
-		}, {
-			xtype : 'lines',
-			margin : '5 0 0 0',
-			allowBlank : false
-		}, {
-			fieldLabel : '凭证编号',
-			margin : '5 0 0 0',
-			maxLength : 5,
-			name : '_code',
-			allowBlank : false
-		}, {
-			fieldLabel : '凭证名称',
-			margin : '5 0 0 0',
-			name : '_name',
-			allowBlank : false
-		}],
-		buttons : [{
-			text : '確定',
-			handler : function(btn) {
-				var formpanel = form = btn.up('form'), form = formpanel
-						.getForm();
-				if (form.isValid()) {
-					var values = form.getValues(), viewport = this
-							.up('viewport'), center = viewport.down('center'), id = 'center_'
-							+ values._set.toString()
-							+ values._line.toString()
-							+ values._code.toString(), cmp = Ext.getCmp(id);
-					if (cmp) {
-						center.setActiveTab(cmp);
-					} else {
-						center.add({
-							closable : true,
-							xtype : 'panel',
-							items : Ext.Object.merge({
-										xtype : 'yspz_edit'
-									}, values),
-							id : id,
-							title : "[" + formpanel.down('sets').getRawValue()
-									+ ']['
-									+ formpanel.down('lines').getRawValue()
-									+ '][' + values._code + ']凭证生成'
-						}).show();
+			defaultType : 'textfield',
+			items : [{
+						fieldLabel : '所属类别',
+						xtype : 'treepicker',
+						name : '_type',
+						displayField : 'text',
+						valueField : 'id',
+						store : new Ext.data.TreeStore({
+									fields : ['id', 'text'],
+									proxy : {
+										type : 'ajax',
+										url : Ext.urls.GET_ALL_CREDENTIAL_TYPES
+									},
+									root : {
+										expanded : true,
+										id : '',
+										text : '所有类别'
+									},
+									autoLoad : true
+								}),
+						allowBlank : false
+					}, {
+						fieldLabel : '凭证编号',
+						margin : '5 0 0 0',
+						maxLength : 5,
+						name : '_code',
+						allowBlank : false
+					}, {
+						fieldLabel : '凭证名称',
+						margin : '5 0 0 0',
+						name : '_name',
+						allowBlank : false
+					}],
+			buttons : [{
+				text : '確定',
+				handler : function(btn) {
+					var formpanel = form = btn.up('form'), form = formpanel
+							.getForm();
+					if (form.isValid()) {
+						var values = form.getValues(), viewport = this
+								.up('viewport'), center = viewport
+								.down('center'), id = 'center_'
+								+ values._type.toString()
+								+ values._code.toString(), cmp = Ext.getCmp(id);
+						if (cmp) {
+							center.setActiveTab(cmp);
+						} else {
+							center.add({
+								closable : true,
+								xtype : 'panel',
+								items : Ext.Object.merge({
+											xtype : 'yspz_edit'
+										}, values),
+								id : id,
+								title : '['
+										+ formpanel.down('treepicker')
+												.getRawValue() + ']['
+										+ values._code + ']凭证生成'
+							}).show();
+						}
 					}
 				}
-			}
-		}]
+			}]
+		};
+		this.callParent(arguments);
 	}
+
 });

@@ -8,7 +8,7 @@ Ext.define('yspz_gen.view.task.gen', {
 					fields : ['text', 'credentialCode'],
 					proxy : {
 						type : 'ajax',
-						url : 'credential/CredentialServlet.action?method=getCredentailTree'
+						url : Ext.urls.GET_CREDENTIAL_TREE
 					}
 				}), gcolumns = [{
 					text : "编号",
@@ -123,43 +123,19 @@ Ext.define('yspz_gen.view.task.gen', {
 						rows.forEach(function(element, index, array) {
 									items.push(element.data.id);
 								});
-						Ext
-								.asyncRequest(
-										'credential/CredentialServlet.action?method=optionCredential',
-										{
-											task : items
-										}, function(response) {
-											var res = Ext
-													.decode(response.responseText);
-											if (res.success) {
-												Ext.info('消息', '任务提交成功',
-														Ext.Msg.OK, function() {
-															me.down('grid').store
-																	.reload();
-														});
-											} else {
-												Ext.error('错误', '任务提交失败:'
-																+ res.msg,
-														Ext.Msg.OK);
-											}
-										});
+						Ext.asyncRequest(Ext.urls.SUBMIT_TASK_START_FOR_CHECK,
+								{
+									task : items
+								}, function() {
+									me.down('grid').store.reload();
+								});
 					}
 				}],
 				listeners : {
 					edit : function(editor, e) {
 						var rowIndex = e.rowIdx;
-						Ext.asyncRequest('task/fix', e.record.data, function(
-										response) {
-									var res = Ext.decode(response.responseText);
-									if (res.success) {
-										Ext.info('消息', '修改提交成功', Ext.Msg.OK,
-												function() {
-													e.store.reload();
-												});
-									} else {
-										Ext.error('错误', '修改提交失败:' + res.msg,
-												Ext.Msg.OK);
-									}
+						Ext.asyncRequest('task/fix', e.record.data, function() {
+									e.store.reload();
 								});
 					},
 					beforeselect : function(me, record, index, eOpts) {
@@ -169,7 +145,7 @@ Ext.define('yspz_gen.view.task.gen', {
 					}
 				}
 			},
-			_url : 'credential/CredentialServlet.action?method=getCredentialStatus',
+			_url : Ext.urls.QUERY_TASK_STATUS,
 			_fields : fields,
 			_items : items,
 			_gcolumns : gcolumns

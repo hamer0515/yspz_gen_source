@@ -274,6 +274,14 @@ a {
 	background-image: url('images/delete.png');
 }
 
+.bi_add {
+	background-image: url('images/bi_add.png');
+}
+
+.bi_delete {
+	background-image: url('images/bi_delete.png');
+}
+
 .preview {
 	background-image: url('images/eye.png');
 }
@@ -359,4 +367,18 @@ a {
 
 #images img {
     margin: 20px;
+}
+
+.list-item {
+    margin-top: 3px;
+    padding-left: 20px;
+    font-size: 11px;
+    line-height: 20px;
+    cursor: pointer;
+    background: url(images/rss.gif) no-repeat 0 2px;
+    border: 1px solid #fff;
+}
+
+.list-item-hover {
+    background-color: #eee;
 }

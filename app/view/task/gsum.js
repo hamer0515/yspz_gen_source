@@ -246,20 +246,9 @@ Ext.define('yspz_gen.view.task.gsum', {
 										importDate : rec.data.importDate,
 										id : rec.data.id,
 										gsum : value
-									}, function(response) {
-										var res = Ext
-												.decode(response.responseText);
-										if (res.success) {
-											Ext.info('消息', '汇总生成提交成功',
-													Ext.Msg.OK, function() {
-														window.close();
-														grid.store.reload();
-													});
-										} else {
-											Ext.error('错误', '汇总生成提交失败:'
-															+ res.msg,
-													Ext.Msg.OK);
-										}
+									}, function() {
+										window.close();
+										grid.store.reload();
 									});
 				}
 			}]

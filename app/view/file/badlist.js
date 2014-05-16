@@ -38,21 +38,21 @@ Ext.define('yspz_gen.view.file.badlist', {
 		// }
 		// });
 		store = Ext.create('Ext.data.Store', {
-			fields : fields,
-			// autoLoad : true,
-			proxy : {
-				type : 'ajax',
-				api : {
-					read : 'credential/CredentialServlet.action?method=getUpdateCredential'
-				},
-				reader : {
-					type : 'json',
-					root : 'data',
-					totalProperty : 'totalCount',
-					successProperty : 'success'
-				}
-			}
-		}), rowEditing = Ext.create('Ext.grid.plugin.RowEditing', {
+					fields : fields,
+					// autoLoad : true,
+					proxy : {
+						type : 'ajax',
+						api : {
+							read : Ext.urls.GET_ALL_BAD_RECORDS
+						},
+						reader : {
+							type : 'json',
+							root : 'data',
+							totalProperty : 'totalCount',
+							successProperty : 'success'
+						}
+					}
+				}), rowEditing = Ext.create('Ext.grid.plugin.RowEditing', {
 					pluginId : 'rowEditing',
 					saveBtnText : '保存',
 					cancelBtnText : "取消",
@@ -70,17 +70,9 @@ Ext.define('yspz_gen.view.file.badlist', {
 			Ext
 					.asyncRequest(
 							'credential/CredentialServlet.action?method=updateCredential',
-							e.record.data, function(response) {
-								var res = Ext.decode(response.responseText);
-								if (res.success) {
-									Ext.info('消息', '修改提交成功', Ext.Msg.OK,
-											function() {
-												me.getStore().reload();
+							e.record.data, function() {
+								me.getStore().reload();
 
-											});
-								} else {
-									Ext.error('错误', '修改提交失败', Ext.Msg.OK);
-								}
 							});
 		});
 		me.callParent(arguments);

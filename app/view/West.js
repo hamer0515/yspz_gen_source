@@ -35,7 +35,7 @@ Ext.define('yspz_gen.view.West', {
 									expanded : true,
 									children : [{
 												text : "凭证生成",
-												url : "yspz_gen",
+												url : "yspz_edit",
 												leaf : true
 											}]
 								}, {

@@ -10,14 +10,14 @@ Ext.define('yspz_gen.view.bi.BiBrowser', {
 			'<div class="thumb-wrap">',
 			'<div class="thumb">',
 			(!Ext.isIE6
-					? '<img src="icons/{thumb}" />'
+					? '<img src="resources/icons/{thumb}" />'
 					: '<div style="width:74px;height:74px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'icons/{thumb}\')"></div>'),
-			'</div>', '<span>{name}</span>', '</div>', '</tpl>'],
+			'</div>', '<span>{name}({count})</span>', '</div>', '</tpl>'],
 
 	initComponent : function() {
 		this.store = Ext.create('Ext.data.Store', {
 					autoLoad : true,
-					fields : ['name', 'thumb', 'url', 'type'],
+					fields : ['name', 'code', 'count', 'thumb'],
 					proxy : {
 						type : 'ajax',
 						url : 'json/bi/icons.json',
