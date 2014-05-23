@@ -125,30 +125,24 @@ Ext.define('yspz_gen.view.task.list', {
 							}
 							Ext.Msg.confirm('警告', msg, function(optional) {
 								if (optional == 'yes') {
-									Ext
-											.asyncRequest(
-													'credential/CredentialServlet.action?method=getCredentialMeta',
-													{
-														code : rec.data.code
-													}, undefined, undefined,
-													function(response) {
-														var res = Ext
-																.decode(response.responseText);
-														if (Object.keys(res).length > 0) {
-															Ext
-																	.widget(
-																			'task_gsum',
-																			{
-																				_rec : rec,
-																				_grid : grid,
-																				_items : res
-																			});
-														} else {
-															Ext
-																	.error('获取凭证定义失败:'
-																			+ res.msg);
-														}
-													});
+									Ext.asyncRequest(
+											Ext.urls.GET_YSPZ_INFO_AND_RULES, {
+												credentialId : rec.data.credentialId
+											}, undefined, undefined, function(
+													response) {
+												var res = Ext
+														.decode(response.responseText);
+												if (Object.keys(res).length > 0) {
+													Ext.widget('task_gsum', {
+																_rec : rec,
+																_grid : grid,
+																_items : res
+															});
+												} else {
+													Ext.error('获取凭证定义失败:'
+															+ res.msg);
+												}
+											});
 
 								}
 							});

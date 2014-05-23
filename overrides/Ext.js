@@ -63,6 +63,9 @@ Ext.define('overrides.Ext', {
 		GET_CREDENTIAL_TREE : "credential/credentialAction_getCredentialTree.action", // 获取原始凭证树型控件数据
 		GET_ALL_BAD_RECORDS : "credential/credentialAction_getUpdateCredential.action",// 获得相关任务的bad记录
 		GET_ALL_TASK_STATUS : "credential/credentialAction_getCredentialStatusList.action",// 获得所有导入任务的状态(查询导入任务界面发起)
+		GET_YSPZ_INFO_AND_RULES : "summary/summary_querySummaryRule.action",// 获得原始凭证信息及所有汇总方案
+		ADD_YSPZ_RULE : "summary/summary_createSummaryRule.action",// 添加原始凭证汇总方案
+		GET_RULE_INFO : "summary/summary_getSummaryRule.action",// 获得汇总方案信息
 		QUERY_TASK_STATUS : "credential/credentialAction_getCredentialStatus.action", // 查询原始凭证状态(用于生成导入任务的查询按钮)
 		SUBMIT_FIXED_BAD_RECORD : "credential/credentialAction_updateCredential.action",// 提交更改过的bad记录
 		SUBMIT_TASK_START_FOR_CHECK : "credential/credentialAction_optionCredential.action",// 提交原始凭证导入任务，开始校验

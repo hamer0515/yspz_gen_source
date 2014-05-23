@@ -8,12 +8,25 @@ Ext.define('yspz_gen.view.task.gsum', {
 	modal : true,
 	autoShow : true,
 	initComponent : function() {
-		var me = this, items = me._items, fields = [];
-		for (var i in items) {
+		var me = this, items = me._items, fields = [], rules = [];
+		for (var i in items.meta) {
 			fields.push({
-						boxLabel : items[i],
+						boxLabel : items.meta[i],
 						name : "fields",
 						inputValue : i
+					});
+		}
+		for (var j in items.rules) {
+			rules.push({
+						boxLabel : items.rules[j].id,
+						name : "fields",
+						boxLabelAttrTpl : "title = \"汇总列："
+								+ Ext.Object.getValues(items.rules[j].group)
+										.join(" ,")
+								+ "&#10;求和列："
+								+ Ext.Object.getValues(items.rules[j].sum)
+										.join(" ,") + "\"",
+						inputValue : items.rules[j].id
 					});
 		}
 		me.items = {
@@ -32,7 +45,12 @@ Ext.define('yspz_gen.view.task.gsum', {
 							anchor : '100%'
 						},
 						layout : 'anchor',
-						items : []
+						items : [{
+									xtype : 'checkboxgroup',
+									columns : 6,
+									vertical : true,
+									items : rules
+								}]
 					}, {
 						xtype : 'fieldset',
 						columnWidth : 0.5,
@@ -86,7 +104,7 @@ Ext.define('yspz_gen.view.task.gsum', {
 													}
 													window._textarea
 															.setValue(value
-																	.join(",")).submitValue = svalue
+																	.join(","))._submitValue = svalue
 															.join(",");
 													window.close();
 												}
@@ -153,7 +171,7 @@ Ext.define('yspz_gen.view.task.gsum', {
 													}
 													window._textarea
 															.setValue(value
-																	.join(",")).submitValue = svalue
+																	.join(","))._submitValue = svalue
 															.join(",");
 													window.close();
 												}
@@ -180,42 +198,52 @@ Ext.define('yspz_gen.view.task.gsum', {
 			buttons : [{
 				text : '添加',
 				handler : function() {
-					var formpanel = this.up('window').down('form');
-					if (formpanel.isValid()) {
-						var fields = formpanel.getForm().getFields().items;
-						formpanel.items.items[0].add({
-							xtype : 'fieldcontainer',
-							layout : {
-								type : 'hbox',
-								align : 'center'
-							},
-							items : [{
-								xtype : 'component',
-								html : "<div title=\""
-										+ fields[0].value
-										+ "\">汇总列："
-										+ Ext.util.Format.ellipsis(
-												fields[0].value, 26)
-										+ "</div><div title=\""
-										+ fields[1].value
-										+ "\">求和列："
-										+ Ext.util.Format.ellipsis(
-												fields[1].value, 26) + "</div>",
-								submitValue : {
-									group : fields[0].submitValue,
-									sum : fields[1].submitValue
-								}
-							}, {
-								xtype : 'button',
-								margin : '0 0 0 10',
-								iconCls : "delete",
-								handler : function() {
-									this.up('fieldset').remove(this
-											.up('fieldcontainer'));
-								}
-							}]
-						});
-						formpanel.getForm().reset();
+					var form = this.up("form"), sumField = form
+							.down("textarea[name=\"sum\"]"), groupField = form
+							.down("textarea[name=\"group\"]"), rec = this
+							.up("window")._rec;
+					if (sumField.isValid() && groupField.isValid()) {
+						Ext.asyncRequest(Ext.urls.ADD_YSPZ_RULE, {
+									credentialId : rec.data.credentialId,
+									importDate : rec.data.importDate,
+									id : rec.data.id,
+									sum : sumField._submitValue,
+									group : groupField._submitValue
+								}, function() {
+									Ext.asyncRequest(Ext.urls.GET_RULE_INFO, {
+												credentialId : rec.data.credentialId
+											}, undefined, undefined, function(
+													response) {
+												var items = Ext
+														.decode(response.responseText), rules = [], checkboxgroup = form
+														.down("checkboxgroup");
+												if (items.length > 0) {
+													for (var j in items) {
+														rules.push({
+															boxLabel : items[j].id,
+															name : "fields",
+															boxLabelAttrTpl : "title = \"汇总列："
+																	+ Ext.Object
+																			.getValues(items[j].group)
+																			.join(" ,")
+																	+ "&#10;求和列："
+																	+ Ext.Object
+																			.getValues(items[j].sum)
+																			.join(" ,")
+																	+ "\"",
+															inputValue : items[j].id
+														});
+													}
+													checkboxgroup.removeAll();
+													checkboxgroup.add(rules);
+													groupField.setValue("");
+													sumField.setValue("");
+												} else {
+													Ext.error('获取凭证信息失败:'
+															+ res.msg);
+												}
+											});
+								});
 					}
 				}
 			}, {
@@ -231,25 +259,30 @@ Ext.define('yspz_gen.view.task.gsum', {
 			}, {
 				text : '提交',
 				handler : function() {
-					var window = this.up('window'), fieldContainers = window
-							.down('form').items.items[0].items.items, value = [], rec = window._rec, grid = window._grid;
-					for (var i in fieldContainers) {
-						value
-								.push(Ext
-										.encode(fieldContainers[i].items.items[0].submitValue));
+					var window = this.up("window"), rec = window._rec, grid = window._grid, form = this
+							.up("form"), checkbox = form.down("checkboxgroup"), checked = checkbox
+							.getChecked(), values = [];
+					if (checked.length > 0) {
+						for (var i in checked)
+							values.push(checked[i].getSubmitValue());
 					}
-					Ext
-							.asyncRequest(
-									'credential/CredentialServlet.action?method=sumCredential',
-									{
-										credentialId : rec.data.credentialId,
-										importDate : rec.data.importDate,
-										id : rec.data.id,
-										gsum : value
-									}, function() {
-										window.close();
-										grid.store.reload();
-									});
+					// var window = this.up('window'), fieldContainers = window
+					// .down('form').items.items[0].items.items, value = [], rec
+					// = window._rec, grid = window._grid;
+					// for (var i in fieldContainers) {
+					// value
+					// .push(Ext
+					// .encode(fieldContainers[i].items.items[0].submitValue));
+					// }
+					Ext.asyncRequest('credential/submit_sum', {
+								credentialId : rec.data.credentialId,
+								importDate : rec.data.importDate,
+								id : rec.data.id,
+								rules : values
+							}, function() {
+								window.close();
+								grid.store.reload();
+							});
 				}
 			}]
 		}
