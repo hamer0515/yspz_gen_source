@@ -1,0 +1,178 @@
+[{
+			"code" : "bi",
+			"name" : "内部BI"
+		}, {
+			"code" : "bjAcct",
+			"name" : "本金账号"
+		}, {
+			"code" : "bjIn",
+			"name" : "本金入帐日期"
+		}, {
+			"code" : "feeCwwfIAmt1",
+			"name" : "返佣1"
+		}, {
+			"code" : "feeCwwfIAmt2",
+			"name" : "返佣2"
+		}, {
+			"code" : "feeCwwfIAmt3",
+			"name" : "返佣3"
+		}, {
+			"code" : "feeCwwfOAmt1",
+			"name" : "返佣退回1"
+		}, {
+			"code" : "feeCwwfOAmt2",
+			"name" : "返佣退回2"
+		}, {
+			"code" : "feeCwwfOAmt3",
+			"name" : "返佣退回3"
+		}, {
+			"code" : "feeBfjAcct1",
+			"name" : "备付金手续费账号1"
+		}, {
+			"code" : "feeBfjAcct2",
+			"name" : "备付金手续费账号2"
+		}, {
+			"code" : "feeBfjAcct3",
+			"name" : "备付金手续费账号3"
+		}, {
+			"code" : "feeBfjAcct4",
+			"name" : "备付金手续费账号4"
+		}, {
+			"code" : "feeBfjAcct5",
+			"name" : "备付金手续费账号5"
+		}, {
+			"code" : "feeBfjOut1",
+			"name" : "备付金手续费出账日期1"
+		}, {
+			"code" : "feeBfjOut2",
+			"name" : "备付金手续费出账日期2"
+		}, {
+			"code" : "feeBfjOut3",
+			"name" : "备付金手续费出账日期3"
+		}, {
+			"code" : "feeBfjOut4",
+			"name" : "备付金手续费出账日期4"
+		}, {
+			"code" : "feeBfjOut5",
+			"name" : "备付金手续费出账日期5"
+		}, {
+			"code" : "feeBfjIn1",
+			"name" : "备付金手续费入账日期1"
+		}, {
+			"code" : "feeBfjIn2",
+			"name" : "备付金手续费入账日期2"
+		}, {
+			"code" : "feeBfjIn3",
+			"name" : "备付金手续费入账日期3"
+		}, {
+			"code" : "feeBfjIn4",
+			"name" : "备付金手续费入账日期4"
+		}, {
+			"code" : "feeBfjIn5",
+			"name" : "备付金手续费入账日期5"
+		}, {
+			"code" : "fp1",
+			"name" : "周期确认规则1"
+		}, {
+			"code" : "fp2",
+			"name" : "周期确认规则2"
+		}, {
+			"code" : "fp3",
+			"name" : "周期确认规则3"
+		}, {
+			"code" : "fp4",
+			"name" : "周期确认规则4"
+		}, {
+			"code" : "fp5",
+			"name" : "周期确认规则5"
+		}, {
+			"code" : "feeBfjOAmt1",
+			"name" : "备付金手续费1"
+		}, {
+			"code" : "feeBfjOAmt2",
+			"name" : "备付金手续费2"
+		}, {
+			"code" : "feeBfjOAmt3",
+			"name" : "备付金手续费3"
+		}, {
+			"code" : "feeBfjOAmt4",
+			"name" : "备付金手续费4"
+		}, {
+			"code" : "feeBfjOAmt5",
+			"name" : "备付金手续费5"
+		}, {
+			"code" : "feeBfjIAmt1",
+			"name" : "退回备付金手续费1"
+		}, {
+			"code" : "feeBfjIAmt2",
+			"name" : "退回备付金手续费2"
+		}, {
+			"code" : "feeBfjIAmt3",
+			"name" : "退回备付金手续费3"
+		}, {
+			"code" : "feeBfjIAmt4",
+			"name" : "退回备付金手续费4"
+		}, {
+			"code" : "feeBfjIAmt5",
+			"name" : "退回备付金手续费5"
+		}, {
+			"code" : "feeCwwfOAmt1",
+			"name" : "财务外付手续费1"
+		}, {
+			"code" : "feeCwwfOAmt2",
+			"name" : "财务外付手续费2"
+		}, {
+			"code" : "feeCwwfOAmt3",
+			"name" : "财务外付手续费3"
+		}, {
+			"code" : "feeCwwfOAmt4",
+			"name" : "财务外付手续费4"
+		}, {
+			"code" : "feeCwwfOAmt5",
+			"name" : "财务外付手续费5"
+		}, {
+			"code" : "feeCwwfIAmt1",
+			"name" : "退回财务外付手续费1"
+		}, {
+			"code" : "feeCwwfIAmt2",
+			"name" : "退回财务外付手续费2"
+		}, {
+			"code" : "feeCwwfIAmt3",
+			"name" : "退回财务外付手续费3"
+		}, {
+			"code" : "feeCwwfIAmt4",
+			"name" : "退回财务外付手续费4"
+		}, {
+			"code" : "feeCwwfIAmt5",
+			"name" : "退回财务外付手续费5"
+		}, {
+			"code" : "packFeeZgOAmt1",
+			"name" : "暂估手续费1"
+		}, {
+			"code" : "packFeeZgOAmt2",
+			"name" : "暂估手续费2"
+		}, {
+			"code" : "packFeeZgOAmt3",
+			"name" : "暂估手续费3"
+		}, {
+			"code" : "packFeeZgOAmt4",
+			"name" : "暂估手续费4"
+		}, {
+			"code" : "packFeeZgOAmt5",
+			"name" : "暂估手续费5"
+		}, {
+			"code" : "packFeeZgIAmt1",
+			"name" : "退回暂估手续费1"
+		}, {
+			"code" : "packFeeZgIAmt2",
+			"name" : "退回暂估手续费2"
+		}, {
+			"code" : "packFeeZgIAmt3",
+			"name" : "退回暂估手续费3"
+		}, {
+			"code" : "packFeeZgIAmt4",
+			"name" : "退回暂估手续费4"
+		}, {
+			"code" : "packFeeZgIAmt5",
+			"name" : "退回暂估手续费5"
+		}]

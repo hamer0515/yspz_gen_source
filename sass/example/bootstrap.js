@@ -5,30 +5,31 @@
  * metadata-driven class system features 
  */
 Ext.Loader.addClassPathMappings({
-  "Ext.locale.zh_CN.view.AbstractView": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.toolbar.Paging": "../../../ext/locale/ext-lang-zh_CN.js",
-  "overrides": "../../overrides",
+  "Ext.locale.zh_CN.view.AbstractView": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.Component": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.grid.header.Container": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.window.MessageBox": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.form.field.Date": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.form.field.ComboBox": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.form.field.Number": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.rtl.EventObjectImpl": "../../../ext/src/rtl/EventObject.js",
-  "Ext.locale.zh_CN.view.View": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.form.field.Text": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.form.field.VTypes": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.form.field.Base": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.grid.plugin.DragDrop": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext": "../../../ext/src",
+  "yspz_gen": "../../app",
+  "Ext.locale.zh_CN.tab.Tab": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.grid.PropertyColumnModel": "../../../ext/locale/ext-lang-zh_CN.js",
+  "yspz_gen.Application": "../../app/application.js",
+  "overrides": "../../overrides",
+  "Ext.locale.zh_CN.grid.header.Container": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.window.MessageBox": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.form.field.Number": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.form.field.ComboBox": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.view.View": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.picker.Month": "../../../ext/locale/ext-lang-zh_CN.js",
   " Ext.Msg": "../../../ext/src/window/MessageBox.js",
-  "Ext.locale.zh_CN.grid.plugin.DragDrop": "../../../ext/locale/ext-lang-zh_CN.js",
-  "yspz_gen": "../../app",
-  "Ext": "../../../ext/src",
-  "Ext.locale.zh_CN.tab.Tab": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.picker.Date": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.grid.PropertyColumnModel": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.form.field.HtmlEditor": "../../../ext/locale/ext-lang-zh_CN.js",
-  "yspz_gen.Application": "../../app/application.js"
+  "yspz_gen.view.yspz_sum.query": "../../app/view/yspz_sum/q1uery.js",
+  "Ext.locale.zh_CN.form.field.HtmlEditor": "../../../ext/locale/ext-lang-zh_CN.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
   "Ext.locale.zh_CN.toolbar.Paging": [],
@@ -65,7 +66,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.locale.zh_CN.view.View": [],
   "yspz_gen.view.bi.ItemSelectPanel": [],
   "yspz_gen.view.bi.InfoPanel": [],
-  "yspz_gen.view.yspz_sum.f0002": [],
   "overrides.TabBar": [],
   "Ext.locale.zh_CN.picker.Month": [],
   "Ext.ux.PreviewPlugin": [],
@@ -73,6 +73,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.yspz.edit": [],
   "Ext.ux.ajax.SimXhr": [],
   "Ext.ux.event.RecorderManager": [],
+  "yspz_gen.view.yspz_sum.query": [],
   "Ext.ux.ProgressBarPager": [],
   "Ext.locale.zh_CN.form.field.HtmlEditor": [],
   "yspz_gen.view.bi.List": [],
@@ -109,6 +110,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.yspz.input": [],
   "Ext.ux.TreePicker": [],
   "yspz_gen.view.North": [],
+  "yspz_gen.view.component.yspz": [],
   "yspz_gen.view.Center": [],
   "Ext.ux.data.PagingMemoryProxy": [
     "Ext.data.PagingMemoryProxy"
@@ -134,6 +136,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.component.pay_cycle": [],
   "Ext.ux.GroupTabPanel": [],
   "Ext.ux.DataView.LabelEditor": [],
+  "yspz_gen.view.component.rule": [],
   "Ext.ux.grid.filter.StringFilter": [],
   "Ext.ux.statusbar.ValidationStatus": [],
   "yspz_gen.view.component.plugins.PageComboResizer": [],
@@ -236,9 +239,6 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.bi.InfoPanel": [
     "widget.infopanel"
   ],
-  "yspz_gen.view.yspz_sum.f0002": [
-    "widget.yspz_sum_f0002"
-  ],
   "overrides.TabBar": [],
   "Ext.locale.zh_CN.picker.Month": [],
   "Ext.ux.PreviewPlugin": [
@@ -253,6 +253,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.ajax.SimXhr": [],
   "Ext.ux.event.RecorderManager": [
     "widget.eventrecordermanager"
+  ],
+  "yspz_gen.view.yspz_sum.query": [
+    "widget.sum_query"
   ],
   "Ext.ux.ProgressBarPager": [],
   "Ext.locale.zh_CN.form.field.HtmlEditor": [],
@@ -324,6 +327,9 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.North": [
     "widget.north"
   ],
+  "yspz_gen.view.component.yspz": [
+    "widget.yspz"
+  ],
   "yspz_gen.view.Center": [
     "widget.center"
   ],
@@ -375,6 +381,9 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.grouptabpanel"
   ],
   "Ext.ux.DataView.LabelEditor": [],
+  "yspz_gen.view.component.rule": [
+    "widget.rule"
+  ],
   "Ext.ux.grid.filter.StringFilter": [
     "gridfilter.string"
   ],

@@ -245,7 +245,8 @@ Ext.define('yspz_gen.view.yspz.edit', {
 						renderer : function(v) {
 							if (!v)
 								return v;
-							return ['流水文件', '计费模块', 'Matcher'][parseInt(v) - 1];
+							return ['流水文件', '计费模块', 'Matcher', '其他'][parseInt(v)
+									- 1];
 						}
 					}, {
 						text : "金额",

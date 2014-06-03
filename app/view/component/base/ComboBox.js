@@ -60,6 +60,9 @@ Ext.define('yspz_gen.view.component.base.ComboBox', {
 										})
 							});
 				}
+				if (me.onChangeEvent) {
+					me.on("change", me.onChangeEvent, me);
+				}
 				me.callParent(arguments);
 			}
 		});

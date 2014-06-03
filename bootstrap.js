@@ -10,6 +10,7 @@ Ext.Loader.addClassPathMappings({
   "Ext": "../ext/src",
   "yspz_gen": "app",
   "Ext.rtl.EventObjectImpl": "../ext/src/rtl/EventObject.js",
+  "yspz_gen.view.yspz_sum.query": "app/view/yspz_sum/q1uery.js",
   "yspz_gen.Application": "app/application.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
@@ -41,15 +42,15 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.bi.ItemSelectPanel": [],
   "yspz_gen.view.bi.InfoPanel": [],
   "overrides.TabBar": [],
-  "yspz_gen.view.yspz_sum.f0002": [],
   "Ext.ux.PreviewPlugin": [],
   "yspz_gen.view.task.gen": [],
   "Ext.ux.ajax.SimXhr": [],
   "yspz_gen.view.yspz.edit": [],
   "Ext.ux.event.RecorderManager": [],
+  "yspz_gen.view.yspz_sum.query": [],
   "Ext.ux.ProgressBarPager": [],
-  "Ext.ux.CellDragDrop": [],
   "yspz_gen.view.bi.List": [],
+  "Ext.ux.CellDragDrop": [],
   "yspz_gen.store.CBase": [],
   "Ext.ux.ajax.Simlet": [],
   "Ext.ux.SlidingPager": [],
@@ -79,6 +80,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.TreePicker": [],
   "yspz_gen.view.yspz.input": [],
   "yspz_gen.view.North": [],
+  "yspz_gen.view.component.yspz": [],
   "yspz_gen.view.Center": [],
   "Ext.ux.data.PagingMemoryProxy": [
     "Ext.data.PagingMemoryProxy"
@@ -103,6 +105,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.DataView.LabelEditor": [],
   "Ext.ux.GroupTabPanel": [],
   "Ext.ux.grid.filter.StringFilter": [],
+  "yspz_gen.view.component.rule": [],
   "Ext.ux.statusbar.ValidationStatus": [],
   "yspz_gen.view.component.plugins.PageComboResizer": [],
   "Ext.ux.layout.Center": [],
@@ -194,9 +197,6 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.infopanel"
   ],
   "overrides.TabBar": [],
-  "yspz_gen.view.yspz_sum.f0002": [
-    "widget.yspz_sum_f0002"
-  ],
   "Ext.ux.PreviewPlugin": [
     "plugin.preview"
   ],
@@ -210,12 +210,15 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.event.RecorderManager": [
     "widget.eventrecordermanager"
   ],
-  "Ext.ux.ProgressBarPager": [],
-  "Ext.ux.CellDragDrop": [
-    "plugin.celldragdrop"
+  "yspz_gen.view.yspz_sum.query": [
+    "widget.sum_query"
   ],
+  "Ext.ux.ProgressBarPager": [],
   "yspz_gen.view.bi.List": [
     "widget.bilist"
+  ],
+  "Ext.ux.CellDragDrop": [
+    "plugin.celldragdrop"
   ],
   "yspz_gen.store.CBase": [],
   "Ext.ux.ajax.Simlet": [
@@ -276,6 +279,9 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.North": [
     "widget.north"
   ],
+  "yspz_gen.view.component.yspz": [
+    "widget.yspz"
+  ],
   "yspz_gen.view.Center": [
     "widget.center"
   ],
@@ -327,6 +333,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Ext.ux.grid.filter.StringFilter": [
     "gridfilter.string"
+  ],
+  "yspz_gen.view.component.rule": [
+    "widget.rule"
   ],
   "Ext.ux.statusbar.ValidationStatus": [],
   "yspz_gen.view.component.plugins.PageComboResizer": [],

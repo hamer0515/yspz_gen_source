@@ -115,28 +115,36 @@ Ext.define('yspz_gen.view.yspz.input', {
 											boxLabel : 'Matcher',
 											name : 'vfrom',
 											inputValue : 3
+										}, {
+											boxLabel : '其他',
+											name : 'vfrom',
+											inputValue : 4
 										}],
 								listeners : {
 									change : function(field, newValue, oldValue) {
-										Ext.getCmp('vfrom_' + oldValue.vfrom)
-												.hide();
-										Ext.getCmp('vfrom_' + oldValue.vfrom)
-												.disable();
-										Ext.getCmp('vfrom_' + newValue.vfrom)
-												.show();
-										Ext.getCmp('vfrom_' + newValue.vfrom)
-												.enable();
 										if (newValue.vfrom == 1) {
-											Ext.getCmp('vfrom_4').show();
-											Ext.getCmp('vfrom_4').enable();
-											Ext.getCmp('vfrom_5').show();
-											Ext.getCmp('vfrom_5').enable();
+											Ext.getCmp('vfrom_10').show();
+											Ext.getCmp('vfrom_10').enable();
+											Ext.getCmp('vfrom_11').show();
+											Ext.getCmp('vfrom_11').enable();
 										}
 										if (oldValue.vfrom == 1) {
-											Ext.getCmp('vfrom_4').hide();
-											Ext.getCmp('vfrom_4').disable();
-											Ext.getCmp('vfrom_5').hide();
-											Ext.getCmp('vfrom_5').disable();
+											Ext.getCmp('vfrom_10').hide();
+											Ext.getCmp('vfrom_10').disable();
+											Ext.getCmp('vfrom_11').hide();
+											Ext.getCmp('vfrom_11').disable();
+										}
+										if (newValue.vfrom != 4) {
+											Ext.getCmp('vfrom_'
+													+ newValue.vfrom).show();
+											Ext.getCmp('vfrom_'
+													+ newValue.vfrom).enable();
+										}
+										if (oldValue.vfrom != 4) {
+											Ext.getCmp('vfrom_'
+													+ oldValue.vfrom).hide();
+											Ext.getCmp('vfrom_'
+													+ oldValue.vfrom).disable();
 										}
 									}
 								}
@@ -168,13 +176,13 @@ Ext.define('yspz_gen.view.yspz.input', {
 								name : 'value'
 							}, {
 								xtype : 'validation',
-								id : 'vfrom_4',
+								id : 'vfrom_10',
 								fieldLabel : '流水校验规则',
 								name : 'validation',
 								allowBlank : false
 							}, {
 								xtype : 'preprocess',
-								id : 'vfrom_5',
+								id : 'vfrom_11',
 								fieldLabel : '处理方式',
 								name : 'preprocess'
 							}]

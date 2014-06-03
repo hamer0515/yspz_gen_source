@@ -23,14 +23,6 @@ Ext.define('yspz_gen.view.West', {
 									url : "task_list",
 									leaf : true
 								}, {
-									text : "汇总查询",
-									expanded : true,
-									children : [{
-												text : "F0002与销卡渠道方交易勾兑成功",
-												url : "yspz_sum_f0002",
-												leaf : true
-											}]
-								}, {
 									text : "原始凭证",
 									expanded : true,
 									children : [{
@@ -38,6 +30,11 @@ Ext.define('yspz_gen.view.West', {
 												url : "yspz_edit",
 												leaf : true
 											}]
+								}, {
+									text : "汇总查询",
+									expanded : true,
+									url : "sum_query",
+									leaf : true
 								}, {
 									text : "银行接口配置",
 									url : "bilist",

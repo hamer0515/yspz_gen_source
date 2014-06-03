@@ -274,7 +274,7 @@ Ext.define('yspz_gen.view.task.gsum', {
 					// .push(Ext
 					// .encode(fieldContainers[i].items.items[0].submitValue));
 					// }
-					Ext.asyncRequest('credential/submit_sum', {
+					Ext.asyncRequest(Ext.urls.SUBMIT_YSPZ_SUMMARY, {
 								credentialId : rec.data.credentialId,
 								importDate : rec.data.importDate,
 								id : rec.data.id,
