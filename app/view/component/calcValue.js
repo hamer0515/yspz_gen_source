@@ -4,7 +4,16 @@ Ext.define('yspz_gen.view.component.calcValue', {
 	// name : '_type',
 	_fields : ["code", "name"],
 	valueField : 'code',
-	_url : "common/commonQueryAction_queryFeeDict.action"
+	_storeName : 'CalcValue'
+		// _url : "common/commonQueryAction_queryFeeDict.action",
+		// initComponent : function() {
+		// var me = this, data = [];
+		// Ext.data.StoreManager.lookup('CalcValue').each(function(rec) {
+		// data.push(rec.data);
+		// });
+		// me._data = data;
+		// me.callParent(arguments);
+		// }
 		// _data : [{
 		// "code" : "[RES_BI]",
 		// "name" : "[RES_BI]"

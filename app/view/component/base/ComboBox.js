@@ -55,7 +55,21 @@ Ext.define('yspz_gen.view.component.base.ComboBox', {
 				} else if (me._data) {
 					Ext.apply(me, {
 								store : Ext.create('widget.mystore', {
-											fields : ['id', 'name'],
+											fields : me._fields
+													|| ['id', 'name'],
+											data : me._data
+										})
+							});
+				} else if (me._storeName) {
+					me._data = [];
+					Ext.data.StoreManager.lookup(me._storeName).each(
+							function(rec) {
+								me._data.push(rec.data);
+							});
+					Ext.apply(me, {
+								store : Ext.create('widget.mystore', {
+											fields : me._fields
+													|| ['id', 'name'],
 											data : me._data
 										})
 							});

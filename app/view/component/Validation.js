@@ -4,12 +4,9 @@ Ext.define('yspz_gen.view.component.Validation', {
 			name : 'validation',
 			_data : [{
 						id : 1,
-						name : '不校验'
-					}, {
-						id : 2,
 						name : '金额'
 					}, {
-						id : 3,
+						id : 2,
 						name : '日期'
 					}]
 

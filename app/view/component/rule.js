@@ -3,6 +3,6 @@ Ext.define('yspz_gen.view.component.rule', {
 			alias : ['widget.rule'],
 			name : 'rule',
 			fieldLabel : '汇总求和方案',
-			_url : 'base/rule',
+			_url : 'summary/summary_getSummaryRule.action',
 			_disAutoLoad : true
 		});

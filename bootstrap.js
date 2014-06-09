@@ -10,7 +10,6 @@ Ext.Loader.addClassPathMappings({
   "Ext": "../ext/src",
   "yspz_gen": "app",
   "Ext.rtl.EventObjectImpl": "../ext/src/rtl/EventObject.js",
-  "yspz_gen.view.yspz_sum.query": "app/view/yspz_sum/q1uery.js",
   "yspz_gen.Application": "app/application.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
@@ -19,8 +18,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.ajax.DataSimlet": [],
   "Ext.ux.grid.TransformGrid": [],
   "yspz_gen.view.bi.RuleInputPanel": [],
-  "yspz_gen.view.component.Books": [],
   "yspz_gen.view.bi.BiBrowser": [],
+  "yspz_gen.view.component.Books": [],
   "yspz_gen.view.bi.FeeInputPanel": [],
   "yspz_gen.view.component.Validation": [],
   "overrides.TreeField": [],
@@ -61,6 +60,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "overrides.Gridpanel": [],
   "yspz_gen.view.component.base.CheckBoxGroupSingle": [],
   "Ext.ux.event.Recorder": [],
+  "yspz_gen.store.CalcValue": [],
   "overrides.TabCloseMenu": [],
   "yspz_gen.view.file.badlist": [],
   "yspz_gen.view.file.mgr": [],
@@ -100,13 +100,13 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.component.bfj_acct": [],
   "Ext.ux.GMapPanel": [],
   "yspz_gen.view.component.Line": [],
-  "yspz_gen.view.yspz.gen": [],
   "yspz_gen.view.component.pay_cycle": [],
   "Ext.ux.DataView.LabelEditor": [],
   "Ext.ux.GroupTabPanel": [],
   "Ext.ux.grid.filter.StringFilter": [],
   "yspz_gen.view.component.rule": [],
   "Ext.ux.statusbar.ValidationStatus": [],
+  "yspz_gen.view.yspz.list": [],
   "yspz_gen.view.component.plugins.PageComboResizer": [],
   "Ext.ux.layout.Center": [],
   "yspz_gen.view.Panel": [],
@@ -151,11 +151,11 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.bi.RuleInputPanel": [
     "widget.bi_ruleinputpanel"
   ],
-  "yspz_gen.view.component.Books": [
-    "widget.books"
-  ],
   "yspz_gen.view.bi.BiBrowser": [
     "widget.bibrowser"
+  ],
+  "yspz_gen.view.component.Books": [
+    "widget.books"
   ],
   "yspz_gen.view.bi.FeeInputPanel": [
     "widget.bi_feeinputpanel"
@@ -238,6 +238,7 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.checkboxgroupsingle"
   ],
   "Ext.ux.event.Recorder": [],
+  "yspz_gen.store.CalcValue": [],
   "overrides.TabCloseMenu": [],
   "yspz_gen.view.file.badlist": [
     "widget.badlist"
@@ -321,9 +322,6 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.component.Line": [
     "widget.lines"
   ],
-  "yspz_gen.view.yspz.gen": [
-    "widget.yspz_gen"
-  ],
   "yspz_gen.view.component.pay_cycle": [
     "widget.pay_cycle"
   ],
@@ -338,6 +336,9 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.rule"
   ],
   "Ext.ux.statusbar.ValidationStatus": [],
+  "yspz_gen.view.yspz.list": [
+    "widget.yspz_list"
+  ],
   "yspz_gen.view.component.plugins.PageComboResizer": [],
   "Ext.ux.layout.Center": [
     "layout.ux.center"
