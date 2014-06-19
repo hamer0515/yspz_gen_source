@@ -1,6 +1,6 @@
 Ext.define('yspz_gen.view.bi.List', {
 	extend : 'Ext.panel.Panel',
-	alias : 'widget.bilist',
+	alias : 'widget.bi_list',
 	layout : 'border',
 	border : false,
 	bodyBorder : false,

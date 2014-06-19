@@ -63,27 +63,29 @@ Ext.define('yspz_gen.view.Panel', {
 			form = Ext.create('widget.queryform', Ext.Object.merge({
 								items : items
 							}, me.formConfig || {}));
-			form.add(Ext.create('widget.button', {
-						text : me.submitText || '查询',
-						margin : '0 20 0 0',
-						action : 'submit',
-						handler : me.submitHandler || function() {
-							if (form.formCheck ? form.formCheck() : form
-									.isValid()) {
-								store.proxy.extraParams = form._getValues
-										? form._getValues()
-										: form.getForm().getValues();
-								store.loadPage(1);
+			if (!me._disableSubmitBtn) {
+				form.add(Ext.create('widget.button', {
+					text : me.submitText || '查询',
+					margin : '0 20 0 0',
+					action : 'submit',
+					handler : me.submitHandler || function() {
+						if (form.formCheck ? form.formCheck() : form.isValid()) {
+							store.proxy.extraParams = form._getValues ? form
+									._getValues() : form.getForm().getValues();
+							store.loadPage(1);
+						}
+					}
+				}));
+			}
+			if (!me._disableResetBtn) {
+				form.add(Ext.create('widget.button', {
+							text : '重置',
+							margin : '0 20 0 0',
+							handler : function(button) {
+								form.getForm().reset();
 							}
-						}
-					}));
-			form.add(Ext.create('widget.button', {
-						text : '重置',
-						margin : '0 20 0 0',
-						handler : function(button) {
-							form.getForm().reset();
-						}
-					}));
+						}));
+			}
 			// 有没有导出excel按钮
 			if (me.hasExporBtn) {
 				exportBtn = Ext.create('widget.exportbtn', {
@@ -105,5 +107,6 @@ Ext.define('yspz_gen.view.Panel', {
 		}
 		me.items = [form, grid];
 		me.callParent(arguments);
+		me._init && me._init.call(this);
 	}
 });

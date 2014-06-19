@@ -1,0 +1,50 @@
+{
+	success : true,
+	total : 3,
+	data : [{
+				"id" : 1,
+				"begin_date" : "2014-03-01",
+				"end_date" : "2014-03-23",
+				"ready_or_no" : 1,
+				"import_status" : 0,
+				"cal_status" : 0,
+				"check_status" : 0,
+				"match_status" : 0,
+				"report_status" : 0,
+				"file_type" : '1'
+			}, {
+				"id" : 2,
+				"begin_date" : "2014-03-01",
+				"end_date" : "2014-03-23",
+				"ready_or_no" : 1,
+				"import_status" : 1,
+				"cal_status" : 1,
+				"check_status" : 1,
+				"match_status" : 1,
+				"report_status" : 1,
+				"file_type" : '1,2'
+			}, {
+				"id" : 3,
+				"begin_date" : "2014-03-01",
+				"end_date" : "2014-03-23",
+				"ready_or_no" : 1,
+				"import_status" : 1,
+				"cal_status" : 1,
+				"check_status" : 1,
+				"match_status" : 1,
+				"report_status" : 2,
+				"file_type" : '1,2,3'
+			}, {
+				"id" : 4,
+				"begin_date" : "2014-03-01",
+				"end_date" : "2014-03-23",
+				"ready_or_no" : 1,
+				"import_status" : 1,
+				"cal_status" : 1,
+				"check_status" : 1,
+				"match_status" : 1,
+				"report_status" : 3,
+				"file_type" : '1,2,3'
+			}]
+
+}

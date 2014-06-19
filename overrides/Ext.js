@@ -57,6 +57,8 @@ Ext.define('overrides.Ext', {
 				});
 	},
 	urls : {
+		GET_ALL_BAOBIAO_TASK : "task_selectTaskByID.action",// "baobiao/task",//
+		// 获得报表模块的任务列表
 		GET_ALL_CREDENTIAL_TYPES : "credential/credentialAction_getCredentialComboxTree.action",// 获得原始凭证类别
 		GET_ALL_ENTRIES : "credential/checking_findAllChecking.action", // 获得所有核算项
 		GET_ALL_BOOKS : "credential/book_findAllBookBySuit.action",// 获得所有的科目信息（用于科目的擦combo控件）
@@ -65,12 +67,17 @@ Ext.define('overrides.Ext', {
 		GET_ALL_BAD_RECORDS : "credential/credentialAction_getUpdateCredential.action",// 获得相关任务的bad记录
 		GET_ALL_TASK_STATUS : "credential/credentialAction_getCredentialStatusList.action",// 获得所有导入任务的状态(查询导入任务界面发起)
 		GET_YSPZ_INFO_AND_RULES : "summary/summary_querySummaryRule.action",// 获得原始凭证信息及所有汇总方案
+		GET_BAOBIAO_BANK_STATUS_BY_TASK : "taskaccount_selectTaskAccountByID.action",// "baobiao/bank_status_by_task",//
+																						// 获得银行帐号的状态，根据任务
 		ADD_YSPZ_RULE : "summary/summary_createSummaryRule.action",// 添加原始凭证汇总方案
+		ADD_BAOBIAO_TASK : "task_createNewTask.action",// "baobiao/task_add",//
+		// 添加报表任务
 		GET_RULE_INFO : "summary/summary_getSummaryRule.action",// 获得汇总方案信息
 		QUERY_TASK_STATUS : "credential/credentialAction_getCredentialStatus.action", // 查询原始凭证状态(用于生成导入任务的查询按钮)
 		SUBMIT_YSPZ_SUMMARY : "summary/summary_sumCredential.action",// 提交原始凭证汇总生成方案
 		SUBMIT_FIXED_BAD_RECORD : "credential/credentialAction_updateCredential.action",// 提交更改过的bad记录
 		SUBMIT_TASK_START_FOR_CHECK : "credential/credentialAction_optionCredential.action",// 提交原始凭证导入任务，开始校验
+		SUBMIT_BAOBIAO_TASK_READY_OR_NOT : "baobiao/ready_or_not",// 提交报表数据源准备情况
 		SUBMIT_CREDENTIAL_META : "credential/meta_createCredential.action"// 提交原始凭证元数据
 	}
 });

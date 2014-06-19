@@ -63,7 +63,7 @@ Ext.define("yspz_gen.view.yspz.list", {
 							xtype : "label",
 							columnWidth : 1,
 							html : "可用模板：<br\>\
-调用模板1 （外部部门编号 外部接口编号 银行成功日期 银行清算日期 交易金额 matcher）<br\>\
+调用模板1（外部部门编号 外部接口编号 银行成功日期 银行清算日期 交易金额 matcher 本金银行账号）<br\>\
 调用模板2（外部部门编号 外部接口编号）<br\>\
 <br\>\
 输入规则：<br\>\

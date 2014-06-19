@@ -1,0 +1,36 @@
+{
+	success : true,
+	total : 3,
+	data : [{
+				"id" : 1,
+				"b_name" : 1,
+				"b_acct" : 12312312312,
+				"ready_or_no" : 1,
+				"import_status" : 0,
+				"cal_status" : 0,
+				"check_status" : 0,
+				"match_status" : 0,
+				"report_status" : 0
+			}, {
+				"id" : 2,
+				"b_name" : 2,
+				"b_acct" : 12312312312,
+				"ready_or_no" : 1,
+				"import_status" : 1,
+				"cal_status" : 1,
+				"check_status" : 1,
+				"match_status" : 1,
+				"report_status" : 1
+			}, {
+				"id" : 3,
+				"b_name" : 3,
+				"b_acct" : 12312312312,
+				"ready_or_no" : 1,
+				"import_status" : 1,
+				"cal_status" : 1,
+				"check_status" : 1,
+				"match_status" : 1,
+				"report_status" : 1
+			}]
+
+}

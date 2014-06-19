@@ -14,6 +14,8 @@ Ext.define("yspz_gen.controller.Index", {
 					"bi.List", "bi.BiPanel", "bi.ProtoPanel",
 					"bi.DeptAddPanel", "bi.BiAddPanel", "bi.ProtoAddPanel",
 					"bi.RuleInputPanel", "bi.FeeInputPanel",
-					"component.bfj_acct"],
+					"component.bfj_acct", "baobiao.task.list",
+					"baobiao.task.add", "baobiao.task.edit",
+					"baobiao.task.source"],
 			stores : ["CBase", "FStatus", "CalcValue"]
 		});

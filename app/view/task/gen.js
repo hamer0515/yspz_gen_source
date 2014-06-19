@@ -140,8 +140,9 @@ Ext.define('yspz_gen.view.task.gen', {
 					},
 					beforeselect : function(me, record, index, eOpts) {
 						return record.data.status == 2
-								|| record.data.status == 4
-								|| record.data.status == 7;
+						// || record.data.status == 4
+						// || record.data.status == 7
+						;
 					}
 				}
 			},
