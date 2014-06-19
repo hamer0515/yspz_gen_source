@@ -64,6 +64,9 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 			storeConfig : {
 				autoLoad : true
 			},
+			// gridconfig : {
+			// autoScroll : true
+			// },
 			formConfig : {
 				_reloadData : function() {
 					var form = this, values = this.getValues();

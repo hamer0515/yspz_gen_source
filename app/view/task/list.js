@@ -40,9 +40,6 @@ Ext.define('yspz_gen.view.task.list', {
 				}, {
 					text : "总金额",
 					dataIndex : 'sumMoney',
-					// renderer : function(value) {
-					// return Ext.util.Format.number(parseInt(value), '0,0.00');
-					// },
 					flex : 1
 				}, {
 					text : "Good",
@@ -61,54 +58,13 @@ Ext.define('yspz_gen.view.task.list', {
 				}, {
 					text : "完成百分比",
 					dataIndex : 'percent',
-					// renderer : function(value) {
-					// return Ext.Number.correctFloat(parseFloat(value)) * 100
-					// + '%';
-					// },
 					flex : 1
 				}, {
 					xtype : 'actioncolumn',
 					text : '操作',
 					width : 80,
 					align : 'center',
-					items : [
-							// {
-							// tooltip : '开始校验',
-							// margin : '0 10 0 0',
-							// getClass : function(v, meta, rec) {
-							// if (rec.data.status == 2) {
-							// return 'startjob';
-							// }
-							// return 'hide';
-							// },
-							// handler : function(grid, rowIndex, colIndex) {
-							// var rec = grid.getStore().getAt(rowIndex), msg =
-							// "确定[开始校验]";
-							// Ext.Msg.confirm('警告', msg, function(optional) {
-							// if (optional == 'yes') {
-							// Ext.asyncRequest('action/ksjy', {
-							// id : rec.data.id
-							// }, function(response) {
-							// var res = Ext
-							// .decode(response.responseText);
-							// if (res.success) {
-							// Ext.info('消息', '开始校验提交成功',
-							// Ext.Msg.OK,
-							// function() {
-							// grid.store
-							// .reload();
-							// });
-							// } else {
-							// Ext.error('错误', '开始校验提交失败:'
-							// + res.msg,
-							// Ext.Msg.OK);
-							// }
-							// });
-							// }
-							// });
-							// }
-							// },
-							{
+					items : [{
 						tooltip : '汇总生成',
 						margin : '0 10 0 0',
 						getClass : function(v, meta, rec) {

@@ -1,5 +1,6 @@
 Ext.define('yspz_gen.view.Panel', {
 	extend : 'Ext.panel.Panel',
+	overflowY : 'auto',
 	/*
 	 * _columns(object):科目汇总时候需要的列
 	 * _gcolumns(array):科目初始化时候需要的列（科目汇总查询时为初始化的列定义，其他为grid列定义）
@@ -45,6 +46,7 @@ Ext.define('yspz_gen.view.Panel', {
 							}, me.storeConfig || {}));
 			grid = new Ext.grid.Panel(Ext.Object.merge({
 						store : store,
+						// autoScroll : true,
 						columns : gcolumns
 					}, me.gridConfig || {}));
 			// 添加底部分页工具栏
