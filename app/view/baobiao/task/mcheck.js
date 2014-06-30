@@ -1,6 +1,6 @@
-Ext.define('yspz_gen.view.baobiao.task.edit', {
+Ext.define('yspz_gen.view.baobiao.task.mcheck', {
 	extend : 'yspz_gen.view.Panel',
-	alias : 'widget.baobiao_task_edit',
+	alias : 'widget.baobiao_task_mcheck',
 	initComponent : function() {
 		var me = this, cls = Ext.getClassName(me).split('.').pop(), gcolumns = [
 				{
@@ -64,16 +64,15 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 			storeConfig : {
 				autoLoad : true
 			},
+			// gridconfig : {
+			// autoScroll : true
+			// },
 			formConfig : {
 				_reloadData : function() {
 					var form = this, values = this.getValues();
-					Ext.asyncRequest(Ext.urls.GET_ALL_BAOBIAO_TASK, Ext.Object
-									.merge(values, {
-												page : 1,
-												start : 0,
-												limit : 50
-											}), undefined, undefined, function(
-									response) {
+					Ext.asyncRequest(Ext.urls.GET_ALL_BAOBIAO_TASK, {
+								id : values.id
+							}, undefined, undefined, function(response) {
 								var res = Ext.decode(response.responseText);
 								form.getForm().setValues(res.data[0]);
 							});
@@ -94,12 +93,12 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 						items : [{
 									xtype : 'datefield',
 									name : 'begin_date',
-									readOnly : true,
+									disabled : true,
 									width : 180
 								}, {
 									xtype : 'datefield',
 									name : 'end_date',
-									readOnly : true,
+									disabled : true,
 									width : 180
 								}]
 					}, {
@@ -114,7 +113,7 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 						items : [{
 									xtype : 'numberfield',
 									name : 'id',
-									readOnly : true
+									disabled : true
 								}, {
 									xtype : 'displayfield',
 									name : "file_type",
@@ -144,7 +143,6 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 											_form : btn.up("form")
 										}), _record = btn
 										.up("baobiao_task_edit")._record;
-								view.down("form").loadRecord(_record);
 								view.down("checkboxgroup").setValue({
 									file_type : _record.data.file_type
 											.split(',')
@@ -161,9 +159,6 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 								Ext.asyncRequest(
 										Ext.urls.SUBMIT_BAOBIAO_IMPORT, {
 											id : rec.data.id
-										}, function() {
-											me.down("form")._reloadData.call(me
-													.down("form"));
 										}, function() {
 											me.down("form")._reloadData.call(me
 													.down("form"));

@@ -24,7 +24,6 @@ Ext.define("yspz_gen.view.Viewport", {
 			layout : {
 				type : "border"
 			},
-
 			items : [{
 						region : "north",
 						xtype : "north",

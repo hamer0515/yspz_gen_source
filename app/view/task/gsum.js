@@ -210,7 +210,8 @@ Ext.define('yspz_gen.view.task.gsum', {
 									sum : sumField._submitValue,
 									group : groupField._submitValue
 								}, function() {
-									Ext.asyncRequest(Ext.urls.GET_RULE_INFO, {
+									Ext.asyncRequest(
+											Ext.urls.GET_YSPZ_INFO_AND_RULES, {
 												credentialId : rec.data.credentialId
 											}, undefined, undefined, function(
 													response) {

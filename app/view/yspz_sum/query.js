@@ -88,11 +88,31 @@ Ext.define('yspz_gen.view.yspz_sum.query', {
 					}]
 		}], fields = ['id'];
 		Ext.apply(me, {
-					_url : "summary/summary_getSummaryDetailData.action",
-					_fields : fields,
-					_items : items,
-					_gcolumns : gcolumns
-				})
+			_buttons : [{
+				text : '导出到Oralcle',
+				handler : function(btn) {
+					if (me.down("grid").store.getCount() > 0)
+						Ext.Msg.confirm('确认', "确认查询结果导出到Oracle？", function(
+										optional) {
+									if (optional == 'yes') {
+										Ext
+												.asyncRequest(
+														Ext.urls.SUBMIT_EXPORT_TO_ORACLE,
+														me.down("form")
+																.getValues(),
+														function() {
+															me.down('grid').store
+																	.reload();
+														});
+									}
+								});
+				}
+			}],
+			_url : Ext.urls.GET_SUM_RESULT,
+			_fields : fields,
+			_items : items,
+			_gcolumns : gcolumns
+		})
 		me.callParent(arguments);
 	}
 });

@@ -19,6 +19,7 @@ Ext.define("yspz_gen.view.yspz.list", {
 							columnWidth : 0.5,
 							fieldLabel : "所属类别",
 							xtype : "treepicker",
+							margin : "5 0 0 0",
 							name : "_type",
 							displayField : "text",
 							valueField : "id",
@@ -44,8 +45,13 @@ Ext.define("yspz_gen.view.yspz.list", {
 							name : "_code",
 							allowBlank : false
 						}, {
+							fieldLabel : "流水文件列数",
+							margin : "5 0 5 0",
+							columnWidth : 0.5,
+							name : "_fileColCount"
+						}, {
 							fieldLabel : "凭证名称",
-							margin : "5 0 0 0",
+							margin : "5 0 0 5",
 							name : "_name",
 							columnWidth : 0.5,
 							allowBlank : false
@@ -54,11 +60,6 @@ Ext.define("yspz_gen.view.yspz.list", {
 							margin : "5 0 5 5",
 							columnWidth : 0.5,
 							name : "_calcParams"
-						}, {
-							fieldLabel : "流水文件列数",
-							margin : "5 0 5 0",
-							columnWidth : 0.5,
-							name : "_fileColCount"
 						}, {
 							xtype : "label",
 							columnWidth : 1,

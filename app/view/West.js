@@ -51,6 +51,22 @@ Ext.define('yspz_gen.view.West', {
 												url : "baobiao_task_list",
 												leaf : true
 											}]
+								}, {
+									text : "资金对账",
+									expanded : true,
+									children : [{
+												text : "任务生成",
+												url : "zjdz_task_gen",
+												leaf : true
+											}, {
+												text : "对账状态改写",
+												url : "zjdz_task_reset",
+												leaf : true
+											}, {
+												text : "对账任务查看",
+												url : "zjdz_task_list",
+												leaf : true
+											}]
 								}]
 					}
 				});

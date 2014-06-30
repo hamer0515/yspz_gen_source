@@ -2,31 +2,16 @@ Ext.define('yspz_gen.view.component.DataType', {
 			extend : 'yspz_gen.view.component.base.ComboBox',
 			alias : 'widget.datatype',
 			_data : [{
-						id : 'varchar(512)',
-						name : 'varchar(512)'
-					}, {
-						id : 'varchar(128)',
-						name : 'varchar(128)'
+						id : 'varchar(40)',
+						name : 'varchar(40)--[金额]等类型可选'
 					}, {
 						id : 'varchar(32)',
-						name : 'varchar(32)'
+						name : 'varchar(32)--[账号][接口编号][产品类型]等类型可选'
 					}, {
-						id : 'char(64)',
-						name : 'char(64)'
-					}, {
-						id : 'char(1)',
-						name : 'char(1)'
-					}, {
-						id : 'bigint',
-						name : 'bigint'
+						id : 'varchar(10)',
+						name : 'varchar(10)--[日期][币种][业务类型]等类型可选'
 					}, {
 						id : 'integer',
-						name : 'integer'
-					}, {
-						id : 'date',
-						name : 'date'
-					}, {
-						id : 'timestamp',
-						name : 'timestamp'
+						name : 'integer--[转账类型]等类型可选'
 					}]
 		});

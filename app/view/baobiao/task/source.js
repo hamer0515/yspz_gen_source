@@ -47,6 +47,12 @@ Ext.define("yspz_gen.view.baobiao.task.source", {
 											name : 'file_type',
 											inputValue : '4'
 										}]
+							}, {
+								xtype : "hidden",
+								name : "begin_date"
+							}, {
+								xtype : "hidden",
+								name : "end_date"
 							}],
 					buttons : [{
 						text : "確定",
@@ -63,7 +69,13 @@ Ext.define("yspz_gen.view.baobiao.task.source", {
 												});
 									},
 									failure : function(f, action) {
-										Ext.error("操作失败：" + action.result.msg);
+										Ext.error("操作失败：" + action.result.msg,
+												function() {
+													var win = btn.up("window");
+													win._form._reloadData
+															.call(win._form);
+													form.up("window").close();
+												});
 									}
 								});
 							}

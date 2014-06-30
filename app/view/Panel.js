@@ -49,12 +49,14 @@ Ext.define('yspz_gen.view.Panel', {
 						// autoScroll : true,
 						columns : gcolumns
 					}, me.gridConfig || {}));
-			// 添加底部分页工具栏
-			grid.addDocked({
-						xtype : 'pagingtoolbar',
-						store : store,
-						dock : 'bottom'
-					});
+			if (!me._disablePaging) {
+				// 添加底部分页工具栏
+				grid.addDocked({
+							xtype : 'pagingtoolbar',
+							store : store,
+							dock : 'bottom'
+						});
+			}
 			// 数据集中添加表格的引用
 			Ext.apply(store, {
 						_grid : grid
@@ -81,9 +83,9 @@ Ext.define('yspz_gen.view.Panel', {
 			}
 			if (!me._disableResetBtn) {
 				form.add(Ext.create('widget.button', {
-							text : '重置',
+							text : me.resetText || '重置',
 							margin : '0 20 0 0',
-							handler : function(button) {
+							handler : me.resetHandler || function(button) {
 								form.getForm().reset();
 							}
 						}));
@@ -101,6 +103,11 @@ Ext.define('yspz_gen.view.Panel', {
 						});
 				form.add(exportBtn);
 			};
+			if (me._buttons) {
+				for (var i in me._buttons) {
+					form.add(Ext.create('widget.button', me._buttons[i]));
+				}
+			}
 			// if (!me.submitHandler) {
 			Ext.apply(store, {
 						_form : form

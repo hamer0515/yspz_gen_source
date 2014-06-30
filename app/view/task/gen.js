@@ -91,7 +91,9 @@ Ext.define('yspz_gen.view.task.gen', {
 			},
 			gridConfig : {
 				minHeight : 200,
-				selType : 'checkboxmodel',
+				selModel : Ext.create('Ext.selection.CheckboxModel', {
+							mode : "SIMPLE"
+						}),
 				plugins : [{
 							xclass : 'Ext.grid.plugin.RowEditing',
 							clicksToMoveEditor : 1,

@@ -1,0 +1,7 @@
+{
+	success : true,
+	date : '2014-06-04'
+
+	// success : false,
+	// msg : 'error msg'
+}
