@@ -18,6 +18,6 @@ Ext.define("yspz_gen.controller.Index", {
 					"component.bfj_acct", "baobiao.task.list",
 					"baobiao.task.add", "baobiao.task.edit",
 					"baobiao.task.source", "zjdz.task.gen", "zjdz.task.reset",
-					"zjdz.task.list", "zjdz.task.dz"],
+					"zjdz.task.list", "zjdz.task.dz", "zjdz.task.adjust"],
 			stores : ["CBase", "FStatus", "CalcValue"]
 		});

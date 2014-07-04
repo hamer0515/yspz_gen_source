@@ -57,6 +57,7 @@ Ext.define('overrides.Ext', {
 				});
 	},
 	urls : {
+		GET_ZJDZ_TASK_ADJUST : "zjdz/task_adjust", // 获得资金对账调整数据
 		GET_ZJDZ_TASK_DZ : "zjdz/task_data", // 获得资金对账的数据
 		GET_ZJDZ_TASK_LIST : "zjdz/task_list", // 获得资金对账任务列表
 		GET_ZJDZ_TASK_GEN : "zjdz/task_bank_list",// 获得资金对账任务生成界面银行帐号列表
@@ -79,6 +80,7 @@ Ext.define('overrides.Ext', {
 		// 添加报表任务
 		GET_RULE_INFO : "summary/summary_getSummaryRule.action",// 获得汇总方案信息
 		QUERY_TASK_STATUS : "credential/credentialAction_getCredentialStatus.action", // 查询原始凭证状态(用于生成导入任务的查询按钮)
+		SUBMIT_ZJDZ_TASK_DZ : "zjdz/task_dz",// 提交资金对账任务改写
 		SUBMIT_ZJDZ_TASK_RESET : "zjdz/task_reset",// 提交资金对账任务改写
 		SUBMIT_ZJDZ_TASK : "zjdz/task_gen",// 提交资金对账任务生成
 		SUBMIT_YSPZ_SUMMARY : "summary/summary_sumCredential.action",// 提交原始凭证汇总生成方案

@@ -18,17 +18,13 @@ Ext.define('yspz_gen.view.yspz_sum.query', {
 						onChangeEvent : function(combo, newValue, oldValue,
 								eOpts) {
 							var rule = this.up("fieldcontainer").down("rule");
+							rule.setValue("");
+							rule.store.removeAll();
 							if (newValue) {
 								rule.store.proxy.extraParams = {
 									credentialId : newValue
 								};
 								rule.store.reload()
-							} else {
-								rule.fireEvent("change", {
-											newValue : ""
-										});
-								rule.setValue("");
-								rule.store.removeAll();
 							}
 						}
 					}, {
