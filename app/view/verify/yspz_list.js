@@ -23,7 +23,7 @@ Ext.define('yspz_gen.view.verify.yspz_list', {
 					},
 					flex : 1
 				}, {
-					text : "凭证编号",
+					text : "单据编号",
 					dataIndex : 'ys_id',
 					flex : 1
 				}, {

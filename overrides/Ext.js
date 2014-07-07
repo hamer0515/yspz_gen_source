@@ -88,6 +88,7 @@ Ext.define('overrides.Ext', {
 		SUBMIT_TASK_START_FOR_CHECK : "credential/credentialAction_optionCredential.action",// 提交原始凭证导入任务，开始校验
 		SUBMIT_BAOBIAO_TASK_READY_OR_NOT : "import_readyOrnot.action",// 提交报表数据源准备情况
 		SUBMIT_BAOBIAO_IMPORT : "import_importData.action",// 提交报表导入操作
+		SUBMIT_BAOBIAO_CALCULATE : "calculate/calc_calculate",// 提交报表计算操作
 		SUBMIT_CREDENTIAL_META : "credential/meta_createCredential.action",// 提交原始凭证元数据
 		SUBMIT_EXPORT_TO_ORACLE : "summary/summary_expSumDetailData2Oracle.action"// 汇总查询结果导出到oracle
 	}

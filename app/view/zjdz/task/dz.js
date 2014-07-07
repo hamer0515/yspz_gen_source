@@ -344,17 +344,31 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								var btn = new Ext.dom.Element(btn);
 								var baseTR = btn.parent("tr");
 								var td = baseTR.child("td[rowspan]");
-								if (td) {// 前期帐务清除
-									var rowspan = parseInt(td
-											.getAttribute("rowspan"));
-									baseTR = baseTR.next("tr").next("tr");
-									for (var i = 0; i < rowspan; i++) {
+								if (td) {// 前期帐务|其他 清除
+									if (baseTR.getHTML().toString()
+											.indexOf("其他帐务") !== -1) {
+										baseTR = baseTR.next().next().next()
+												.next().next().next();
 										baseTR.child("td[class=\"ice_three\"]")
 												.setHTML("0.00");
-										baseTR = baseTR.next("tr");
+										baseTR.query("input[type=\"text\"]")
+												.forEach(function(v) {
+													new Ext.dom.Element(v).dom.value = "0.00";
+												});
+									} else {
+										var rowspan = parseInt(td
+												.getAttribute("rowspan"));
+										baseTR = baseTR.next("tr").next("tr");
+										for (var i = 0; i < rowspan; i++) {
+											baseTR
+													.child("td[class=\"ice_three\"]")
+													.setHTML("0.00");
+											baseTR = baseTR.next("tr");
+										}
+										// 删除保存在iew上面的调整数据
+										delete view._data[btn
+												.getAttribute("_tid")];
 									}
-									// 删除保存在iew上面的调整数据
-									delete view._data[btn.getAttribute("_tid")];
 									calTotal4Tid(td);
 								} else {// 本期帐务清除
 									baseTR = baseTR.prev("tr").prev("tr");
@@ -382,7 +396,6 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 											.child("td[rowspan=4]"));
 								}
 								calTotal();
-
 							});
 						} else if (v.innerHTML === "调节") {
 							el.on("click", function(evt, el) {

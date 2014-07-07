@@ -23,10 +23,10 @@ Ext.define('yspz_gen.view.West', {
 									url : "task_list",
 									leaf : true
 								}, {
-									text : "原始凭证",
+									text : "单据",
 									expanded : true,
 									children : [{
-												text : "凭证生成",
+												text : "单据生成",
 												url : "yspz_list",
 												leaf : true
 											}]

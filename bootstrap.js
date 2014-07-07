@@ -109,6 +109,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.task.gsum": [],
   "yspz_gen.controller.yspzDict": [],
   "yspz_gen.view.bi.ProtoAddPanel": [],
+  "yspz_gen.view.baobiao.task.mcheck": [],
   "yspz_gen.view.component.bfj_acct": [],
   "Ext.ux.GMapPanel": [],
   "yspz_gen.view.component.Line": [],
@@ -136,6 +137,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.RowExpander": [],
   "Ext.ux.event.Player": [],
   "yspz_gen.view.South": [],
+  "yspz_gen.view.zjdz.task.adjust": [],
   "overrides.Connection": [],
   "Ext.ux.ToolbarDroppable": [],
   "Ext.ux.event.Maker": [],
@@ -359,6 +361,9 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.bi.ProtoAddPanel": [
     "widget.proto_add"
   ],
+  "yspz_gen.view.baobiao.task.mcheck": [
+    "widget.baobiao_task_mcheck"
+  ],
   "yspz_gen.view.component.bfj_acct": [
     "widget.bfj_acct"
   ],
@@ -413,6 +418,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.event.Player": [],
   "yspz_gen.view.South": [
     "widget.south"
+  ],
+  "yspz_gen.view.zjdz.task.adjust": [
+    "widget.zjdz_task_adjust"
   ],
   "overrides.Connection": [],
   "Ext.ux.ToolbarDroppable": [],

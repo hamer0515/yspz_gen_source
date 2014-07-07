@@ -4,7 +4,7 @@ Ext.define('yspz_gen.view.task.list', {
 	initComponent : function() {
 		var me = this, cls = Ext.getClassName(me).split('.').pop(), gcolumns = [
 				{
-					text : "凭证编号",
+					text : "单据编号",
 					dataIndex : 'code',
 					flex : 1
 				}, {
@@ -95,7 +95,7 @@ Ext.define('yspz_gen.view.task.list', {
 																_items : res
 															});
 												} else {
-													Ext.error('获取凭证定义失败:'
+													Ext.error('获取单据定义失败:'
 															+ res.msg);
 												}
 											});

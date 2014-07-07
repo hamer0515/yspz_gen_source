@@ -173,7 +173,22 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 						}, {
 							xtype : 'button',
 							text : "计算",
-							width : 100
+							width : 100,
+							handler : function(btn) {
+								var rec = btn.up("baobiao_task_edit")._record;
+								Ext.asyncRequest(
+										Ext.urls.SUBMIT_BAOBIAO_CALCULATE, {
+											id : rec.data.id,
+											start : rec.data.begin_date,
+											end : rec.data.end_date
+										}, function() {
+											me.down("form")._reloadData.call(me
+													.down("form"));
+										}, function() {
+											me.down("form")._reloadData.call(me
+													.down("form"));
+										});
+							}
 						}, {
 							xtype : 'button',
 							text : "人工校验",

@@ -22,7 +22,7 @@ Ext.define('yspz_gen.view.task.gen', {
 					},
 					flex : 1
 				}, {
-					text : "凭证编号",
+					text : "单据编号",
 					dataIndex : 'code',
 					flex : 1
 				}, {
@@ -71,7 +71,7 @@ Ext.define('yspz_gen.view.task.gen', {
 					var form = me.getForm(), items = [], records = me
 							.down('treepanel').getChecked();
 					if (records.length == 0) {
-						Ext.error('错误', '至少选择一个原始凭证', Ext.Msg.OK);
+						Ext.error('至少选择一个单据');
 						return false;
 					}
 					return true;
@@ -119,7 +119,7 @@ Ext.define('yspz_gen.view.task.gen', {
 						var grid = me.down('grid'), gsm = grid
 								.getSelectionModel(), rows = gsm.getSelection(), items = [];
 						if (rows.length == 0) {
-							Ext.error('错误', '至少选择一个原始凭证', Ext.Msg.OK);
+							Ext.error('至少选择一个单据');
 							return;
 						}
 						rows.forEach(function(element, index, array) {

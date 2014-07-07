@@ -63,6 +63,8 @@ Ext.define('yspz_gen.view.zjdz.task.gen', {
 			}, {
 				fieldLabel : "资金对账日期",
 				xtype : 'datefield',
+				value : new Date(),
+				allowBlank : false,
 				maxValue : new Date(),
 				name : "zjdz_date"
 			}, {

@@ -188,7 +188,7 @@ Ext.define("yspz_gen.view.yspz.input", {
 							fieldLabel : "取自流水第几列",
 							id : "vfrom_1",
 							anchor : "100%",
-							maxValue : 99,
+							maxValue : 100,
 							minValue : 1,
 							name : "value",
 							allowBlank : false

@@ -46,7 +46,7 @@ Ext.define('yspz_gen.view.task.gsum', {
 						},
 						layout : 'anchor',
 						items : [{
-									xtype : 'checkboxgroup',
+									xtype : 'radiogroup',
 									columns : 6,
 									vertical : true,
 									items : rules
@@ -240,7 +240,7 @@ Ext.define('yspz_gen.view.task.gsum', {
 													groupField.setValue("");
 													sumField.setValue("");
 												} else {
-													Ext.error('获取凭证信息失败:'
+													Ext.error('获取单据信息失败:'
 															+ res.msg);
 												}
 											});

@@ -38,19 +38,22 @@ Ext.define("yspz_gen.view.yspz.list", {
 									}),
 							allowBlank : false
 						}, {
-							fieldLabel : "凭证编号",
+							fieldLabel : "单据编号",
 							margin : "5 0 0 5",
 							maxLength : 5,
 							columnWidth : 0.5,
 							name : "_code",
 							allowBlank : false
 						}, {
+							xtype : "numberfield",
+							maxValue : 100,
+							minValue : 1,
 							fieldLabel : "流水文件列数",
 							margin : "5 0 5 0",
 							columnWidth : 0.5,
 							name : "_fileColCount"
 						}, {
-							fieldLabel : "凭证名称",
+							fieldLabel : "单据名称",
 							margin : "5 0 0 5",
 							name : "_name",
 							columnWidth : 0.5,
@@ -59,7 +62,13 @@ Ext.define("yspz_gen.view.yspz.list", {
 							fieldLabel : "计费模块参数",
 							margin : "5 0 5 5",
 							columnWidth : 0.5,
-							name : "_calcParams"
+							name : "_calcParams",
+							enableKeyEvents : true,
+							listeners : {
+								change : function(fld, newValue, oldValue, opts) {
+									fld.setValue(newValue.toUpperCase());
+								}
+							}
 						}, {
 							xtype : "label",
 							columnWidth : 1,
@@ -128,6 +137,7 @@ Ext.define("yspz_gen.view.yspz.list", {
 							if (store.getCount() > 0) {
 								sm.select(0);
 							}
+							grid.getView().refresh();
 						},
 						disabled : true
 					}, "->", "-", {

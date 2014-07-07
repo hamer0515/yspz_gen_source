@@ -11,7 +11,7 @@ Ext.define('yspz_gen.view.file.badlist', {
 							dataIndex : 'lineNu',
 							width : 80
 						}, {
-							text : '凭证内容',
+							text : '单据内容',
 							dataIndex : 'lineData',
 							flex : 2,
 							editor : 'textfield'
@@ -35,7 +35,7 @@ Ext.define('yspz_gen.view.file.badlist', {
 				// });
 				// }
 				// } else {
-				// Ext.error('错误', '获取原始凭证原数据失败:' + res.error, Ext.Msg.OK);
+				// Ext.error('错误', '获取原始单据原数据失败:' + res.error, Ext.Msg.OK);
 				// }
 				// });
 				store = Ext.create('Ext.data.Store', {

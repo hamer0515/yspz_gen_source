@@ -170,6 +170,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.event.Player": [],
   "yspz_gen.view.South": [],
   "Ext.locale.zh_CN.tab.Tab": [],
+  "yspz_gen.view.zjdz.task.adjust": [],
   "overrides.Connection": [],
   "Ext.locale.zh_CN.grid.PropertyColumnModel": [],
   "Ext.ux.ToolbarDroppable": [],
@@ -469,6 +470,9 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.south"
   ],
   "Ext.locale.zh_CN.tab.Tab": [],
+  "yspz_gen.view.zjdz.task.adjust": [
+    "widget.zjdz_task_adjust"
+  ],
   "overrides.Connection": [],
   "Ext.locale.zh_CN.grid.PropertyColumnModel": [],
   "Ext.ux.ToolbarDroppable": [],
