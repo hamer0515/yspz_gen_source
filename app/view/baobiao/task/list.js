@@ -143,13 +143,16 @@ Ext.define('yspz_gen.view.baobiao.task.list', {
 								items : [{
 											xtype : 'datefield',
 											name : 'begin_date',
+											// flex:1
 											width : 180
 										}, {
 											xtype : 'datefield',
 											name : 'end_date',
+											// flex:1
 											width : 180
 										}, {
 											xtype : 'numberfield',
+											// flex:1,
 											width : 516,
 											name : 'id',
 											fieldLabel : "任务ID"

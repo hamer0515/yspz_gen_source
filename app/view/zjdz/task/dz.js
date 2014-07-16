@@ -40,7 +40,7 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								+ "</div></td>"
 								+ "<td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">前期帐务</td><td style=\"border: 0\"><button type=\"button\" _tid=\""
 								+ json.id
-								+ "\">清除</button></td><td style=\"border: 0\"><button type=\"button\" _tid=\""
+								+ "\">重置</button></td><td style=\"border: 0\"><button type=\"button\" _tid=\""
 								+ json.id
 								+ "\">调节</button></td></tr>"
 								+ "<tr><td style=\"width:200px\"></td><td style=\"width:180px\">前期未达</td><td style=\"width:180px\">前期长款</td><td style=\"width:180px\">前期短款</td><td style=\"width:110px\">前期变化总额</td></tr>"
@@ -76,7 +76,7 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								+ Ext.util.Format.number(json.qianqi[3][0],
 										'0,0.00')
 								+ "</td><td class=\"ice_one\"></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>"
-								+ "<tr><td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">本期帐务</td><td style=\"border: 0\"><button type=\"button\">清除</button></td><td style=\"border: 0\"></td></tr>";
+								+ "<tr><td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">本期帐务</td><td style=\"border: 0\"><button type=\"button\">重置</button></td><td style=\"border: 0\"></td></tr>";
 						for (var i in json.benqi) {
 							var bq = json.benqi[i];
 							data += "<tr><td>清算日期"
@@ -112,7 +112,7 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								+ "</div></td>"
 								+ "<td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">前期帐务</td><td style=\"border: 0\"><button type=\"button\" _tid=\""
 								+ json.id
-								+ "\">清除</button></td><td style=\"border: 0\"><button type=\"button\" _tid=\""
+								+ "\">重置</button></td><td style=\"border: 0\"><button type=\"button\" _tid=\""
 								+ json.id
 								+ "\">调节</button></td></tr>"
 								+ "<tr><td style=\"width:200px\"></td><td style=\"width:180px\">前期未达</td><td style=\"width:180px\">前期长款</td><td style=\"width:180px\">前期短款</td><td style=\"width:110px\">前期变化总额</td></tr>"
@@ -148,7 +148,7 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								+ Ext.util.Format.number(json.qianqi[3][0],
 										'0,0.00')
 								+ "</td><td class=\"ice_one\"></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>"
-								+ "<tr><td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">本期帐务</td><td style=\"border: 0\"><button type=\"button\">清除</button></td><td style=\"border: 0\"></td></tr>";
+								+ "<tr><td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">本期帐务</td><td style=\"border: 0\"><button type=\"button\">重置</button></td><td style=\"border: 0\"></td></tr>";
 						for (var i in json.benqi) {
 							var bq = json.benqi[i];
 							data += "<tr><td>清算日期"
@@ -180,7 +180,7 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								+ "<div style=\"margin-top: 10px\"><label class=\"ice_five\">帐务变化总额:</label></div><div style=\"text-align: right; margin-right: 20px\">"
 								+ "<input type=\"text\" class=\"ice_six\" disabled=\"disabled\" style=\"width:180px\"></input>"
 								+ "</div></td>"
-								+ "<td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">其他帐务</td><td style=\"border: 0\"><button type=\"button\">清除</button></td><td style=\"border: 0\"></td></tr>"
+								+ "<td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">其他帐务</td><td style=\"border: 0\"><button type=\"button\">重置</button></td><td style=\"border: 0\"></td></tr>"
 								+ "<tr><td>帐务变化类型</td><td>入金</td><td>帐务变化类型</td><td>出金</td><td>帐务变化</td></tr>"
 								+ "<tr><td>资金划拨调入</td><td class=\"ice_two\">"
 								+ Ext.util.Format.number(json.amt[0], '0,0.00')
@@ -239,9 +239,9 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								+ Ext.util.Format.number(
 										parseFloat(json.qichu), '0,0.00')
 								+ "\"></td></tr>"
-								+ "<tr><td style=\"text-align: left\"><label>银行实际资金变化总额:</label></td><td style=\"text-align: left\"><input type=\"text\" style=\"width: 160px\"></td>"
+								+ "<tr><td style=\"text-align: left\"><label>银行实际资金变化总额:</label></td><td style=\"text-align: left\"><input type=\"text\" style=\"width: 160px;background-color: yellow\" disabled=\"disabled\" value=\"0.00\"></td>"
 								+ "<td style=\"text-align: left\"><label>帐务变化总额:</label></td><td style=\"text-align: left\"><input type=\"text\" style=\"width: 160px;background-color: yellow\" disabled=\"disabled\"></td></tr>"
-								+ "<tr><td style=\"text-align: left\"><label>银行实际资金变化总额:</label></td><td style=\"text-align: left\"><input type=\"text\" style=\"width: 160px\"></td>"
+								+ "<tr><td style=\"text-align: left\"><label>银行实际期末余额:</label></td><td style=\"text-align: left\"><input type=\"text\" style=\"width: 160px\"></td>"
 								+ "<td style=\"text-align: left\"><label>账户期末余额:</label></td><td style=\"text-align: left\"><input type=\"text\" style=\"width: 160px;background-color: yellow\" disabled=\"disabled\"></td></tr>"
 								+ "</table>"
 								+ "</td></tr>"
@@ -274,14 +274,14 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 						el.on('blur', function(e, t) {
 							var el = new Ext.dom.Element(t);
 							var value = el.getValue().replace(/,/g, '').trim();
-							if (!/^(-)?(([1-9]{1}\d*)|([0]{1}))(\.\d+)?$/
+							if (!/^(([1-9]{1}\d*)|([0]{1}))(\.\d+)?$/
 									.test(value)) {
 								value = 0;
 							}
 							el.dom.value = Ext.util.Format.number(value,
 									'0,0.00');
 							var tr = el.parent("tr"), td = tr
-									.child("td[class=\"ice_three\"]"), sum = 0;
+									.child("td[class=\"ice_three\"]"), sum = 0, base = 0, hasBase = false;
 							if (td) {
 								if (tr.getHTML().indexOf("未知长款") !== -1) {
 									tr.query("input[type=\"text\"]").forEach(
@@ -299,6 +299,14 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 
 											});
 								} else {
+									if (tr.query("input[type=\"text\"]").length === 2) {
+										base = parseFloat(tr
+												.child("td[class=\"ice_two\"]")
+												.getHTML().replace(/,/g, '')
+												.trim());
+										hasBase = true;
+										// console.log("base:" + base);
+									}
 									tr.query("input[type=\"text\"]").forEach(
 											function(v) {
 												sum += parseFloat(new Ext.dom.Element(v)
@@ -306,12 +314,99 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 																/,/g, '')
 														.trim());
 											});
+									if (hasBase && sum > base) {
+										Ext.MessageBox
+												.confirm(
+														'提示',
+														"本期应收/付+本期长/短款>本期清算<br\>\
+"
+																+ Ext.util.Format
+																		.number(
+																				sum,
+																				'0,0.00')
+																+ ">"
+																+ Ext.util.Format
+																		.number(
+																				base,
+																				'0,0.00')
+																+ "<br\>\
+是否要清空?",
+														function(opt) {
+															if (opt === 'yes') {
+																value = 0, sum = 0;
+																el.dom.value = Ext.util.Format
+																		.number(
+																				value,
+																				'0,0.00');
+																tr
+																		.query("input[type=\"text\"]")
+																		.forEach(
+																				function(
+																						v) {
+																					sum += parseFloat(new Ext.dom.Element(v)
+																							.getValue()
+																							.replace(
+																									/,/g,
+																									'')
+																							.trim());
+																				});
+																td
+																		.setHTML(Ext.util.Format
+																				.number(
+																						sum,
+																						'0,0.00'));
+																calTotal4Tid(tr
+																		.prev("tr:has(td[rowspan=4])")
+																		.child("td[rowspan=4]"));
+																calTotal();
+															} else {
+																el.focus();
+															}
+														});
+
+									}
 								}
 								td.setHTML(Ext.util.Format
 										.number(sum, '0,0.00'));
 								calTotal4Tid(tr.prev("tr:has(td[rowspan=4])")
 										.child("td[rowspan=4]"));
 								calTotal();
+							}
+							// 银行实际期初余额 | 银行实际期末余额
+							else {
+								var bankReal;
+								if (tr.getHTML().toString().indexOf("银行实际期初余额") !== -1) {
+									bankReal = new Ext.dom.Element(tr
+											.next("tr")
+											.query("input:disabled[type=\"text\"]")[0]);
+									sum = parseFloat(new Ext.dom.Element(tr
+											.next("tr")
+											.next("tr")
+											.query("input:enabled[type=\"text\"]")[0])
+											.getValue().replace(/,/g, '')
+											.trim())
+											- parseFloat(new Ext.dom.Element(tr
+													.query("input:enabled[type=\"text\"]")[0])
+													.getValue().replace(/,/g,
+															'').trim());
+								} else if (tr.getHTML().toString()
+										.indexOf("银行实际期末余额") !== -1) {
+									bankReal = new Ext.dom.Element(tr
+											.prev("tr")
+											.query("input:disabled[type=\"text\"]")[0]);
+									sum = parseFloat(new Ext.dom.Element(tr
+											.query("input:enabled[type=\"text\"]")[0])
+											.getValue().replace(/,/g, '')
+											.trim())
+											- parseFloat(new Ext.dom.Element(tr
+													.prev("tr")
+													.prev("tr")
+													.query("input:enabled[type=\"text\"]")[0])
+													.getValue().replace(/,/g,
+															'').trim());
+								}
+								bankReal.dom.value = Ext.util.Format.number(
+										sum, '0,0.00')
 							}
 						});
 					});
@@ -339,12 +434,12 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 					// 注册按钮事件
 					btn.forEach(function(v) {
 						var el = new Ext.dom.Element(v);
-						if (v.innerHTML === "清除") {
+						if (v.innerHTML === "重置") {
 							el.on("click", function(e, btn) {
 								var btn = new Ext.dom.Element(btn);
 								var baseTR = btn.parent("tr");
 								var td = baseTR.child("td[rowspan]");
-								if (td) {// 前期帐务|其他 清除
+								if (td) {// 前期帐务|其他 重置
 									if (baseTR.getHTML().toString()
 											.indexOf("其他帐务") !== -1) {
 										baseTR = baseTR.next().next().next()
@@ -612,8 +707,6 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 		var calTotal = function() {
 			var table = new Ext.dom.Element(view.getEl()
 					.query("td[rowspan=\"5\"]")[0]).child("table");
-			// var table =
-			// view.getEl().query("td[rowspan=\"5\"]").child("table");
 			var qichu, total, remaining, sum = 0;
 			table.query("tr").forEach(function(v, i, arr) {
 				var tr = new Ext.dom.Element(v);
@@ -623,7 +716,7 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								.replace(/,/g, '').trim());
 					});
 				} else if (tr.getHTML().toString().indexOf("帐务变化总额") !== -1) {
-					total = new Ext.dom.Element(tr.query("input:disabled")[0]);
+					total = new Ext.dom.Element(tr.query("input:disabled")[1]);
 				} else if (tr.getHTML().toString().indexOf("账户期末余额") !== -1) {
 					remaining = new Ext.dom.Element(tr.query("input:disabled")[0]);
 				}

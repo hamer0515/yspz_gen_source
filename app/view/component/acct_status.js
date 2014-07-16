@@ -9,6 +9,9 @@ Ext.define('yspz_gen.view.component.acct_status', {
 					}, {
 						id : 2,
 						name : '销户'
+					}, {
+						id : 3,
+						name : '全部'
 					}]
 
 		});

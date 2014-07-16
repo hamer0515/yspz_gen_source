@@ -1,17 +1,38 @@
 {
-	success : true,
-	total : 3,
-	data : [{
-				"business_date" : "CMBCHINA_NET_B2C_ZHBM1020",
-				"fch" : "10000516346",
-				"business_type" : "15",
-				"goods_type" : "420.00",
-				"success_money" : "1.13"
-			}, {
-				"business_date" : "CMBCHINA_NET_B2C_ZHBM1020",
-				"fch" : "123456",
-				"business_type" : "15",
-				"goods_type" : "50.00",
-				"success_money" : "0.15"
-			}]
+	"data" : [{
+				"BANK_C_CF_ACCOUNT" : "325100021016860",
+				"TASK_ID" : 241,
+				"BANK_BC_C_ACCOUNT1" : "325100021016860",
+				"BANK_RC_FORE_COST_AMT2" : "0",
+				"BANK_RC_FORE_COST_AMT3" : "0",
+				"BANK_BC_FORE_COST_AMT1" : "0",
+				"BANK_BC_FORE_COST_AMT2" : "0",
+				"BANK_RC_FORE_COST_AMT1" : "0",
+				"BANK_C_FUND_CHANGE_DATE" : "2014-06-17",
+				"BANK_C_CLEAR_DATE" : "2014-06-17",
+				"BANK_BC_FORE_COST_AMT3" : "0",
+				"BANK_BC_FORE_COST_AMT4" : "0",
+				"BANK_C_IN_AMT" : "18436417",
+				"BANK_C_ITFE_ID" : "325100001010100",
+				"BANK_BC_FORE_COST_AMT5" : "0",
+				"BANK_RC_INTERNAL_COST_AMT2" : "0",
+				"BANK_RC_INTERNAL_COST_AMT1" : "0",
+				"BANK_RC_INTERNAL_COST_AMT3" : "0",
+				"BANK_BC_EST_COST_AMT1" : "0",
+				"CUS_C_TA_TYPE" : 1,
+				"BANK_BC_INTERNAL_COST_AMT5" : "0",
+				"BANK_BC_INTERNAL_COST_AMT4" : "0",
+				"BANK_BC_INTERNAL_COST_AMT3" : "0",
+				"BANK_BC_INTERNAL_COST_AMT2" : "0",
+				"BANK_BC_INTERNAL_COST_AMT1" : "55309.25",
+				"BANK_BC_EST_COST_AMT5" : "0",
+				"BANK_BC_EST_COST_AMT4" : "0",
+				"BANK_BC_EST_COST_AMT3" : "0",
+				"BANK_BC_EST_COST_AMT2" : "0",
+				"BANK_BC_C_FUNDOUT_DATE1" : "2014-06-17",
+				"CURRENCY" : "CNY",
+				"C_L_B_TYPE" : "3001",
+				"C_H_GL_DATE" : "2014-06-17"
+			}],
+	"success" : true
 }

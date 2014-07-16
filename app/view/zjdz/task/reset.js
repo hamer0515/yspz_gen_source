@@ -77,17 +77,19 @@ Ext.define('yspz_gen.view.zjdz.task.reset', {
 						xtype : 'fieldcontainer',
 						layout : 'hbox',
 						items : [{
-									xtype : "bank",
-									margin : '0 20 0 0',
-									width : 516
-								}, {
-									xtype : "bfj_acct",
-									width : 516
-								}, {
-									xtype : "hidden",
-									name : "dz_status",
-									value : 2
-								}]
+							xtype : "bank",
+							margin : '0 20 0 0',
+							flex : 1
+								// width : 516
+							}, {
+							xtype : "bfj_acct",
+							flex : 1
+								// width : 516
+							}, {
+							xtype : "hidden",
+							name : "dz_status",
+							value : 2
+						}]
 					}, {
 						fieldLabel : "资金对账日期",
 						xtype : 'datefield',

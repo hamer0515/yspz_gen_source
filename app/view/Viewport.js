@@ -15,11 +15,12 @@ Ext.define("yspz_gen.view.Viewport", {
 					"overrides.Gridpanel", "overrides.Paging",
 					"overrides.Treepanel", "overrides.TreeField",
 					"overrides.Connection", "overrides.DateField",
-					"Ext.form.field.Display", "overrides.RowEditor",
-					"Ext.form.CheckboxGroup", "Ext.grid.plugin.DragDrop",
-					"Ext.grid.column.RowNumberer", "Ext.form.RadioGroup",
-					"Ext.form.FieldSet", "Ext.toolbar.Spacer",
-					"Ext.ux.TreePicker", "Ext.layout.container.Column"],
+					"overrides.Gridpanel", "Ext.form.field.Display",
+					"overrides.RowEditor", "Ext.form.CheckboxGroup",
+					"Ext.grid.plugin.DragDrop", "Ext.grid.column.RowNumberer",
+					"Ext.form.RadioGroup", "Ext.form.FieldSet",
+					"Ext.toolbar.Spacer", "Ext.ux.TreePicker",
+					"Ext.layout.container.Column"],
 
 			layout : {
 				type : "border"

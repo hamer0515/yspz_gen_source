@@ -62,6 +62,13 @@ Ext.define('yspz_gen.view.task.gen', {
 				}], fields = ['id', 'credentialPath', 'code', 'importDate',
 				'status', 'error'];
 		Ext.apply(me, {
+			resetHandler : function() {
+				me.down("form").getForm().reset();
+				var checkbox = me.down("form").down("yspz_dict")
+						.down("checkbox[action=selectAll]");
+				checkbox.setRawValue(false);
+				checkbox.fireEvent('change', checkbox, false);
+			},
 			formConfig : {
 				formCheck : function() {
 					var me = this, invalid = me.isValid();;

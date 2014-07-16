@@ -29,17 +29,17 @@
 						"tname" : "收款",
 						"amt" : [10, 20, null]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-19",
 						"type" : 2,
 						"tname" : "交易手续费",
 						"amt" : [10, null, null]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-19",
 						"type" : 3,
 						"tname" : "交易退款",
 						"amt" : [5, null, 20]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-19",
 						"type" : 4,
 						"tname" : "退回手续费",
 						"amt" : [-0.3, null, null]
@@ -52,17 +52,17 @@
 						"tname" : "收款",
 						"amt" : [10, 20, null]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-21",
 						"type" : 2,
 						"tname" : "交易手续费",
 						"amt" : [10, null, null]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-21",
 						"type" : 3,
 						"tname" : "交易退款",
 						"amt" : [5, null, 20]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-21",
 						"type" : 4,
 						"tname" : "退回手续费",
 						"amt" : [-0.3, null, null]
@@ -75,17 +75,17 @@
 						"tname" : "收款",
 						"amt" : [10, 20, null]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-22",
 						"type" : 2,
 						"tname" : "交易手续费",
 						"amt" : [10, null, null]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-22",
 						"type" : 3,
 						"tname" : "交易退款",
 						"amt" : [5, null, 20]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-22",
 						"type" : 4,
 						"tname" : "退回手续费",
 						"amt" : [-0.3, null, null]
@@ -93,22 +93,22 @@
 		}, {
 			"ydz_date" : "2014-05-22",
 			"data" : [{
-						"clear_date" : "2014-05-20",
+						"clear_date" : "2014-05-23",
 						"type" : 1,
 						"tname" : "收款",
 						"amt" : [10, 20, null]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-23",
 						"type" : 2,
 						"tname" : "交易手续费",
 						"amt" : [10, null, null]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-23",
 						"type" : 3,
 						"tname" : "交易退款",
 						"amt" : [5, null, 20]
 					}, {
-						"clear_date" : "2014-05-18",
+						"clear_date" : "2014-05-23",
 						"type" : 4,
 						"tname" : "退回手续费",
 						"amt" : [-0.3, null, null]

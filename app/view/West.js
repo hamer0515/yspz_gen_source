@@ -39,11 +39,13 @@ Ext.define('yspz_gen.view.West', {
 									text : "银行接口配置",
 									url : "bi_list",
 									leaf : true
-								}, {
-									text : "银行账号信息维护",
-									url : "acct_list",
-									leaf : true
-								}, {
+								},
+								// {
+								// text : "银行账号信息维护",
+								// url : "acct_list",
+								// leaf : true
+								// },
+								{
 									text : "报表",
 									expanded : true,
 									children : [{

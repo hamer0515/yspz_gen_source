@@ -5,16 +5,13 @@ Ext.define('yspz_gen.controller.yspzDict', {
 			init : function() {
 				this.control({
 							'treepanel' : {
-								checkchange : this.checkChange
+								checkchange : this.check
 							},
 							'routes' : {
 								setChangedValue : this.setValues
 							},
 							'checkbox[action=selectAll]' : {
 								change : this.selectAll
-							},
-							'checkbox[action=deselectAll]' : {
-								change : this.deselectAll
 							}
 						});
 			},
@@ -37,33 +34,31 @@ Ext.define('yspz_gen.controller.yspzDict', {
 					}
 				}
 			},
-			selectAll : function(element, newValue, oldValue, eOpts) {
+			selectAll : function(element, newValue) {
+				// if (!element._ssEvent) {
 				var routes = Ext.getCmp('routes');
 				var root = routes.getRootNode();
 				this.changeChecked(root, newValue);
+				// }
+				// element._ssEvent = false;
 			},
-			deselectAll : function(element, newValue, oldValue, eOpts) {
+			check : function(node, checked) {
+				this.checkChange(node, checked);
 				var routes = Ext.getCmp('routes');
-				var root = routes.getRootNode();
-				this.checkDeselect(root);
-			},
-			checkDeselect : function(node) {
-				if (node.childNodes.length > 0) {
-					this.deselect(node.childNodes);
-				}
-			},
-			deselect : function(node) {
-				if (Ext.isArray(node)) {
-					for (var i = node.length - 1; i >= 0; i--) {
-						this.deselect(node[i]);
-					}
+				var checkbox = routes.up("panel")
+						.down("checkbox[boxLabel=\"全选\"]");
+				if (this.checkSelectAll(routes.getRootNode())) {
+					// checkbox._ssEvent = true;
+					// routes.suspendEvent("checkchange");
+					checkbox.setRawValue(true);
+					checkbox.mixins.field.value = true;
+					// routes.resumeEvent("checkchange");
 				} else {
-					if (node.data.checked != null) {
-						node.set('checked', !node.data.checked);
-					}
-					if (node.childNodes.length > 0) {
-						this.deselect(node.childNodes);
-					}
+					// checkbox._ssEvent = true;
+					// routes.suspendEvent("checkchange");
+					checkbox.setRawValue(false);
+					checkbox.mixins.field.value = false;;
+					// routes.resumeEvent("checkchange");
 				}
 			},
 			checkChange : function(node, checked) {
@@ -73,6 +68,26 @@ Ext.define('yspz_gen.controller.yspzDict', {
 				if (node.parentNode.data.checked != null) {
 					this.changeCheckedUp(node.parentNode, checked);
 				}
+			},
+			checkSelectAll : function(node) {
+				if (Ext.isArray(node)) {
+					for (var i = node.length - 1; i >= 0; i--) {
+						if (!this.checkSelectAll(node[i])) {
+							return false;
+						}
+					}
+				} else {
+					if (node.data.checked !== null
+							&& node.data.checked === false) {
+						return false;
+					}
+					if (node.childNodes.length > 0) {
+						if (!this.checkSelectAll(node.childNodes)) {
+							return false;
+						}
+					}
+				}
+				return true;
 			},
 			changeChecked : function(node, checked) {
 				if (Ext.isArray(node)) {

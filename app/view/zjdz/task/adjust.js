@@ -5,7 +5,8 @@ Ext.define('yspz_gen.view.zjdz.task.adjust', {
 	autoScroll : true,
 
 	initComponent : function() {
-		var me = this, view, tpl;
+		var me = this, view = me._view, tpl, OriginData = view._data[me._tid];
+//		console.log(OriginData);
 		tpl = new Ext.XTemplate(
 				'<table width="98%" border="1" cellspacing="1" cellpadding="0" align="center" class="live_1_table">',
 				'<thead><tr><th>应到帐日期(差错日期)</th><th>清算日期</th><th>前期未达类型</th><th>未达余额</th><th style=\"width: 70px\"></th><th>前期长款</th><th style=\"width: 70px\"></th><th>前期短款</th><th style=\"width: 70px\"></th></tr></thead>',
@@ -15,9 +16,16 @@ Ext.define('yspz_gen.view.zjdz.task.adjust', {
 				'<tfoot><tr><td colspan=\"5\" style=\"border: 0\"></td><td colspan=\"2\" style=\"border: 0\"><button type=\"button\">清除</button></td><td colspan=\"2\" style=\"border: 0\"><button type=\"button\">确认</button></td></tr></tfoot>',
 				'</table>', {
 					gentrs : function(json) {
-						var data = "";
+						var data = "", d, value;
 						var field = json.data;
 						for (var j in field) {
+							if (OriginData) {
+								d = Ext.Array.findBy(OriginData,
+										function(item) {
+											return item.clear_date === field[j].clear_date
+													&& item.tname === field[j].tname
+										});
+							}
 							if (parseInt(j) === 0) {
 								data += "<tr><td>" + json.ydz_date + "</td>";
 							} else {
@@ -27,11 +35,16 @@ Ext.define('yspz_gen.view.zjdz.task.adjust', {
 							data += "<td>" + f.clear_date + "</td><td _type=\""
 									+ f.type + "\">" + f.tname + "</td>";
 							for (var k in f.amt) {
+								value = d
+										? d.amt[k] ? d.amt[k] : "0.00"
+										: "0.00";
 								data += f.amt[k]
 										? "<td>"
 												+ Ext.util.Format.number(
 														f.amt[k], '0,0.00')
-												+ "</td><td><input type=\"text\" style=\"width: 60px\"></td>"
+												+ "</td><td><input type=\"text\" style=\"width: 60px\" value=\""
+												+ Ext.util.Format.number(value,
+														'0,0.00') + "\"></td>"
 										: "<td></td><td></td>";
 							}
 							data += "</tr>";
@@ -53,20 +66,21 @@ Ext.define('yspz_gen.view.zjdz.task.adjust', {
 					// 按钮包括清除和确定按钮
 					var btn = view.getEl().query("button");
 					textfield.forEach(function(v) {
-						var el = new Ext.dom.Element(v);
-						el.dom.value = Ext.util.Format.number("0.00", '0,0.00');
-						el.on('blur', function(e, t) {
-									var el = new Ext.dom.Element(t);
-									var value = el.getValue().replace(/,/g, '')
-											.trim();
-									if (!/^(-)?(([1-9]{1}\d*)|([0]{1}))(\.\d+)?$/
-											.test(value)) {
-										value = 0;
-									}
-									el.dom.value = Ext.util.Format.number(
-											value, '0,0.00');
-								});
-					});
+								var el = new Ext.dom.Element(v);
+								// el.dom.value = Ext.util.Format.number("0.00",
+								// '0,0.00');
+								el.on('blur', function(e, t) {
+											var el = new Ext.dom.Element(t);
+											var value = el.getValue().replace(
+													/,/g, '').trim();
+											if (!/^(([1-9]{1}\d*)|([0]{1}))(\.\d+)?$/
+													.test(value)) {
+												value = 0;
+											}
+											el.dom.value = Ext.util.Format
+													.number(value, '0,0.00');
+										});
+							});
 					// 注册按钮事件
 					btn.forEach(function(v) {
 						var el = new Ext.dom.Element(v);

@@ -29,6 +29,34 @@ Ext.define('yspz_gen.view.zjdz.task.gen', {
 				}], fields = ['b_acct', 'opening_bank', 'b_name', 'bank_code',
 				'acct_status'];
 		Ext.apply(me, {
+			submitHandler : function() {
+				me.down("grid").store.loadPage(1);
+			},
+			storeConfig : {
+				autoLoad : true,
+				listeners : {
+					beforeload : function(store, operation, eOpts) {
+						var form = me.down("form"), values = form.getValues();
+						if (form.formCheck ? form.formCheck() : form.isValid()) {
+							store.proxy.extraParams = form._getValues ? form
+									._getValues() : form.getForm().getValues();
+
+							form.down("button[text=\"生成任务\"]")
+									.setDisabled(values.acct_status !== 1
+											? true
+											: false);
+							// if (values.acct_status !== 1) {
+							// form.down("button[text=\"生成任务\"]")
+							// .setDisabled(true);
+							// } else {
+							// form.down("button[text=\"生成任务\"]")
+							// .setDisabled(false);
+							// }
+							// store.loadPage(1);
+						}
+					}
+				}
+			},
 			_url : Ext.urls.GET_ZJDZ_TASK_GEN,
 			_fields : fields,
 			_items : [{
@@ -69,6 +97,7 @@ Ext.define('yspz_gen.view.zjdz.task.gen', {
 				name : "zjdz_date"
 			}, {
 				xtype : "acct_status",
+				editable : false,
 				value : 1
 			}],
 			_disablePaging : true,
@@ -99,6 +128,6 @@ Ext.define('yspz_gen.view.zjdz.task.gen', {
 		})
 		me.callParent(arguments);
 
-		me.down("button[text=\"查询\"]").fireHandler();
+		// me.down("button[text=\"查询\"]").fireHandler();
 	}
 });

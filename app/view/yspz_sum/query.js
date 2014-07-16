@@ -2,8 +2,8 @@ Ext.define('yspz_gen.view.yspz_sum.query', {
 	extend : 'yspz_gen.view.Panel',
 	alias : 'widget.sum_query',
 	initComponent : function() {
-		var me = this, cls = Ext.getClassName(me).split('.').pop(), gcolumns = [
-				{
+		var me = this, cWidth = 200, cls = Ext.getClassName(me).split('.')
+				.pop(), gcolumns = [{
 					text : "请选择汇总求和方案",
 					dataIndex : 'id',
 					flex : 1
@@ -47,18 +47,47 @@ Ext.define('yspz_gen.view.yspz_sum.query', {
 												function(res) {
 													var response = Ext
 															.decode(res.responseText), grid = me
-															.down("gridpanel"), columns = [];
+															.down("gridpanel"), columns = [], tWidth = 0, needWidth = 0;
 													grid.store.removeAll();
 													grid.store.proxy
 															.getModel()
 															.setFields(Ext.Object
-																	.getKeys(response))
+																	.getKeys(response));
 													for (var i in response) {
-														columns.push({
+														needWidth += cWidth;
+													}
+													if (me.getWidth() > needWidth) {
+														for (var i in response) {
+															columns.push({
+																text : response[i],
+																dataIndex : i,
+																flex : 1,
+																renderer : function(
+																		v) {
+																	return v
+																}
+															});
+														}
+													} else {
+														for (var i in response) {
+															if (tWidth < (me
+																	.getWidth() - 500)) {
+																columns.push({
 																	text : response[i],
 																	dataIndex : i,
-																	flex : 1
+																	width : cWidth,
+																	locked : true
 																});
+																tWidth += cWidth;
+															} else {
+																columns.push({
+																	text : response[i],
+																	dataIndex : i,
+																	width : cWidth
+																});
+																tWidth += cWidth;
+															}
+														}
 													}
 													grid
 															.reconfigure(
@@ -84,6 +113,9 @@ Ext.define('yspz_gen.view.yspz_sum.query', {
 					}]
 		}], fields = ['id'];
 		Ext.apply(me, {
+			gridConfig : {
+				enableLocking : true
+			},
 			_buttons : [{
 				text : '导出到Oralcle',
 				handler : function(btn) {
