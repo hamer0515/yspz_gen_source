@@ -13,6 +13,10 @@ Ext.define('yspz_gen.view.Panel', {
 		var me = this, columns = me._columns, gcolumns = me._gcolumns
 				|| (columns && Ext.Object.getValues(columns)), items = me._items, fields = me._fields, url = me._url, form, exportBtn, store, grid;
 
+		// 给panel添加loadMask
+		me.loadMask = new Ext.LoadMask(me, {
+					msg : "操作中..."
+				});
 		// 判断有没有表格
 		if (gcolumns) {
 			/*

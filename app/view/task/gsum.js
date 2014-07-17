@@ -9,6 +9,9 @@ Ext.define('yspz_gen.view.task.gsum', {
 	autoShow : true,
 	initComponent : function() {
 		var me = this, items = me._items, fields = [], rules = [];
+		me.loadMask = new Ext.LoadMask(me, {
+					msg : "操作中..."
+				});
 		for (var i in items.meta) {
 			fields.push({
 						boxLabel : items.meta[i],
@@ -266,6 +269,9 @@ Ext.define('yspz_gen.view.task.gsum', {
 					if (checked.length > 0) {
 						for (var i in checked)
 							values.push(checked[i].getSubmitValue());
+					} else {
+						Ext.info("请选择一个求和汇总方案");
+						return;
 					}
 					// var window = this.up('window'), fieldContainers = window
 					// .down('form').items.items[0].items.items, value = [], rec
@@ -283,7 +289,7 @@ Ext.define('yspz_gen.view.task.gsum', {
 							}, function() {
 								window.close();
 								grid.store.reload();
-							});
+							}, undefined, undefined, me);
 				}
 			}]
 		}

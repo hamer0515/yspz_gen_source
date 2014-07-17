@@ -1,66 +1,92 @@
 [{
-			"allCount" : 0,
-			"badCount" : 0,
-			"code" : "0017",
-			"credentialId" : 1,
-			"credentialPath" : "/data/ftp/2014-03-24/ck/1.txt",
-			"endTime" : null,
-			"goodCount" : 0,
-			"id" : 1,
-			"importDate" : "2014-03-24",
-			"lastModfiedTime" : "2014-03-24 09:38:19",
-			"startTime" : null,
-			"status" : 2,
-			"suitId" : 0,
-			"tradeId" : 0,
-			"userid" : 0
-		}, {
-			"allCount" : 0,
-			"badCount" : 0,
-			"code" : "0016",
-			"credentialId" : 4,
-			"credentialPath" : "/data/ftp/2014-03-24/ck/4.txt",
-			"endTime" : null,
-			"goodCount" : 0,
-			"id" : 2,
-			"importDate" : "2014-03-24",
-			"lastModfiedTime" : "2014-03-24 09:38:19",
-			"startTime" : null,
-			"status" : 1,
-			"suitId" : 0,
-			"tradeId" : 0,
-			"userid" : 0
-		}, {
-			"allCount" : 0,
-			"badCount" : 0,
-			"code" : "0002",
-			"credentialId" : 2,
-			"credentialPath" : "/data/ftp/2014-03-24/ck/2.txt",
-			"endTime" : null,
-			"goodCount" : 0,
-			"id" : 4,
-			"importDate" : "2014-03-24",
-			"lastModfiedTime" : "2014-03-24 09:38:19",
-			"startTime" : null,
-			"status" : 3,
-			"suitId" : 0,
-			"tradeId" : 0,
-			"userid" : 0
-		}, {
-			"allCount" : 0,
-			"badCount" : 0,
-			"code" : "0003",
-			"credentialId" : 3,
-			"credentialPath" : "/data/ftp/2014-03-24/ck/3.txt",
-			"endTime" : null,
-			"goodCount" : 0,
-			"id" : 5,
-			"importDate" : "2014-03-24",
-			"lastModfiedTime" : "2014-03-24 09:38:20",
-			"startTime" : null,
-			"status" : -1,
-			"suitId" : 0,
-			"tradeId" : 0,
-			"userid" : 0,
-			"error" : "aaaa"
-		}]
+	"id" : 279,
+	"credentialId" : 81,
+	"code" : "1001",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/1001-20140717.dat",
+	"status" : 2
+}, {
+	"id" : 280,
+	"credentialId" : 91,
+	"code" : "1002",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/1002-20140717.dat",
+	"status" : 2
+}, {
+	"id" : 281,
+	"credentialId" : 88,
+	"code" : "1001",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/1001-20140717.dat",
+	"status" : 2
+}, {
+	"id" : 282,
+	"credentialId" : 124,
+	"code" : "2001",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/2001-20140717.dat",
+	"status" : 1
+}, {
+	"id" : 283,
+	"credentialId" : 125,
+	"code" : "2002",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/2002-20140717.dat",
+	"status" : 1
+}, {
+	"id" : 284,
+	"credentialId" : 126,
+	"code" : "2003",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/2003-20140717.dat",
+	"status" : 1
+}, {
+	"id" : 285,
+	"credentialId" : 127,
+	"code" : "2004",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/2004-20140717.dat",
+	"status" : 1
+}, {
+	"id" : 286,
+	"credentialId" : 121,
+	"code" : "3001",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/3001-20140717.dat",
+	"status" : 1
+}, {
+	"id" : 287,
+	"credentialId" : 122,
+	"code" : "3002",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/3002-20140717.dat",
+	"status" : 1
+}, {
+	"id" : 288,
+	"credentialId" : 123,
+	"code" : "3004",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/3004-20140717.dat",
+	"status" : 1
+}, {
+	"id" : 289,
+	"credentialId" : 128,
+	"code" : "3003",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/3003-20140717.dat",
+	"status" : 1
+}, {
+	"id" : 290,
+	"credentialId" : 82,
+	"code" : "1002",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/1002-20140717.dat",
+	"status" : 1
+}, {
+	"id" : 291,
+	"credentialId" : 101,
+	"code" : "4001",
+	"importDate" : "2014-07-17",
+	"credentialPath" : "/home/jdev/opt/apache-tomcat-6.0.16/webapps/yeepay/upload/credential/yeepay/20140717/4001-20140717.dat",
+	"status" : 1
+}]

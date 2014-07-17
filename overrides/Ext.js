@@ -23,13 +23,17 @@ Ext.define('overrides.Ext', {
 		}
 		return index == -1 ? '无效的数据(' + value + ')' : ds.getAt(index).data.name;
 	},
-	asyncRequest : function(url, params, successCallback, failCallback, success) {
+	asyncRequest : function(url, params, successCallback, failCallback,
+			success, panel) {
 		Ext.Ajax.request({
 					async : false,
 					url : url,
 					params : params,
 					success : success || function(response, opts) {
 						var res = Ext.decode(response.responseText);
+						if (panel && panel.loadMask.isVisible()) {
+							panel.loadMask.hide();
+						}
 						if (res.success) {
 							Ext.info('请求提交成功', successCallback);
 						} else {
