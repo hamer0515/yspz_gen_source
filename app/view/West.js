@@ -83,9 +83,10 @@ Ext.define('yspz_gen.view.West', {
 					center.add({
 								closable : true,
 								xtype : 'panel',
-								layout : 'fit',
+								layout : 'anchor',
 								items : {
-									xtype : rec.data.url
+									xtype : rec.data.url,
+									anchor : "100% 100%"
 								},
 								id : id,
 								title : rec.data.text

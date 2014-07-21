@@ -1,6 +1,6 @@
 Ext.define('yspz_gen.view.Panel', {
 	extend : 'Ext.panel.Panel',
-	overflowY : 'auto',
+	// overflowY : 'auto',
 	/*
 	 * _columns(object):科目汇总时候需要的列
 	 * _gcolumns(array):科目初始化时候需要的列（科目汇总查询时为初始化的列定义，其他为grid列定义）
@@ -12,11 +12,6 @@ Ext.define('yspz_gen.view.Panel', {
 	initComponent : function() {
 		var me = this, columns = me._columns, gcolumns = me._gcolumns
 				|| (columns && Ext.Object.getValues(columns)), items = me._items, fields = me._fields, url = me._url, form, exportBtn, store, grid;
-
-		// 给panel添加loadMask
-		me.loadMask = new Ext.LoadMask(me, {
-					msg : "操作中..."
-				});
 		// 判断有没有表格
 		if (gcolumns) {
 			/*
@@ -50,7 +45,6 @@ Ext.define('yspz_gen.view.Panel', {
 							}, me.storeConfig || {}));
 			grid = new Ext.grid.Panel(Ext.Object.merge({
 						store : store,
-						// autoScroll : true,
 						columns : gcolumns
 					}, me.gridConfig || {}));
 			if (!me._disablePaging) {
@@ -112,13 +106,22 @@ Ext.define('yspz_gen.view.Panel', {
 					form.add(Ext.create('widget.button', me._buttons[i]));
 				}
 			}
-			// if (!me.submitHandler) {
 			Ext.apply(store, {
 						_form : form
 					});
-			// }
 		}
 		me.items = [form, grid];
+		me.on('afterlayout', function() {
+					if (grid && !grid.isloclable) {
+						var height = parseInt(this.getHeight()) - 2;
+						if (form) {
+							height -= parseInt(form.getHeight());
+						}
+						// me.un("afterlayout", afterlayout);
+						me.suspendEvent("afterlayout")
+						grid.setHeight(height);
+					}
+				}, me);
 		me.callParent(arguments);
 		me._init && me._init.call(this);
 	}

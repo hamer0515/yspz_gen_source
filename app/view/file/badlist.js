@@ -72,8 +72,7 @@ Ext.define('yspz_gen.view.file.badlist', {
 							Ext.asyncRequest(Ext.urls.SUBMIT_FIXED_BAD_RECORD,
 									e.record.data, function() {
 										me.getStore().reload();
-
-									});
+									}, undefined, undefined, me);
 						});
 				me.callParent(arguments);
 			}

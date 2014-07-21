@@ -171,7 +171,7 @@ Ext.define("yspz_gen.view.yspz.list", {
 											}, function() {
 												store.removeAll();
 												formpanel.getForm().reset();
-											});
+											}, undefined, undefined, me);
 								}
 							})
 						}

@@ -47,7 +47,13 @@ Ext.define('yspz_gen.view.yspz_sum.query', {
 												function(res) {
 													var response = Ext
 															.decode(res.responseText), grid = me
-															.down("gridpanel"), columns = [], tWidth = 0, needWidth = 0;
+															.down("gridpanel"), panel = me
+															.down("form"), columns = [], tWidth = 0, needWidth = 0;
+													panel
+															&& panel.getEl()
+																	.isMasked()
+															&& panel.getEl()
+																	.unmask();
 													grid.store.removeAll();
 													grid.store.proxy
 															.getModel()
@@ -93,7 +99,8 @@ Ext.define('yspz_gen.view.yspz_sum.query', {
 															.reconfigure(
 																	grid.store,
 																	columns);
-												});
+//													grid.up("panel").doLayout();
+												}, me.down("form"));
 							} else {
 								var grid = me.down("gridpanel"), columns = [{
 											text : "请选择汇总求和方案",
@@ -131,7 +138,8 @@ Ext.define('yspz_gen.view.yspz_sum.query', {
 														function() {
 															me.down('grid').store
 																	.reload();
-														});
+														}, undefined,
+														undefined, me);
 									}
 								});
 				}

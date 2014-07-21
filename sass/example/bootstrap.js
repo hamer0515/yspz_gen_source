@@ -5,31 +5,30 @@
  * metadata-driven class system features 
  */
 Ext.Loader.addClassPathMappings({
-  "Ext.locale.zh_CN.toolbar.Paging": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.view.AbstractView": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.Component": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.form.field.Date": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.rtl.EventObjectImpl": "../../../ext/src/rtl/EventObject.js",
-  "Ext.locale.zh_CN.form.field.Text": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.form.field.VTypes": "../../../ext/locale/ext-lang-zh_CN.js",
-  "yspz_gen.view.task.list": "../../app/view/acct/list.js",
-  "Ext.locale.zh_CN.form.field.Base": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.grid.plugin.DragDrop": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext": "../../../ext/src",
-  "yspz_gen": "../../app",
-  "Ext.locale.zh_CN.tab.Tab": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.grid.PropertyColumnModel": "../../../ext/locale/ext-lang-zh_CN.js",
-  "yspz_gen.Application": "../../app/application.js",
+  "Ext.locale.zh_CN.toolbar.Paging": "../../../ext/locale/ext-lang-zh_CN.js",
   "overrides": "../../overrides",
+  "Ext.locale.zh_CN.Component": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.grid.header.Container": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.window.MessageBox": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.form.field.Number": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.form.field.Date": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.form.field.ComboBox": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.form.field.Number": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.rtl.EventObjectImpl": "../../../ext/src/rtl/EventObject.js",
   "Ext.locale.zh_CN.view.View": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.form.field.Text": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.form.field.VTypes": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.form.field.Base": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.picker.Month": "../../../ext/locale/ext-lang-zh_CN.js",
   " Ext.Msg": "../../../ext/src/window/MessageBox.js",
+  "Ext.locale.zh_CN.grid.plugin.DragDrop": "../../../ext/locale/ext-lang-zh_CN.js",
+  "yspz_gen": "../../app",
+  "Ext": "../../../ext/src",
+  "Ext.locale.zh_CN.tab.Tab": "../../../ext/locale/ext-lang-zh_CN.js",
   "Ext.locale.zh_CN.picker.Date": "../../../ext/locale/ext-lang-zh_CN.js",
-  "Ext.locale.zh_CN.form.field.HtmlEditor": "../../../ext/locale/ext-lang-zh_CN.js"
+  "Ext.locale.zh_CN.grid.PropertyColumnModel": "../../../ext/locale/ext-lang-zh_CN.js",
+  "Ext.locale.zh_CN.form.field.HtmlEditor": "../../../ext/locale/ext-lang-zh_CN.js",
+  "yspz_gen.Application": "../../app/application.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
   "Ext.locale.zh_CN.toolbar.Paging": [],
@@ -84,12 +83,10 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.CellDragDrop": [],
   "Ext.locale.zh_CN.view.AbstractView": [],
   "yspz_gen.store.CBase": [],
-  "yspz_gen.view.acct.edit": [],
   "Ext.ux.ajax.Simlet": [],
   "Ext.ux.SlidingPager": [],
   "Ext.locale.zh_CN.Component": [],
   "Ext.ux.TabReorderer": [],
-  "yspz_gen.view.acct.input": [],
   "yspz_gen.view.baobiao.task.source": [],
   "Ext.ux.grid.filter.NumericFilter": [],
   "yspz_gen.view.bi.BiAddPanel": [],
@@ -294,18 +291,12 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Ext.locale.zh_CN.view.AbstractView": [],
   "yspz_gen.store.CBase": [],
-  "yspz_gen.view.acct.edit": [
-    "widget.acct_edit"
-  ],
   "Ext.ux.ajax.Simlet": [
     "simlet.basic"
   ],
   "Ext.ux.SlidingPager": [],
   "Ext.locale.zh_CN.Component": [],
   "Ext.ux.TabReorderer": [],
-  "yspz_gen.view.acct.input": [
-    "widget.acct_input"
-  ],
   "yspz_gen.view.baobiao.task.source": [
     "widget.baobiao_task_source"
   ],

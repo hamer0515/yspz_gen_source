@@ -132,11 +132,17 @@ Ext.define('yspz_gen.view.task.gen', {
 						rows.forEach(function(element, index, array) {
 									items.push(element.data.id);
 								});
-						me.loadMask.show();
+						// me.loadMask.show();
+						// var myMask = new Ext.LoadMask({
+						// target : me,
+						// msg : "Please wait..."
+						// });
+						// myMask.show();
 						Ext.asyncRequest(Ext.urls.SUBMIT_TASK_START_FOR_CHECK,
 								{
 									task : items
 								}, function() {
+									// myMask.hide();
 									me.down('grid').store.reload();
 								}, undefined, undefined, me);
 					}

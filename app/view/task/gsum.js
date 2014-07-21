@@ -9,9 +9,6 @@ Ext.define('yspz_gen.view.task.gsum', {
 	autoShow : true,
 	initComponent : function() {
 		var me = this, items = me._items, fields = [], rules = [];
-		me.loadMask = new Ext.LoadMask(me, {
-					msg : "操作中..."
-				});
 		for (var i in items.meta) {
 			fields.push({
 						boxLabel : items.meta[i],
@@ -218,10 +215,10 @@ Ext.define('yspz_gen.view.task.gsum', {
 												credentialId : rec.data.credentialId
 											}, undefined, undefined, function(
 													response) {
-												var items = Ext
+												var res = items = Ext
 														.decode(response.responseText), rules = [], checkboxgroup = form
 														.down("checkboxgroup");
-												if (items.length > 0) {
+												if (Object.keys(res).length > 0 > 0) {
 													for (var j in items) {
 														rules.push({
 															boxLabel : items[j].id,
@@ -247,7 +244,7 @@ Ext.define('yspz_gen.view.task.gsum', {
 															+ res.msg);
 												}
 											});
-								});
+								}, undefined, undefined, me);
 					}
 				}
 			}, {
@@ -273,14 +270,6 @@ Ext.define('yspz_gen.view.task.gsum', {
 						Ext.info("请选择一个求和汇总方案");
 						return;
 					}
-					// var window = this.up('window'), fieldContainers = window
-					// .down('form').items.items[0].items.items, value = [], rec
-					// = window._rec, grid = window._grid;
-					// for (var i in fieldContainers) {
-					// value
-					// .push(Ext
-					// .encode(fieldContainers[i].items.items[0].submitValue));
-					// }
 					Ext.asyncRequest(Ext.urls.SUBMIT_YSPZ_SUMMARY, {
 								credentialId : rec.data.credentialId,
 								importDate : rec.data.importDate,

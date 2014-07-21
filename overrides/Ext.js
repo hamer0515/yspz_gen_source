@@ -25,20 +25,24 @@ Ext.define('overrides.Ext', {
 	},
 	asyncRequest : function(url, params, successCallback, failCallback,
 			success, panel) {
+		panel && !panel.getEl().isMasked() && panel.getEl().mask("操作中...");
 		Ext.Ajax.request({
-					async : false,
+					// async : false,
 					url : url,
 					params : params,
 					success : success || function(response, opts) {
+						panel && panel.getEl().isMasked()
+								&& panel.getEl().unmask();
 						var res = Ext.decode(response.responseText);
-						if (panel && panel.loadMask.isVisible()) {
-							panel.loadMask.hide();
-						}
 						if (res.success) {
 							Ext.info('请求提交成功', successCallback);
 						} else {
 							Ext.error('请求提交失败:' + res.msg, failCallback);
 						}
+					},
+					failure : function() {
+						panel && panel.getEl().isMasked()
+								&& panel.getEl().unmask();
 					}
 				});
 	},
@@ -64,8 +68,8 @@ Ext.define('overrides.Ext', {
 		GET_ZJDZ_TASK_ADJUST : "zjdz/task_adjust", // 获得资金对账调整数据
 		GET_ZJDZ_TASK_DZ : "zjdz/task_data", // 获得资金对账的数据
 		GET_ZJDZ_TASK_LIST : "zjdz/task_list", // 获得资金对账任务列表
-		GET_ZJDZ_TASK_GEN : "zjdz/task_bank_list",// 获得资金对账任务生成界面银行帐号列表
-		GET_LAST_ZJDZ_DATE : "zjdz/get_last_zjdz_date", // 获得最近资金对账任务生成日期
+		GET_ZJDZ_TASK_GEN : "CashReconciliationTaskGenerateActionImpl_generateQuery.action",// 获得资金对账任务生成界面银行帐号列表
+		GET_LAST_ZJDZ_DATE : "CashReconciliationTaskGenerateActionImpl_getLastMaxDate.action", // 获得最近资金对账任务生成日期
 		GET_ALL_BAOBIAO_TASK : "task_selectTaskByID.action",// "baobiao/task",//
 		// 获得报表模块的任务列表
 		GET_SUM_RESULT : "summary/summary_getSummaryDetailData.action",// 汇总结果查询
@@ -86,7 +90,7 @@ Ext.define('overrides.Ext', {
 		QUERY_TASK_STATUS : "credential/credentialAction_getCredentialStatus.action", // 查询原始凭证状态(用于生成导入任务的查询按钮)
 		SUBMIT_ZJDZ_TASK_DZ : "zjdz/task_dz",// 提交资金对账任务改写
 		SUBMIT_ZJDZ_TASK_RESET : "zjdz/task_reset",// 提交资金对账任务改写
-		SUBMIT_ZJDZ_TASK : "zjdz/task_gen",// 提交资金对账任务生成
+		SUBMIT_ZJDZ_TASK : "CashReconciliationTaskGenerateActionImpl_generateTask.action",// 提交资金对账任务生成
 		SUBMIT_YSPZ_SUMMARY : "summary/summary_sumCredential.action",// 提交原始凭证汇总生成方案
 		SUBMIT_FIXED_BAD_RECORD : "credential/credentialAction_updateCredential.action",// 提交更改过的bad记录
 		SUBMIT_TASK_START_FOR_CHECK : "credential/credentialAction_optionCredential.action",// 提交原始凭证导入任务，开始校验

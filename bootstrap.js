@@ -5,7 +5,6 @@
  * metadata-driven class system features 
  */
 Ext.Loader.addClassPathMappings({
-  "yspz_gen.view.task.list": "app/view/acct/list.js",
   " Ext.Msg": "../ext/src/window/MessageBox.js",
   "overrides": "overrides",
   "Ext": "../ext/src",
@@ -56,11 +55,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.bi.List": [],
   "Ext.ux.CellDragDrop": [],
   "yspz_gen.store.CBase": [],
-  "yspz_gen.view.acct.edit": [],
   "Ext.ux.ajax.Simlet": [],
   "Ext.ux.SlidingPager": [],
   "Ext.ux.TabReorderer": [],
-  "yspz_gen.view.acct.input": [],
   "yspz_gen.view.baobiao.task.source": [],
   "Ext.ux.grid.filter.NumericFilter": [],
   "yspz_gen.view.bi.BiAddPanel": [],
@@ -248,17 +245,11 @@ Ext.ClassManager.addNameAliasMappings({
     "plugin.celldragdrop"
   ],
   "yspz_gen.store.CBase": [],
-  "yspz_gen.view.acct.edit": [
-    "widget.acct_edit"
-  ],
   "Ext.ux.ajax.Simlet": [
     "simlet.basic"
   ],
   "Ext.ux.SlidingPager": [],
   "Ext.ux.TabReorderer": [],
-  "yspz_gen.view.acct.input": [
-    "widget.acct_input"
-  ],
   "yspz_gen.view.baobiao.task.source": [
     "widget.baobiao_task_source"
   ],
