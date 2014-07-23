@@ -281,7 +281,7 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 							el.dom.value = Ext.util.Format.number(value,
 									'0,0.00');
 							var tr = el.parent("tr"), td = tr
-									.child("td[class=\"ice_three\"]"), sum = 0, base = 0, hasBase = false;
+									.child("td[class=\"ice_three\"]"), sum = 0, base = 0, single = 0, hasBase = false;
 							if (td) {
 								if (tr.getHTML().indexOf("未知长款") !== -1) {
 									tr.query("input[type=\"text\"]").forEach(
@@ -299,10 +299,16 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 
 											});
 								} else {
-									if (tr.query("input[type=\"text\"]").length === 2) {
+									if (tr.query("input[type=\"text\"]").length === 2
+											&& el.dom === tr
+													.query("input[type=\"text\"]")[0]) {
 										base = parseFloat(tr
 												.child("td[class=\"ice_two\"]")
 												.getHTML().replace(/,/g, '')
+												.trim());
+										single = parseFloat(new Ext.dom.Element(tr
+												.query("input[type=\"text\"]")[0])
+												.getValue().replace(/,/g, '')
 												.trim());
 										hasBase = true;
 										// console.log("base:" + base);
@@ -314,15 +320,15 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 																/,/g, '')
 														.trim());
 											});
-									if (hasBase && sum > base) {
+									if (hasBase && single > base) {
 										Ext.MessageBox
 												.confirm(
 														'提示',
-														"本期应收/付+本期长/短款>本期清算<br\>\
+														"本期应收/付>本期清算<br\>\
 "
 																+ Ext.util.Format
 																		.number(
-																				sum,
+																				single,
 																				'0,0.00')
 																+ ">"
 																+ Ext.util.Format

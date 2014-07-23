@@ -189,7 +189,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.Spotlight": [],
   "Ext.ux.grid.FiltersFeature": [],
   "Ext.locale.zh_CN.picker.Date": [],
-  "yspz_gen.view.component.yspzDict": []
+  "yspz_gen.view.component.yspzDict": [],
+  "yspz_gen.view.yspz.list-bak": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.locale.zh_CN.toolbar.Paging": [],
@@ -510,5 +511,8 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.locale.zh_CN.picker.Date": [],
   "yspz_gen.view.component.yspzDict": [
     "widget.yspz_dict"
+  ],
+  "yspz_gen.view.yspz.list-bak": [
+    "widget.yspz_list_bak"
   ]
 });

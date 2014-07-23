@@ -6,7 +6,7 @@ Ext.define('yspz_gen.view.zjdz.task.adjust', {
 
 	initComponent : function() {
 		var me = this, view = me._view, tpl, OriginData = view._data[me._tid];
-//		console.log(OriginData);
+		// console.log(OriginData);
 		tpl = new Ext.XTemplate(
 				'<table width="98%" border="1" cellspacing="1" cellpadding="0" align="center" class="live_1_table">',
 				'<thead><tr><th>应到帐日期(差错日期)</th><th>清算日期</th><th>前期未达类型</th><th>未达余额</th><th style=\"width: 70px\"></th><th>前期长款</th><th style=\"width: 70px\"></th><th>前期短款</th><th style=\"width: 70px\"></th></tr></thead>',
@@ -66,21 +66,59 @@ Ext.define('yspz_gen.view.zjdz.task.adjust', {
 					// 按钮包括清除和确定按钮
 					var btn = view.getEl().query("button");
 					textfield.forEach(function(v) {
-								var el = new Ext.dom.Element(v);
-								// el.dom.value = Ext.util.Format.number("0.00",
-								// '0,0.00');
-								el.on('blur', function(e, t) {
-											var el = new Ext.dom.Element(t);
-											var value = el.getValue().replace(
-													/,/g, '').trim();
-											if (!/^(([1-9]{1}\d*)|([0]{1}))(\.\d+)?$/
-													.test(value)) {
-												value = 0;
+						var el = new Ext.dom.Element(v);
+						// el.dom.value = Ext.util.Format.number("0.00",
+						// '0,0.00');
+						el.on('blur', function(e, t) {
+							var el = new Ext.dom.Element(t);
+							var value = el.getValue().replace(/,/g, '').trim();
+							if (!/^(([1-9]{1}\d*)|([0]{1}))(\.\d+)?$/
+									.test(value)) {
+								value = 0;
+							}
+							el.dom.value = Ext.util.Format.number(value,
+									'0,0.00');
+							var tr = el.parent("tr"), base = 0, hasBase = false;
+							if (tr.query("input[type=\"text\"]").length === 2) {
+								base = parseFloat(el.parent("td").prev("td")
+										.getHTML().replace(/,/g, '').trim());
+								hasBase = true;
+								// console.log("base:" + base);
+							}
+							if (hasBase && parseFloat(value) > base) {
+								Ext.MessageBox.confirm('提示', "输入>未达<br\>\
+"
+												+ Ext.util.Format.number(value,
+														'0,0.00')
+												+ ">"
+												+ Ext.util.Format.number(base,
+														'0,0.00')
+												+ "<br\>\
+是否要清空?",
+										function(opt) {
+											if (opt === 'yes') {
+												value = 0, sum = 0;
+												el.dom.value = Ext.util.Format
+														.number(value, '0,0.00');
+												tr
+														.query("input[type=\"text\"]")
+														.forEach(function(v) {
+															sum += parseFloat(new Ext.dom.Element(v)
+																	.getValue()
+																	.replace(
+																			/,/g,
+																			'')
+																	.trim());
+														});
+											} else {
+												me.focus();
+												el.focus();
 											}
-											el.dom.value = Ext.util.Format
-													.number(value, '0,0.00');
 										});
-							});
+
+							}
+						});
+					});
 					// 注册按钮事件
 					btn.forEach(function(v) {
 						var el = new Ext.dom.Element(v);

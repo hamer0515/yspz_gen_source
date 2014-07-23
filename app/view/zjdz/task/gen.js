@@ -170,8 +170,10 @@ Ext.define('yspz_gen.view.zjdz.task.gen', {
 							Ext.error('获取对账任务最近生成日期失败:' + res.msg);
 						}
 					}, me.down("form"));
-			me.down("form").suspendEvent("afterlayout");
-		}, me.down("form"));
+				// me.down("form").suspendEvent("afterlayout");
+		}, me.down("form"), {
+			single : true
+		});
 		// me.down("button[text=\"查询\"]").fireHandler();
 	}
 });

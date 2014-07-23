@@ -153,7 +153,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.ajax.JsonSimlet": [],
   "Ext.ux.Spotlight": [],
   "Ext.ux.grid.FiltersFeature": [],
-  "yspz_gen.view.component.yspzDict": []
+  "yspz_gen.view.component.yspzDict": [],
+  "yspz_gen.view.yspz.list-bak": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "overrides.Treepanel": [],
@@ -456,5 +457,8 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "yspz_gen.view.component.yspzDict": [
     "widget.yspz_dict"
+  ],
+  "yspz_gen.view.yspz.list-bak": [
+    "widget.yspz_list_bak"
   ]
 });

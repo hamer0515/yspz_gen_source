@@ -7,5 +7,27 @@ Ext.define('yspz_gen.view.component.base.PagingInfo', {
 				var me = this;
 
 				return [];
+			},
+			getStoreListeners : function() {
+				return {
+					beforeload : this.beforeLoad,
+					load : this.onLoad,
+					exception : this.onLoadError,
+					remove : this.onLoad,
+					add : this.onLoad
+				};
+			},
+			getPageData : function() {
+				var store = this.store, totalCount = store.getCount();
+
+				return {
+					total : totalCount,
+					currentPage : store.currentPage,
+					pageCount : Math.ceil(totalCount / store.pageSize),
+					fromRecord : ((store.currentPage - 1) * store.pageSize) + 1,
+					toRecord : Math.min(store.currentPage * store.pageSize,
+							totalCount)
+
+				};
 			}
 		});

@@ -124,10 +124,12 @@ Ext.define('yspz_gen.view.Panel', {
 							height -= parseInt(form.getHeight());
 						}
 						// me.un("afterlayout", afterlayout);
-						me.suspendEvent("afterlayout");
+						// me.suspendEvent("afterlayout");
 						grid.setHeight(height);
 					}
-				}, me);
+				}, me, {
+					single : true
+				});
 		me.callParent(arguments);
 		me._init && me._init.call(this);
 	}
