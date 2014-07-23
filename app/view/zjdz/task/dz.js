@@ -258,6 +258,9 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 			},
 			listeners : {
 				load : function(store, records, successful, eOpts) {
+					if (!successful) {
+						me.up("panel").close();
+					}
 					// 所有可用的输入框
 					var textfield = view.getEl()
 							.query("input:enabled[type=\"text\"]");

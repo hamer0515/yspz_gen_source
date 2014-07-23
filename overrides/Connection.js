@@ -27,13 +27,16 @@ Ext.define('overrides.Connection', {
 				if (success) {
 					response = me.createResponse(request);
 					me.fireEvent('requestcomplete', me, response, options);
-					if (Ext.decode(response.responseText).success == 'forbidden') {
+					if (Ext.decode(response.responseText).success === 'forbidden') {
 						Ext.MessageBox.show({
 									title : '警告',
 									msg : '无权访问:' + options.url,
 									buttons : Ext.Msg.YES,
 									icon : Ext.Msg.WARNING
 								});
+					} else if (Ext.decode(response.responseText).success === false) {
+						Ext.error("访问url:" + options.url + ",原因:"
+								+ Ext.decode(response.responseText).msg);
 					} else {
 						Ext.callback(options.success, options.scope, [response,
 										options]);
@@ -53,12 +56,12 @@ Ext.define('overrides.Connection', {
 									buttons : Ext.Msg.YES,
 									icon : Ext.Msg.ERROR,
 									fn : function() {
-											var viewport = Ext
-													.getCmp('zixweb_viewport');
-											viewport.removeAll();
-											viewport.add({
-														xtype : 'loginform'
-													});
+										var viewport = Ext
+												.getCmp('zixweb_viewport');
+										viewport.removeAll();
+										viewport.add({
+													xtype : 'loginform'
+												});
 									}
 								});
 					} else if (response.status != 200) {
