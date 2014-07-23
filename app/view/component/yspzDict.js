@@ -18,7 +18,7 @@ Ext.define('yspz_gen.view.component.yspzDict', {
 				var me = this;
 				me.items = [{
 							xtype : 'checkboxgroup',
-							fieldLabel : '凭证选择',
+							fieldLabel : '单据选择',
 							columns : 1,
 							vertical : true,
 							items : [{

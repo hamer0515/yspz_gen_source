@@ -20,27 +20,8 @@ Ext.define('yspz_gen.view.file.badlist', {
 							dataIndex : 'errorMsg',
 							flex : 1
 						}];
-				// Ext.asyncRequest('base/fields', {
-				// ys_id : ys_id
-				// }, function(response) {
-				// var res = Ext.decode(response.responseText);
-				// if (res.success) {
-				// for (var i in res.data) {
-				// fields.push(i);
-				// columns.push({
-				// text : res.data[i],
-				// dataIndex : i,
-				// flex : 1,
-				// editor : 'textfield'
-				// });
-				// }
-				// } else {
-				// Ext.error('错误', '获取原始单据原数据失败:' + res.error, Ext.Msg.OK);
-				// }
-				// });
 				store = Ext.create('Ext.data.Store', {
 							fields : fields,
-							// autoLoad : true,
 							proxy : {
 								type : 'ajax',
 								api : {

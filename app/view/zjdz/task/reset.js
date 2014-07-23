@@ -45,7 +45,7 @@ Ext.define('yspz_gen.view.zjdz.task.reset', {
 							mode : "SIMPLE"
 						})
 			},
-			_url : Ext.urls.GET_ZJDZ_TASK_LIST,
+			_url : Ext.urls.GET_ZJDZ_TASK_LIST_FOR_RESET,
 			_fields : fields,
 			_buttons : [{
 				text : '修改任务状态',
@@ -67,8 +67,11 @@ Ext.define('yspz_gen.view.zjdz.task.reset', {
 											Ext.urls.SUBMIT_ZJDZ_TASK_RESET, {
 												task : items
 											}, function() {
+												me.down('grid')
+														.getSelectionModel()
+														.deselectAll();
 												me.down('grid').store.reload();
-											});
+											}, undefined, undefined, me);
 								}
 							});
 				}

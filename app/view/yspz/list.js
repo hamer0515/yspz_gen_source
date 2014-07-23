@@ -49,7 +49,7 @@ Ext.define("yspz_gen.view.yspz.list", {
 							maxValue : 100,
 							minValue : 1,
 							fieldLabel : "流水文件列数",
-							margin : "5 0 5 0",
+							margin : "5 0 0 0",
 							columnWidth : 0.5,
 							name : "_fileColCount"
 						}, {
@@ -60,7 +60,7 @@ Ext.define("yspz_gen.view.yspz.list", {
 							allowBlank : false
 						}, {
 							fieldLabel : "计费模块参数",
-							margin : "5 0 5 5",
+							margin : "5 0 0 0",
 							columnWidth : 0.5,
 							name : "_calcParams",
 							enableKeyEvents : true,

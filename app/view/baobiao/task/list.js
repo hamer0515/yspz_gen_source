@@ -162,6 +162,7 @@ Ext.define('yspz_gen.view.baobiao.task.list', {
 					gridConfig : {
 						tbar : ['-', {
 									xtype : 'button',
+									iconCls : 'add',
 									text : '新建任务',
 									handler : function() {
 										Ext.widget("baobiao_task_add");

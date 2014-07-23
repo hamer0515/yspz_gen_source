@@ -3,5 +3,5 @@ Ext.define('yspz_gen.view.component.bank', {
 			alias : ['widget.bank'],
 			name : 'bank',
 			fieldLabel : '备付金银行',
-			_url : 'base/bank'
+			_url : 'CashReconciliationTaskGenerateActionImpl_cQueryBfjbank.action'
 		});

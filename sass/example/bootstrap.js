@@ -69,6 +69,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.bi.ItemSelectPanel": [],
   "yspz_gen.view.bi.InfoPanel": [],
   "overrides.TabBar": [],
+  "yspz_gen.view.task.badlist": [],
   "Ext.locale.zh_CN.picker.Month": [],
   "Ext.ux.PreviewPlugin": [],
   "yspz_gen.view.baobiao.task.add": [],
@@ -139,6 +140,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.controller.yspzDict": [],
   "yspz_gen.view.bi.ProtoAddPanel": [],
   "yspz_gen.view.baobiao.task.mcheck": [],
+  "yspz_gen.view.component.base.PagingInfo": [],
   "yspz_gen.view.component.bfj_acct": [],
   "yspz_gen.view.component.Line": [],
   "Ext.ux.GMapPanel": [],
@@ -261,6 +263,9 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.infopanel"
   ],
   "overrides.TabBar": [],
+  "yspz_gen.view.task.badlist": [
+    "widget.bad_list"
+  ],
   "Ext.locale.zh_CN.picker.Month": [],
   "Ext.ux.PreviewPlugin": [
     "plugin.preview"
@@ -404,6 +409,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "yspz_gen.view.baobiao.task.mcheck": [
     "widget.baobiao_task_mcheck"
+  ],
+  "yspz_gen.view.component.base.PagingInfo": [
+    "widget.paginginfo"
   ],
   "yspz_gen.view.component.bfj_acct": [
     "widget.bfj_acct"

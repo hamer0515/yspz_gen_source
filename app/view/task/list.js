@@ -98,7 +98,7 @@ Ext.define('yspz_gen.view.task.list', {
 													Ext.error('获取单据定义失败:'
 															+ res.msg);
 												}
-											});
+											}, me);
 
 								}
 							});
@@ -106,7 +106,7 @@ Ext.define('yspz_gen.view.task.list', {
 					}, {
 						tooltip : 'Bad列表',
 						getClass : function(v, meta, rec) {
-							if (rec.data.status == 4 && rec.data.badCount > 0) {
+							if (rec.data.status === 4 && rec.data.badCount > 0) {
 								return 'bad';
 							}
 							return 'hide';
@@ -120,22 +120,32 @@ Ext.define('yspz_gen.view.task.list', {
 							if (cmp) {
 								center.setActiveTab(cmp);
 							} else {
-								var list = Ext.createByAlias('widget.badlist');
-								list.store.load({
-											params : {
-												credentialId : rec.data.credentialId,
-												importDate : rec.data.importDate,
-												id : rec.data.id
-											}
+								var list = Ext.createByAlias('widget.bad_list',
+										{
+											anchor : "100% 100%"
 										});
+								// list.down("grid").store.load({
+								// params : {
+								// credentialId : rec.data.credentialId,
+								// importDate : rec.data.importDate,
+								// id : rec.data.id
+								// }
+								// });
+								list.down("grid").store.proxy.extraParams = {
+									credentialId : rec.data.credentialId,
+									importDate : rec.data.importDate,
+									id : rec.data.id
+								};
+								list.down("grid").store.loadPage(1);
 								center.add({
-									closable : true,
-									xtype : 'panel',
-									items : list,
-									id : id,
-									title : '文件[' + rec.data.credentialPath
-											+ ']Bad列表'
-								}).show();
+											closable : true,
+											xtype : 'panel',
+											items : list,
+											layout : 'anchor',
+											id : id,
+											title : '文件[' + rec.data.code
+													+ ']Bad列表'
+										}).show();
 							}
 						}
 					}]

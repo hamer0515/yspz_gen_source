@@ -54,6 +54,12 @@ Ext.define('yspz_gen.view.Panel', {
 							store : store,
 							dock : 'bottom'
 						});
+			} else {
+				grid.addDocked({
+							xtype : 'paginginfo',
+							store : store,
+							dock : 'bottom'
+						});
 			}
 			// 数据集中添加表格的引用
 			Ext.apply(store, {
@@ -118,7 +124,7 @@ Ext.define('yspz_gen.view.Panel', {
 							height -= parseInt(form.getHeight());
 						}
 						// me.un("afterlayout", afterlayout);
-						me.suspendEvent("afterlayout")
+						me.suspendEvent("afterlayout");
 						grid.setHeight(height);
 					}
 				}, me);

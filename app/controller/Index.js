@@ -1,9 +1,10 @@
 Ext.define("yspz_gen.controller.Index", {
 			extend : "Ext.app.Controller",
 			views : ["West", "North", "South", "Center", "Panel",
-					"component.plugins.PageComboResizer", "file.badlist",
-					"component.MyStore", "component.QueryForm", "task.gen",
-					"task.list", "task.gsum", "component.base.ComboBox",
+					"component.plugins.PageComboResizer", "component.MyStore",
+					"component.base.PagingInfo", "component.QueryForm",
+					"task.gen", "task.list", "task.gsum",
+					"component.base.ComboBox",
 					"component.base.CheckBoxGroupSingle", "component.Books",
 					"component.Set", "component.Validation", "component.Line",
 					"component.JournalEntry", "component.calcValue",
@@ -18,6 +19,7 @@ Ext.define("yspz_gen.controller.Index", {
 					"component.bfj_acct", "baobiao.task.list",
 					"baobiao.task.add", "baobiao.task.edit",
 					"baobiao.task.source", "zjdz.task.gen", "zjdz.task.reset",
-					"zjdz.task.list", "zjdz.task.dz", "zjdz.task.adjust"],
+					"zjdz.task.list", "zjdz.task.dz", "zjdz.task.adjust",
+					"task.badlist"],
 			stores : ["CBase", "FStatus", "CalcValue"]
 		});

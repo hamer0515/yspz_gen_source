@@ -1,6 +1,7 @@
 {
 	success : true,
-	date : '2014-06-04'
+	date : '2014-06-04',
+	today : '2014-07-22'
 
 	// success : false,
 	// msg : 'error msg'

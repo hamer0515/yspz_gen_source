@@ -119,7 +119,7 @@ Ext.define('yspz_gen.view.task.gen', {
 					}
 				},
 				tbar : ["->", {
-					iconCls : 'useradd',
+					iconCls : 'add',
 					text : '开始校验',
 					tooltip : '开始执行文件格式检查，校验和导入',
 					handler : function() {

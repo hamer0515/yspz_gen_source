@@ -30,14 +30,18 @@ Ext.define('overrides.Ext', {
 					// async : false,
 					url : url,
 					params : params,
-					success : success || function(response, opts) {
+					success : function(response, opts) {
 						panel && panel.getEl().isMasked()
 								&& panel.getEl().unmask();
-						var res = Ext.decode(response.responseText);
-						if (res.success) {
-							Ext.info('请求提交成功', successCallback);
+						if (success) {
+							success.call(success, response, opts);
 						} else {
-							Ext.error('请求提交失败:' + res.msg, failCallback);
+							var res = Ext.decode(response.responseText);
+							if (res.success) {
+								Ext.info('请求提交成功', successCallback);
+							} else {
+								Ext.error('请求提交失败:' + res.msg, failCallback);
+							}
 						}
 					},
 					failure : function() {
@@ -66,8 +70,9 @@ Ext.define('overrides.Ext', {
 	},
 	urls : {
 		GET_ZJDZ_TASK_ADJUST : "zjdz/task_adjust", // 获得资金对账调整数据
-		GET_ZJDZ_TASK_DZ : "zjdz/task_data", // 获得资金对账的数据
-		GET_ZJDZ_TASK_LIST : "zjdz/task_list", // 获得资金对账任务列表
+		GET_ZJDZ_TASK_DZ : "cash/cashAction_getCashData.action", // 获得资金对账的数据
+		GET_ZJDZ_TASK_LIST : "CashReconciliationTaskGenerateActionImpl_eQuery.action", // 获得资金对账任务列表
+		GET_ZJDZ_TASK_LIST_FOR_RESET : "CashReconciliationTaskGenerateActionImpl_mQuery.action", // 获得资金对账任务列表-资金对账任务修改
 		GET_ZJDZ_TASK_GEN : "CashReconciliationTaskGenerateActionImpl_generateQuery.action",// 获得资金对账任务生成界面银行帐号列表
 		GET_LAST_ZJDZ_DATE : "CashReconciliationTaskGenerateActionImpl_getLastMaxDate.action", // 获得最近资金对账任务生成日期
 		GET_ALL_BAOBIAO_TASK : "task_selectTaskByID.action",// "baobiao/task",//
@@ -89,7 +94,7 @@ Ext.define('overrides.Ext', {
 		GET_RULE_INFO : "summary/summary_getSummaryRule.action",// 获得汇总方案信息
 		QUERY_TASK_STATUS : "credential/credentialAction_getCredentialStatus.action", // 查询原始凭证状态(用于生成导入任务的查询按钮)
 		SUBMIT_ZJDZ_TASK_DZ : "zjdz/task_dz",// 提交资金对账任务改写
-		SUBMIT_ZJDZ_TASK_RESET : "zjdz/task_reset",// 提交资金对账任务改写
+		SUBMIT_ZJDZ_TASK_RESET : "CashReconciliationTaskGenerateActionImpl_mUpdate.action",// 提交资金对账任务改写
 		SUBMIT_ZJDZ_TASK : "CashReconciliationTaskGenerateActionImpl_generateTask.action",// 提交资金对账任务生成
 		SUBMIT_YSPZ_SUMMARY : "summary/summary_sumCredential.action",// 提交原始凭证汇总生成方案
 		SUBMIT_FIXED_BAD_RECORD : "credential/credentialAction_updateCredential.action",// 提交更改过的bad记录

@@ -1,6 +1,6 @@
 {
 	success : true,
-	total : 1,
+	totalCount : 1,
 	data : [{
 		"id" : 7499,
 		"credentialId" : 41,
