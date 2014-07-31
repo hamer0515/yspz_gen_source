@@ -11,8 +11,9 @@ Ext.define('yspz_gen.view.task.gsum', {
 		var me = this, items = me._items, fields = [], rules = [];
 		for (var i in items.meta) {
 			fields.push({
-						boxLabel : items.meta[i],
+						boxLabel : Ext.util.Format.ellipsis(items.meta[i], 7),
 						name : "fields",
+						boxLabelAttrTpl : "title = \"" + items.meta[i] + "\"",
 						inputValue : i
 					});
 		}

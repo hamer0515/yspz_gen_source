@@ -30,6 +30,7 @@ Ext.define('overrides.Ext', {
 					// async : false,
 					url : url,
 					params : params,
+					_panel : panel,
 					success : function(response, opts) {
 						panel && panel.getEl().isMasked()
 								&& panel.getEl().unmask();
@@ -102,6 +103,8 @@ Ext.define('overrides.Ext', {
 		SUBMIT_BAOBIAO_TASK_READY_OR_NOT : "import_readyOrnot.action",// 提交报表数据源准备情况
 		SUBMIT_BAOBIAO_IMPORT : "import_importData.action",// 提交报表导入操作
 		SUBMIT_BAOBIAO_CALCULATE : "calculate/calc_calculate",// 提交报表计算操作
+		SUBMIT_BAOBIAO_CHECK : "",// 提交报表人工校验操作
+		SUBMIT_BAOBIAO_MAKE : "repo/repo_report.action",// 提交报表报备操作
 		SUBMIT_CREDENTIAL_META : "credential/meta_createCredential.action",// 提交原始凭证元数据
 		SUBMIT_EXPORT_TO_ORACLE : "summary/summary_expSumDetailData2Oracle.action"// 汇总查询结果导出到oracle
 	}

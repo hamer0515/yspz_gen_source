@@ -123,6 +123,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.layout.Center": [],
   "yspz_gen.view.Panel": [],
   "Ext.ux.DataView.Animated": [],
+  "overrides.View": [],
   "yspz_gen.view.bi.BiPanel": [],
   "overrides.DateField": [],
   "Ext.ux.statusbar.StatusBar": [
@@ -396,6 +397,7 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "yspz_gen.view.Panel": [],
   "Ext.ux.DataView.Animated": [],
+  "overrides.View": [],
   "yspz_gen.view.bi.BiPanel": [
     "widget.bipanel"
   ],

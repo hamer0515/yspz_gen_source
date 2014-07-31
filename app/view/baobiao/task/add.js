@@ -29,12 +29,7 @@ Ext.define("yspz_gen.view.baobiao.task.add", {
 								},
 								items : [{
 											xtype : 'datefield',
-											name : 'begin_date',
-											allowBlank : false,
-											width : 180
-										}, {
-											xtype : 'datefield',
-											name : 'end_date',
+											name : 'date',
 											allowBlank : false,
 											width : 180
 										}]
@@ -44,6 +39,7 @@ Ext.define("yspz_gen.view.baobiao.task.add", {
 						handler : function() {
 							var form = this.up("form");
 							if (form.isValid()) {
+								form.getEl().mask("操作中...");
 								form.getForm().submit({
 									success : function(f, action) {
 										Ext.info("任务创建成功", function() {
@@ -54,7 +50,8 @@ Ext.define("yspz_gen.view.baobiao.task.add", {
 										Ext
 												.error("任务创建失败："
 														+ action.result.msg);
-									}
+									},
+									_panel : form
 								});
 							}
 						}

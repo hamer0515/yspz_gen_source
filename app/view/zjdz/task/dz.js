@@ -56,7 +56,10 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 										'0,0.00')
 								+ "</td><td class=\"ice_one\"></td><td class=\"ice_one\"><td class=\"ice_three\"></td></td></tr>"
 								+ "<tr><td rowspan=\""
-								+ (3 + json.benqi.length * 5)
+								+ (8 + (json.benqi.length > 0
+										? json.benqi.length - 1
+										: 0)
+										* 5)
 								+ "\"><div class=\"ice_seven\">对账单实际资金变化</div>"
 								+ "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\">"
 								+ "<tr><td style=\"text-align: right\"><label class=\"ice_five\">交易收款金额</label></td><td style=\"text-align: left\"><input type=\"text\" class=\"ice_six\" disabled=\"disabled\" style=\"background-color: #D8D8D8\"></input></td></tr>"
@@ -75,29 +78,38 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								+ "<tr><td>退回手续费</td><td class=\"ice_two\">"
 								+ Ext.util.Format.number(json.qianqi[3][0],
 										'0,0.00')
-								+ "</td><td class=\"ice_one\"></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>"
-								+ "<tr><td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">本期帐务</td><td style=\"border: 0\"><button type=\"button\">重置</button></td><td style=\"border: 0\"></td></tr>";
-						for (var i in json.benqi) {
-							var bq = json.benqi[i];
-							data += "<tr><td>清算日期"
-									+ bq.clear_date
-									+ "</td><td>本期清算</td><td>本期实际应收/付</td><td>本期长/短款</td><td>本期变化总额</td></tr>"
-									+ "<tr><td>应收银行-应收交易款</td><td class=\"ice_two\">"
-									+ Ext.util.Format.number(bq.data[0],
-											'0,0.00')
-									+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_three\"></td></tr>"
-									+ "<tr><td>应付银行-应付银行手续费</td><td class=\"ice_two\">"
-									+ Ext.util.Format.number(bq.data[1],
-											'0,0.00')
-									+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>"
-									+ "<tr><td>应付银行-应付银行交易款</td><td class=\"ice_two\">"
-									+ Ext.util.Format.number(bq.data[2],
-											'0,0.00')
-									+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_three\"></td></tr>"
-									+ "<tr><td>应收银行-应收银行手续费</td><td class=\"ice_two\">"
-									+ Ext.util.Format.number(bq.data[3],
-											'0,0.00')
-									+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>";
+								+ "</td><td class=\"ice_one\"></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>";
+						if (json.benqi.length > 0) {
+							data += "<tr><td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">本期帐务</td><td style=\"border: 0\"><button type=\"button\">重置</button></td><td style=\"border: 0\"></td></tr>";
+							for (var i in json.benqi) {
+								var bq = json.benqi[i];
+								data += "<tr><td>清算日期"
+										+ bq.clear_date
+										+ "</td><td>本期清算</td><td>本期实际应收/付</td><td>本期长/短款</td><td>本期变化总额</td></tr>"
+										+ "<tr><td>应收银行-应收交易款</td><td class=\"ice_two\">"
+										+ Ext.util.Format.number(bq.data[0],
+												'0,0.00')
+										+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_three\"></td></tr>"
+										+ "<tr><td>应付银行-应付银行手续费</td><td class=\"ice_two\">"
+										+ Ext.util.Format.number(bq.data[1],
+												'0,0.00')
+										+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>"
+										+ "<tr><td>应付银行-应付银行交易款</td><td class=\"ice_two\">"
+										+ Ext.util.Format.number(bq.data[2],
+												'0,0.00')
+										+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_three\"></td></tr>"
+										+ "<tr><td>应收银行-应收银行手续费</td><td class=\"ice_two\">"
+										+ Ext.util.Format.number(bq.data[3],
+												'0,0.00')
+										+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>";
+							}
+						} else {
+							data += "<tr><td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">本期帐务</td><td style=\"border: 0\"><button type=\"button\" disabled=\"disabled\">重置</button></td><td style=\"border: 0\"></td></tr>";
+							data += "<tr><td>清算日期NaN</td><td>本期清算</td><td>本期实际应收/付</td><td>本期长/短款</td><td>本期变化总额</td></tr>"
+									+ "<tr><td>应收银行-应收交易款</td><td class=\"ice_two\">NaN</td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td class=\"ice_three\"></td></tr>"
+									+ "<tr><td>应付银行-应付银行手续费</td><td class=\"ice_two\">NaN</td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>"
+									+ "<tr><td>应付银行-应付银行交易款</td><td class=\"ice_two\">NaN</td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td class=\"ice_three\"></td></tr>"
+									+ "<tr><td>应收银行-应收银行手续费</td><td class=\"ice_two\">NaN</td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>";
 						}
 						return data;
 					},
@@ -128,7 +140,10 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 										'0,0.00')
 								+ "</td><td class=\"ice_one\"></td><td class=\"ice_one\"><td class=\"ice_three\"></td></td></tr>"
 								+ "<tr><td rowspan=\""
-								+ (3 + json.benqi.length * 5)
+								+ (8 + (json.benqi.length > 0
+										? json.benqi.length - 1
+										: 0)
+										* 5)
 								+ "\"><div class=\"ice_seven\">对账单实际资金变化</div>"
 								+ "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\">"
 								+ "<tr><td style=\"text-align: right\"><label class=\"ice_five\">交易收款金额</label></td><td style=\"text-align: left\"><input type=\"text\" class=\"ice_six\" disabled=\"disabled\" style=\"background-color: #D8D8D8\"></input></td></tr>"
@@ -147,29 +162,38 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								+ "<tr><td>退回手续费</td><td class=\"ice_two\">"
 								+ Ext.util.Format.number(json.qianqi[3][0],
 										'0,0.00')
-								+ "</td><td class=\"ice_one\"></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>"
-								+ "<tr><td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">本期帐务</td><td style=\"border: 0\"><button type=\"button\">重置</button></td><td style=\"border: 0\"></td></tr>";
-						for (var i in json.benqi) {
-							var bq = json.benqi[i];
-							data += "<tr><td>清算日期"
-									+ bq.clear_date
-									+ "</td><td>本期清算</td><td>本期实际应收/付</td><td>本期长/短款</td><td>本期变化总额</td></tr>"
-									+ "<tr><td>应付银行-交易出款</td><td class=\"ice_two\">"
-									+ Ext.util.Format.number(bq.data[0],
-											'0,0.00')
-									+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_three\"></td></tr>"
-									+ "<tr><td>应付银行-出款手续费</td><td class=\"ice_two\">"
-									+ Ext.util.Format.number(bq.data[1],
-											'0,0.00')
-									+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>"
-									+ "<tr><td>应收银行-出款退回</td><td class=\"ice_two\">"
-									+ Ext.util.Format.number(bq.data[2],
-											'0,0.00')
-									+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_three\"></td></tr>"
-									+ "<tr><td>应收银行-应收银行手续费</td><td class=\"ice_two\">"
-									+ Ext.util.Format.number(bq.data[3],
-											'0,0.00')
-									+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>";
+								+ "</td><td class=\"ice_one\"></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>";
+						if (json.benqi.length > 0) {
+							data += "<tr><td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">本期帐务</td><td style=\"border: 0\"><button type=\"button\">重置</button></td><td style=\"border: 0\"></td></tr>";
+							for (var i in json.benqi) {
+								var bq = json.benqi[i];
+								data += "<tr><td>清算日期"
+										+ bq.clear_date
+										+ "</td><td>本期清算</td><td>本期实际应收/付</td><td>本期长/短款</td><td>本期变化总额</td></tr>"
+										+ "<tr><td>应付银行-交易出款</td><td class=\"ice_two\">"
+										+ Ext.util.Format.number(bq.data[0],
+												'0,0.00')
+										+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_three\"></td></tr>"
+										+ "<tr><td>应付银行-出款手续费</td><td class=\"ice_two\">"
+										+ Ext.util.Format.number(bq.data[1],
+												'0,0.00')
+										+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>"
+										+ "<tr><td>应收银行-出款退回</td><td class=\"ice_two\">"
+										+ Ext.util.Format.number(bq.data[2],
+												'0,0.00')
+										+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_three\"></td></tr>"
+										+ "<tr><td>应收银行-应收银行手续费</td><td class=\"ice_two\">"
+										+ Ext.util.Format.number(bq.data[3],
+												'0,0.00')
+										+ "</td><td><input type=\"text\" style=\"width: 160px\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>";
+							}
+						} else {
+							data += "<tr><td colspan=\"3\" class=\"ice_four\" style=\"border: 0\">本期帐务</td><td style=\"border: 0\"><button type=\"button\" disabled=\"disabled\">重置</button></td><td style=\"border: 0\"></td></tr>";
+							data += "<tr><td>清算日期NaN</td><td>本期清算</td><td>本期实际应收/付</td><td>本期长/短款</td><td>本期变化总额</td></tr>"
+									+ "<tr><td>应付银行-交易出款</td><td class=\"ice_two\">NaN</td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td class=\"ice_three\"></td></tr>"
+									+ "<tr><td>应付银行-出款手续费</td><td class=\"ice_two\">NaN</td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>"
+									+ "<tr><td>应收银行-出款退回</td><td class=\"ice_two\">NaN</td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td class=\"ice_three\"></td></tr>"
+									+ "<tr><td>应收银行-应收银行手续费</td><td class=\"ice_two\">NaN</td><td><input type=\"text\" style=\"width: 160px\" disabled=\"disabled\"></input></td><td class=\"ice_one\"></td><td class=\"ice_three\"></td></tr>";
 						}
 						return data;
 					},
@@ -239,10 +263,10 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 								+ Ext.util.Format.number(
 										parseFloat(json.qichu), '0,0.00')
 								+ "\"></td></tr>"
-								+ "<tr><td style=\"text-align: left\"><label>银行实际资金变化总额:</label></td><td style=\"text-align: left\"><input type=\"text\" style=\"width: 160px;background-color: yellow\" disabled=\"disabled\" value=\"0.00\"></td>"
-								+ "<td style=\"text-align: left\"><label>帐务变化总额:</label></td><td style=\"text-align: left\"><input type=\"text\" style=\"width: 160px;background-color: yellow\" disabled=\"disabled\"></td></tr>"
-								+ "<tr><td style=\"text-align: left\"><label>银行实际期末余额:</label></td><td style=\"text-align: left\"><input type=\"text\" style=\"width: 160px\"></td>"
-								+ "<td style=\"text-align: left\"><label>账户期末余额:</label></td><td style=\"text-align: left\"><input type=\"text\" style=\"width: 160px;background-color: yellow\" disabled=\"disabled\"></td></tr>"
+								+ "<tr><td style=\"text-align: left\"><label>银行实际资金变化总额:</label></td><td style=\"text-align: left\"><input type=\"text\" name=\"total_real_change_of_bank\" style=\"width: 160px;background-color: yellow\" disabled=\"disabled\" value=\"0.00\"></td>"
+								+ "<td style=\"text-align: left\"><label>帐务变化总额:</label></td><td style=\"text-align: left\"><input type=\"text\" name=\"total_real_change\" style=\"width: 160px;background-color: yellow\" disabled=\"disabled\"></td></tr>"
+								+ "<tr><td style=\"text-align: left\"><label>银行实际期末余额:</label></td><td style=\"text-align: left\"><input type=\"text\" name=\"term_end_of_bank\" style=\"width: 160px\"></td>"
+								+ "<td style=\"text-align: left\"><label>账户期末余额:</label></td><td style=\"text-align: left\"><input type=\"text\" name=\"term_end\" style=\"width: 160px;background-color: yellow\" disabled=\"disabled\"></td></tr>"
 								+ "</table>"
 								+ "</td></tr>"
 								+ "<tfoot><tr><td colspan=\"5\" style=\"border: 0\"></td><td style=\"border: 0\"><button type=\"button\">确认提交</button></td></tr></tfoot>"
@@ -533,21 +557,30 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 							});
 						} else if (v.innerHTML === "确认提交") {
 							el.on("click", function() {
-								Ext.Msg.confirm('警告', "你确定要提交?", function(
-										optional) {
-									if (optional == 'yes') {
-										Ext.asyncRequest(
-												Ext.urls.SUBMIT_ZJDZ_TASK_DZ, {
-													adjust : Ext
-															.encode(view._data),
-													data : Ext.encode(view
-															.genInputData())
-												}, function() {
-													me.up("panel").close();
-												});
+								if (validate()) {
+									Ext.Msg.confirm('警告', "你确定要提交?", function(
+											optional) {
+										if (optional == 'yes') {
+											Ext
+													.asyncRequest(
+															Ext.urls.SUBMIT_ZJDZ_TASK_DZ,
+															{
+																adjust : Ext
+																		.encode(view._data),
+																data : Ext
+																		.encode(view
+																				.genInputData())
+															},
+															function() {
+																me
+																		.up("panel")
+																		.close();
+															}, undefined,
+															undefined, me);
 
-									}
-								});
+										}
+									});
+								}
 
 							});
 						}
@@ -555,6 +588,29 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 				}
 			}
 		});
+		var validate = function() {
+			var total_real_change_of_bank = parseFloat(new Ext.dom.Element(view
+					.getEl().query("input[name=\"total_real_change_of_bank\"]")[0])
+					.getValue().replace(/,/g, '').trim());
+			var total_real_change = parseFloat(new Ext.dom.Element(view.getEl()
+					.query("input[name=\"total_real_change\"]")[0]).getValue()
+					.replace(/,/g, '').trim());
+			if (total_real_change_of_bank !== total_real_change) {
+				Ext.info("银行实际资金变化总额 与 帐务变化总额 不符，请修改！");
+				return false;
+			}
+			var term_end_of_bank = parseFloat(new Ext.dom.Element(view.getEl()
+					.query("input[name=\"term_end_of_bank\"]")[0]).getValue()
+					.replace(/,/g, '').trim());
+			var term_end = parseFloat(new Ext.dom.Element(view.getEl()
+					.query("input[name=\"term_end\"]")[0]).getValue().replace(
+					/,/g, '').trim());
+			if (term_end_of_bank !== term_end) {
+				Ext.info("银行实际期末余额 与 账户期末余额 不符，请修改！");
+				return false;
+			}
+			return true;
+		}
 		var calBenSum4Tid = function(el, data) {
 			var td = el;
 			var tr = el.parent("tr").next("tr").next("tr");

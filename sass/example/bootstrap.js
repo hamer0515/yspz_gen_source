@@ -128,9 +128,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.GroupTabRenderer": [],
   "Ext.ux.FieldReplicator": [],
   "yspz_gen.view.zjdz.task.reset": [],
+  "yspz_gen.view.task.list": [],
   "Ext.locale.zh_CN.form.field.Base": [],
   "Ext.ux.grid.filter.ListFilter": [],
-  "yspz_gen.view.task.list": [],
   "Ext.locale.zh_CN.grid.plugin.DragDrop": [],
   "yspz_gen.view.component.MyStore": [],
   "yspz_gen.view.baobiao.task.edit": [],
@@ -155,6 +155,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.layout.Center": [],
   "yspz_gen.view.Panel": [],
   "Ext.ux.DataView.Animated": [],
+  "overrides.View": [],
   "yspz_gen.view.bi.BiPanel": [],
   "overrides.DateField": [],
   "Ext.ux.statusbar.StatusBar": [
@@ -383,12 +384,12 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.zjdz.task.reset": [
     "widget.zjdz_task_reset"
   ],
+  "yspz_gen.view.task.list": [
+    "widget.task_list"
+  ],
   "Ext.locale.zh_CN.form.field.Base": [],
   "Ext.ux.grid.filter.ListFilter": [
     "gridfilter.list"
-  ],
-  "yspz_gen.view.task.list": [
-    "widget.task_list"
   ],
   "Ext.locale.zh_CN.grid.plugin.DragDrop": [],
   "yspz_gen.view.component.MyStore": [
@@ -446,6 +447,7 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "yspz_gen.view.Panel": [],
   "Ext.ux.DataView.Animated": [],
+  "overrides.View": [],
   "yspz_gen.view.bi.BiPanel": [
     "widget.bipanel"
   ],

@@ -27,6 +27,12 @@ Ext.define('overrides.Connection', {
 				if (success) {
 					response = me.createResponse(request);
 					me.fireEvent('requestcomplete', me, response, options);
+					// 表单提交完成时去掉遮罩层
+					if (options.scope && options.scope._panel) {
+						var panel = options.scope._panel;
+						panel && panel.getEl().isMasked()
+								&& panel.getEl().unmask();
+					}
 					if (Ext.decode(response.responseText).success === 'forbidden') {
 						Ext.MessageBox.show({
 									title : '警告',
@@ -34,7 +40,10 @@ Ext.define('overrides.Connection', {
 									buttons : Ext.Msg.YES,
 									icon : Ext.Msg.WARNING
 								});
-					} else if (Ext.decode(response.responseText).success === false) {
+					} 
+					//根据options中是否有action来判断是否是数据集load
+					else if (options.action
+							&& Ext.decode(response.responseText).success === false) {
 						Ext.error("访问url:" + options.url + ",原因:"
 								+ Ext.decode(response.responseText).msg);
 					} else {

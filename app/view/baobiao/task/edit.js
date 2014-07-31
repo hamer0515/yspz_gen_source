@@ -16,27 +16,6 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 					dataIndex : 'b_acct',
 					flex : 1
 				}, {
-					text : "数据源准备情况",
-					dataIndex : 'ready_or_no',
-					renderer : function(value) {
-						return ['未查询', '准备好了', '未准备好'][parseInt(value)];
-					},
-					flex : 1
-				}, {
-					text : "导入",
-					dataIndex : 'import_status',
-					renderer : function(value) {
-						return ['未导入', '导入成功', '导入失败'][parseInt(value)];
-					},
-					flex : 1
-				}, {
-					text : "计算",
-					dataIndex : 'cal_status',
-					renderer : function(value) {
-						return ['未计算', '计算成功', '计算失败'][parseInt(value)];
-					},
-					flex : 1
-				}, {
 					text : "人工校验",
 					dataIndex : 'check_status',
 					renderer : function(value) {
@@ -44,26 +23,15 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 					},
 					flex : 1
 				}, {
-					text : "核对",
-					dataIndex : 'match_status',
-					renderer : function(value) {
-						return ['未核对', '核对成功', '核对失败'][parseInt(value)];
-					},
-					flex : 1
-				}, {
 					text : "报备",
-					dataIndex : 'report_status',
+					dataIndex : 'make_status',
 					renderer : function(value) {
 						return ['未报备', '报备成功', '报备失败'][parseInt(value)];
 					},
 					flex : 1
-				}], fields = ['id', 'b_name', 'b_acct', 'ready_or_no',
-				'import_status', 'cal_status', 'check_status', 'match_status',
-				'report_status'];
+				}], fields = ['id', 'b_name', 'b_acct', 'check_status',
+				'make_status'];
 		Ext.apply(me, {
-			storeConfig : {
-				autoLoad : true
-			},
 			formConfig : {
 				_reloadData : function() {
 					var form = this, values = this.getValues();
@@ -74,9 +42,23 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 												limit : 50
 											}), undefined, undefined, function(
 									response) {
-								var res = Ext.decode(response.responseText);
-								form.getForm().setValues(res.data[0]);
-							});
+								var res = Ext.decode(response.responseText), data = res.data[0];
+								form.getForm().setValues(data);
+								Ext.ComponentQuery.query("button", form)
+										.forEach(function(v) {
+													v.hide()
+												});
+								if (parseInt(data.import_status) !== 1) {
+									form.down("button[text=\"导入\"]").show();
+								} else if (parseInt(data.cal_status) !== 1) {
+									form.down("button[text=\"计算\"]").show();
+								} else if (parseInt(data.check_status) !== 1) {
+									form.down("button[text=\"人工校验\"]").show();
+								} else if (parseInt(data.make_status) !== 1) {
+									form.down("button[text=\"导入\"]").show();
+									form.down("button[text=\"计算\"]").show();
+								}
+							}, undefined, form.getEl() ? form : undefined);
 					form.up("panel").down("grid").store.reload();
 				}
 			},
@@ -84,7 +66,6 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 			_fields : fields,
 			_items : [{
 						xtype : "fieldcontainer",
-						fieldLabel : "交易日期",
 						layout : {
 							type : 'hbox',
 							defaultMargins : {
@@ -92,44 +73,21 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 							}
 						},
 						items : [{
+									fieldLabel : "交易日期",
 									xtype : 'datefield',
-									name : 'begin_date',
+									name : 'date',
 									readOnly : true,
-									width : 180
+									flex : 1
 								}, {
-									xtype : 'datefield',
-									name : 'end_date',
-									readOnly : true,
-									width : 180
-								}]
-					}, {
-						xtype : "fieldcontainer",
-						fieldLabel : "任务ID",
-						layout : {
-							type : 'hbox',
-							defaultMargins : {
-								right : 10
-							}
-						},
-						items : [{
+									fieldLabel : "任务ID",
 									xtype : 'numberfield',
 									name : 'id',
-									readOnly : true
-								}, {
-									xtype : 'displayfield',
-									name : "file_type",
-									renderer : function(value) {
-										var types = ["资金对账结果", "收入表",
-												"实际银行余额表", "初值表"], r = [];
-										value.split(',').forEach(function(v) {
-													r.push(types[parseInt(v)
-															- 1]);
-												});
-										return "数据来源：" + r.join("、");
-									}
+									readOnly : true,
+									flex : 1
 								}]
 					}, {
 						xtype : "fieldcontainer",
+						height : 22,
 						layout : {
 							type : 'hbox',
 							defaultMargins : {
@@ -138,120 +96,84 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 						},
 						items : [{
 							xtype : 'button',
-							text : "数据源准备情况",
-							handler : function(btn) {
-								var view = Ext.widget("baobiao_task_source", {
-											_form : btn.up("form")
-										}), _record = btn
-										.up("baobiao_task_edit")._record;
-								view.down("form").loadRecord(_record);
-								view.down("checkboxgroup").setValue({
-									file_type : _record.data.file_type
-											.split(',')
-								});
-								view.down("hiddenfield")
-										.setValue(_record.data.id);
-							},
-							width : 100
-						}, {
-							xtype : 'button',
 							text : "导入",
+							hidden : true,
+							hideMode : "visibility",
 							handler : function(btn) {
 								var rec = btn.up("baobiao_task_edit")._record;
 								Ext.asyncRequest(
 										Ext.urls.SUBMIT_BAOBIAO_IMPORT, {
-											id : rec.data.id
+											id : rec.data.id,
+											date : rec.data.date
 										}, function() {
 											me.down("form")._reloadData.call(me
 													.down("form"));
 										}, function() {
 											me.down("form")._reloadData.call(me
 													.down("form"));
-										});
+										}, undefined, me.down("form"));
 							},
 							width : 100
 						}, {
 							xtype : 'button',
 							text : "计算",
+							hidden : true,
+							hideMode : "visibility",
 							width : 100,
 							handler : function(btn) {
 								var rec = btn.up("baobiao_task_edit")._record;
 								Ext.asyncRequest(
 										Ext.urls.SUBMIT_BAOBIAO_CALCULATE, {
 											id : rec.data.id,
-											start : rec.data.begin_date,
-											end : rec.data.end_date
+											date : rec.data.date
 										}, function() {
 											me.down("form")._reloadData.call(me
 													.down("form"));
 										}, function() {
 											me.down("form")._reloadData.call(me
 													.down("form"));
-										});
+										}, undefined, me.down("form"));
 							}
 						}, {
 							xtype : 'button',
 							text : "人工校验",
-							width : 100
-						}, {
-							xtype : 'button',
-							text : "核对",
-							width : 100
+							hidden : true,
+							hideMode : "visibility",
+							width : 100,
+							handler : function(btn) {
+								var rec = btn.up("baobiao_task_edit")._record;
+								Ext.asyncRequest(Ext.urls.SUBMIT_BAOBIAO_CHECK,
+										{
+											id : rec.data.id,
+											date : rec.data.date
+										}, function() {
+											me.down("form")._reloadData.call(me
+													.down("form"));
+										}, function() {
+											me.down("form")._reloadData.call(me
+													.down("form"));
+										}, undefined, me.down("form"));
+							}
 						}, {
 							xtype : 'button',
 							text : "报备",
-							width : 100
-						}]
-					}, {
-						xtype : "fieldcontainer",
-						layout : {
-							type : 'hbox',
-							defaultMargins : {
-								right : 10
+							hidden : true,
+							hideMode : "visibility",
+							width : 100,
+							handler : function(btn) {
+								var rec = btn.up("baobiao_task_edit")._record;
+								Ext.asyncRequest(Ext.urls.SUBMIT_BAOBIAO_MAKE,
+										{
+											id : rec.data.id,
+											date : rec.data.date
+										}, function() {
+											me.down("form")._reloadData.call(me
+													.down("form"));
+										}, function() {
+											me.down("form")._reloadData.call(me
+													.down("form"));
+										}, undefined, me.down("form"));
 							}
-						},
-						items : [{
-							xtype : 'displayfield',
-							name : 'ready_or_no',
-							renderer : function(value) {
-								return ['未查询', '准备好了', '未准备好'][parseInt(value)];
-							},
-							width : 100
-						}, {
-							xtype : 'displayfield',
-							name : "import_status",
-							renderer : function(value) {
-								return ['未导入', '导入成功', '导入失败'][parseInt(value)];
-							},
-							width : 100
-						}, {
-							xtype : 'displayfield',
-							name : 'cal_status',
-							renderer : function(value) {
-								return ['未计算', '计算成功', '计算失败'][parseInt(value)];
-							},
-							width : 100
-						}, {
-							xtype : 'displayfield',
-							name : 'check_status',
-							renderer : function(value) {
-								return ['未人工校验', '人工校验成功', '人工校验失败'][parseInt(value)];
-							},
-							width : 100
-						}, {
-							xtype : 'displayfield',
-							name : 'match_status',
-							renderer : function(value) {
-								return ['未核对', '核对成功', '核对失败'][parseInt(value)];
-							},
-							width : 100
-						}, {
-							xtype : 'displayfield',
-							name : 'report_status',
-							renderer : function(value) {
-								return ['未报备', '报备成功', '报备失败'][parseInt(value)];
-							},
-							width : 100
 						}]
 					}],
 			_gcolumns : gcolumns,
@@ -262,12 +184,13 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 				this.down("grid").store.proxy.extraParams = {
 					id : this._record.data.id
 				};
-				if (this._readOnly) {
-					this.down("form").query("button[text!=\"人工校验\"]").forEach(
-							function(btn) {
-								btn.setDisabled(true);
-							});
-				}
+				me.down("form")._reloadData.call(me.down("form"));
+				// if (this._readOnly) {
+				// this.down("form").query("button[text!=\"人工校验\"]")
+				// .forEach(function(btn) {
+				// btn.setDisabled(true);
+				// });
+				// }
 			}
 		})
 		me.callParent(arguments);

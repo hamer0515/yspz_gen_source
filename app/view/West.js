@@ -112,20 +112,23 @@ Ext.define('yspz_gen.view.West', {
 												text : "报表任务管理",
 												expanded : true,
 												children : [{
-															text : "新建报表任务",
+															text : "查询报表任务",
 															url : "baobiao_task_list",
 															leaf : true
-														}, {
-															text : "查询报表任务",
-															// url :
-															// "zjdz_task_reset",
-															leaf : true
-														}, {
-															text : "执行报表任务",
-															// url :
-															// "zjdz_task_list",
-															leaf : true
-														}, {
+														},
+														// , {
+														// text : "查询报表任务",
+														// // url :
+														// // "zjdz_task_reset",
+														// leaf : true
+														// },
+														// {
+														// text : "执行报表任务",
+														// // url :
+														// // "zjdz_task_list",
+														// leaf : true
+														// },
+														{
 															text : "发送报表任务",
 															// url :
 															// "zjdz_task_list",
