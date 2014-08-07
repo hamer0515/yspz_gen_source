@@ -99,7 +99,6 @@ Ext.define('yspz_gen.view.task.list', {
 															+ res.msg);
 												}
 											}, me);
-
 								}
 							});
 						}

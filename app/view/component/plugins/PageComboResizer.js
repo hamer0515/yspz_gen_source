@@ -22,6 +22,13 @@ Ext.define('yspz_gen.view.component.plugins.PageComboResizer', {
 							listeners : {
 								select : function(c, r, i) {
 									pagingToolbar.store.pageSize = ps[r[0].index];
+									var pageSize = pagingToolbar.store.pageSize;
+									var totalCount = pagingToolbar.store.totalCount
+											|| 0;
+									var currentPage = pagingToolbar.store.currentPage;
+									if (currentPage * pageSize > totalCount) {
+										pagingToolbar.store.currentPage = 1;
+									}
 								}
 							}
 						});

@@ -19,8 +19,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.grid.TransformGrid": [],
   "yspz_gen.view.bi.RuleInputPanel": [],
   "yspz_gen.view.zjdz.task.gen": [],
-  "yspz_gen.view.bi.BiBrowser": [],
   "yspz_gen.view.component.Books": [],
+  "yspz_gen.view.bi.BiBrowser": [],
   "yspz_gen.view.baobiao.task.list": [],
   "yspz_gen.view.bi.FeeInputPanel": [],
   "yspz_gen.view.component.Validation": [],
@@ -46,15 +46,15 @@ Ext.ClassManager.addNameAlternateMappings({
   "overrides.TabBar": [],
   "yspz_gen.view.task.badlist": [],
   "Ext.ux.PreviewPlugin": [],
-  "yspz_gen.view.baobiao.task.add": [],
   "yspz_gen.view.task.gen": [],
-  "Ext.ux.ajax.SimXhr": [],
+  "yspz_gen.view.baobiao.task.add": [],
   "yspz_gen.view.yspz.edit": [],
+  "Ext.ux.ajax.SimXhr": [],
   "Ext.ux.event.RecorderManager": [],
   "yspz_gen.view.yspz_sum.query": [],
   "Ext.ux.ProgressBarPager": [],
-  "yspz_gen.view.bi.List": [],
   "Ext.ux.CellDragDrop": [],
+  "yspz_gen.view.bi.List": [],
   "yspz_gen.store.CBase": [],
   "Ext.ux.ajax.Simlet": [],
   "Ext.ux.SlidingPager": [],
@@ -83,8 +83,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.dd.CellFieldDropZone": [],
   "Ext.ux.LiveSearchGridPanel": [],
   "Ext.ux.grid.filter.DateFilter": [],
-  "Ext.ux.TreePicker": [],
   "yspz_gen.view.yspz.input": [],
+  "Ext.ux.TreePicker": [],
   "yspz_gen.view.North": [],
   "yspz_gen.view.component.yspz": [],
   "yspz_gen.view.Center": [],
@@ -98,8 +98,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.GroupTabRenderer": [],
   "Ext.ux.FieldReplicator": [],
   "yspz_gen.view.zjdz.task.reset": [],
-  "Ext.ux.grid.filter.ListFilter": [],
   "yspz_gen.view.task.list": [],
+  "Ext.ux.grid.filter.ListFilter": [],
   "yspz_gen.view.component.MyStore": [],
   "yspz_gen.view.baobiao.task.edit": [],
   "yspz_gen.view.zjdz.task.dz": [],
@@ -115,10 +115,10 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.component.pay_cycle": [],
   "Ext.ux.DataView.LabelEditor": [],
   "Ext.ux.GroupTabPanel": [],
-  "yspz_gen.view.component.rule": [],
   "Ext.ux.grid.filter.StringFilter": [],
-  "Ext.ux.statusbar.ValidationStatus": [],
+  "yspz_gen.view.component.rule": [],
   "yspz_gen.view.yspz.list": [],
+  "Ext.ux.statusbar.ValidationStatus": [],
   "yspz_gen.view.component.plugins.PageComboResizer": [],
   "Ext.ux.layout.Center": [],
   "yspz_gen.view.Panel": [],
@@ -170,11 +170,11 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.zjdz.task.gen": [
     "widget.zjdz_task_gen"
   ],
-  "yspz_gen.view.bi.BiBrowser": [
-    "widget.bibrowser"
-  ],
   "yspz_gen.view.component.Books": [
     "widget.books"
+  ],
+  "yspz_gen.view.bi.BiBrowser": [
+    "widget.bibrowser"
   ],
   "yspz_gen.view.baobiao.task.list": [
     "widget.baobiao_task_list"
@@ -228,16 +228,16 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.PreviewPlugin": [
     "plugin.preview"
   ],
-  "yspz_gen.view.baobiao.task.add": [
-    "widget.baobiao_task_add"
-  ],
   "yspz_gen.view.task.gen": [
     "widget.task_gen"
   ],
-  "Ext.ux.ajax.SimXhr": [],
+  "yspz_gen.view.baobiao.task.add": [
+    "widget.baobiao_task_add"
+  ],
   "yspz_gen.view.yspz.edit": [
     "widget.yspz_edit"
   ],
+  "Ext.ux.ajax.SimXhr": [],
   "Ext.ux.event.RecorderManager": [
     "widget.eventrecordermanager"
   ],
@@ -245,11 +245,11 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.sum_query"
   ],
   "Ext.ux.ProgressBarPager": [],
-  "yspz_gen.view.bi.List": [
-    "widget.bi_list"
-  ],
   "Ext.ux.CellDragDrop": [
     "plugin.celldragdrop"
+  ],
+  "yspz_gen.view.bi.List": [
+    "widget.bi_list"
   ],
   "yspz_gen.store.CBase": [],
   "Ext.ux.ajax.Simlet": [
@@ -305,11 +305,11 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.grid.filter.DateFilter": [
     "gridfilter.date"
   ],
-  "Ext.ux.TreePicker": [
-    "widget.treepicker"
-  ],
   "yspz_gen.view.yspz.input": [
     "widget.yspz_input"
+  ],
+  "Ext.ux.TreePicker": [
+    "widget.treepicker"
   ],
   "yspz_gen.view.North": [
     "widget.north"
@@ -336,11 +336,11 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.zjdz.task.reset": [
     "widget.zjdz_task_reset"
   ],
-  "Ext.ux.grid.filter.ListFilter": [
-    "gridfilter.list"
-  ],
   "yspz_gen.view.task.list": [
     "widget.task_list"
+  ],
+  "Ext.ux.grid.filter.ListFilter": [
+    "gridfilter.list"
   ],
   "yspz_gen.view.component.MyStore": [
     "widget.mystore"
@@ -381,16 +381,16 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.GroupTabPanel": [
     "widget.grouptabpanel"
   ],
-  "yspz_gen.view.component.rule": [
-    "widget.rule"
-  ],
   "Ext.ux.grid.filter.StringFilter": [
     "gridfilter.string"
   ],
-  "Ext.ux.statusbar.ValidationStatus": [],
+  "yspz_gen.view.component.rule": [
+    "widget.rule"
+  ],
   "yspz_gen.view.yspz.list": [
     "widget.yspz_list"
   ],
+  "Ext.ux.statusbar.ValidationStatus": [],
   "yspz_gen.view.component.plugins.PageComboResizer": [],
   "Ext.ux.layout.Center": [
     "layout.ux.center"

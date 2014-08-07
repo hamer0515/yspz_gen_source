@@ -12,7 +12,7 @@ Ext.define('yspz_gen.view.zjdz.task.dz', {
 				'<tr align="center"  >',
 				'<td colspan="1">资金对账日期： {zjdz_date}</td>',
 				'<td colspan="3">{opening_bank}:{b_acct}</td>',
-				'<td colspan="2">银行账户标号：{bank_code}</td></tr>',
+				'<td colspan="2">银行账户编号：{bank_code}</td></tr>',
 				'{[this.gentrs(values)]}', '</table>', '</tpl>', {
 					gentrs : function(json) {
 						var data = "";

@@ -186,7 +186,7 @@ Ext.define('yspz_gen.view.yspz.list', {
 						}
 					},
 					remove : function(store) {
-						if (store.getCount == 0) {
+						if (store.getCount() === 0) {
 							me.down("grid").down("#submit").setDisabled(true);
 						}
 					}

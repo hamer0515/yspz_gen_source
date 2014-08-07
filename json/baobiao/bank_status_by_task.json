@@ -7,13 +7,13 @@
 				"b_name" : "中国工商银行",
 				"b_acct" : "0200041719024555158             ",
 				"check_status" : "0",
-				"make_status" : "0"
+				"repo_status" : "0"
 			}, {
 				"id" : 1200,
 				"task_id" : 22,
 				"b_name" : "中国工商银行",
 				"b_acct" : "0200041719200056430             ",
 				"check_status" : "0",
-				"make_status" : "0"
+				"repo_status" : "0"
 			}]
 }

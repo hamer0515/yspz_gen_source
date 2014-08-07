@@ -15,22 +15,25 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 					text : "备付金银行账号",
 					dataIndex : 'b_acct',
 					flex : 1
-				}, {
-					text : "人工校验",
-					dataIndex : 'check_status',
-					renderer : function(value) {
-						return ['未人工校验', '人工校验成功', '人工校验失败'][parseInt(value)];
-					},
-					flex : 1
-				}, {
+				},
+				// {
+				// text : "人工校验",
+				// dataIndex : 'check_status',
+				// renderer : function(value) {
+				// return ['未人工校验', '人工校验成功', '人工校验失败'][parseInt(value)];
+				// },
+				// flex : 1
+				// },
+				{
 					text : "报备",
-					dataIndex : 'make_status',
+					dataIndex : 'repo_status',
 					renderer : function(value) {
 						return ['未报备', '报备成功', '报备失败'][parseInt(value)];
 					},
 					flex : 1
-				}], fields = ['id', 'b_name', 'b_acct', 'check_status',
-				'make_status'];
+				}], fields = ['id', 'b_name', 'b_acct',
+				// 'check_status',
+				'repo_status'];
 		Ext.apply(me, {
 			formConfig : {
 				_reloadData : function() {
@@ -56,7 +59,7 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 									form.down("button[text=\"人工校验\"]").show();
 								} else if (parseInt(data.make_status) !== 1) {
 									form.down("button[text=\"导入\"]").show();
-									form.down("button[text=\"计算\"]").show();
+									form.down("button[text=\"准备报备\"]").show();
 								}
 							}, undefined, form.getEl() ? form : undefined);
 					form.up("panel").down("grid").store.reload();
@@ -146,17 +149,102 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 										{
 											id : rec.data.id,
 											date : rec.data.date
-										}, function() {
-											me.down("form")._reloadData.call(me
-													.down("form"));
-										}, function() {
-											me.down("form")._reloadData.call(me
-													.down("form"));
-										}, undefined, me.down("form"));
+										}, undefined, undefined
+										// function() {
+										// me.down("form")._reloadData.call(me
+										// .down("form"));
+										// }
+										, function(response) {
+											var res = Ext
+													.decode(response.responseText), msg = "请求提交成功";
+											if (res.success) {
+												if (Ext.isString(res.msg)
+														|| res.msg.length === 0) {
+													Ext
+															.info(
+																	msg
+																			+ (Ext
+																					.isString(res.msg)
+																			? ":"
+																					+ res.msg
+																			: ''),
+																	function() {
+																		me
+																				.down("form")._reloadData
+																				.call(me
+																						.down("form"));
+																	});
+													return;
+												}
+											} else {
+												msg = "请求提交失败";
+											}
+											Ext.widget('window', {
+												width : 600,
+												height : 400,
+												layout : 'fit',
+												closable : false,
+												resizable : false,
+												modal : true,
+												autoShow : true,
+												title : msg,
+												items : {
+													xtype : 'form',
+													bodyPadding : 5,
+													layout : 'anchor',
+													// overflowY : "scroll",
+													defaults : {
+														anchor : '100%'
+													},
+													items : Ext.create(
+															'Ext.grid.Panel', {
+																store : Ext
+																		.create(
+																				'Ext.data.Store',
+																				{
+																					fields : [
+																							'account',
+																							'rule',
+																							'rerule',
+																							'level'],
+																					data : res.msg
+																				}),
+																columns : [{
+																	text : '帐号',
+																	dataIndex : 'account',
+																	flex : 1
+																}, {
+																	text : '原规则',
+																	dataIndex : 'rule',
+																	flex : 1
+																}, {
+																	text : '替换后规则',
+																	dataIndex : 'rerule',
+																	flex : 1
+																}, {
+																	text : '错误级别',
+																	dataIndex : 'level',
+																	flex : 1
+																}],
+																height : 327
+															}),
+													buttons : [{
+														text : '确定',
+														handler : function() {
+															this.up('window')
+																	.close();
+															me.down("form")._reloadData
+																	.call(me
+																			.down("form"));
+														}
+													}]
+												}
+											});
+										}, me.down("form"));
 							}
 						}, {
 							xtype : 'button',
-							text : "报备",
+							text : "准备报备",
 							hidden : true,
 							hideMode : "visibility",
 							width : 100,

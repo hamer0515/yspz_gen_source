@@ -29,6 +29,14 @@ Ext.define('yspz_gen.view.zjdz.task.gen', {
 				}], fields = ['b_acct', 'opening_bank', 'b_name', 'bank_code',
 				'acct_status'];
 		Ext.apply(me, {
+			formConfig : {
+				tools : [{
+							type : 'refresh',
+							handler : function(event, toolEl, panelHeader) {
+								getLastDate();
+							}
+						}]
+			},
 			submitHandler : function() {
 				me.down("grid").store.loadPage(1);
 			},
@@ -144,8 +152,7 @@ Ext.define('yspz_gen.view.zjdz.task.gen', {
 				}
 			}
 		});
-		me.callParent(arguments);
-		me.down("form").on('afterlayout', function() {
+		var getLastDate = function() {
 			Ext.asyncRequest(Ext.urls.GET_LAST_ZJDZ_DATE, {}, undefined,
 					undefined, function(response) {
 						var res = Ext.decode(response.responseText), field = me
@@ -170,10 +177,12 @@ Ext.define('yspz_gen.view.zjdz.task.gen', {
 							Ext.error('获取对账任务最近生成日期失败:' + res.msg);
 						}
 					}, me.down("form"));
-				// me.down("form").suspendEvent("afterlayout");
-		}, me.down("form"), {
-			single : true
-		});
+			// me.down("form").suspendEvent("afterlayout");
+		};
+		me.callParent(arguments);
+		me.down("form").on('afterlayout', getLastDate, me.down("form"), {
+					single : true
+				});
 		// me.down("button[text=\"查询\"]").fireHandler();
 	}
 });

@@ -90,11 +90,7 @@ Ext.define('yspz_gen.view.zjdz.task.list', {
 									xtype : "bfj_acct",
 									flex : 1
 										// width : 516
-									}, {
-									xtype : "hidden",
-									name : "dz_status",
-									value : 2
-								}]
+									}]
 							}, {
 								fieldLabel : "资金对账日期",
 								xtype : 'datefield',

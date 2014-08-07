@@ -32,8 +32,8 @@ Ext.define('overrides.Ext', {
 					params : params,
 					_panel : panel,
 					success : function(response, opts) {
-						panel && panel.getEl().isMasked()
-								&& panel.getEl().unmask();
+						// panel && panel.getEl().isMasked()
+						// && panel.getEl().unmask();
 						if (success) {
 							success.call(success, response, opts);
 						} else {
@@ -45,10 +45,16 @@ Ext.define('overrides.Ext', {
 							}
 						}
 					},
-					failure : function() {
+					// failure : function() {
+					// panel && panel.getEl().isMasked()
+					// && panel.getEl().unmask();
+					// },
+					callback : function() {
 						panel && panel.getEl().isMasked()
 								&& panel.getEl().unmask();
-					}
+					},
+					scope : panel,
+					timeout : 14400000
 				});
 	},
 	info : function(msg, callback) {
@@ -60,9 +66,18 @@ Ext.define('overrides.Ext', {
 					fn : callback
 				});
 	},
-	error : function(msg, callback) {
+	warn : function(msg, callback) {
 		Ext.Msg.show({
 					title : "警告",
+					msg : msg,
+					buttons : Ext.Msg.YES,
+					icon : Ext.Msg.WARNING,
+					fn : callback
+				});
+	},
+	error : function(msg, callback) {
+		Ext.Msg.show({
+					title : "错误",
 					msg : msg,
 					buttons : Ext.Msg.YES,
 					icon : Ext.Msg.ERROR,
@@ -103,7 +118,7 @@ Ext.define('overrides.Ext', {
 		SUBMIT_BAOBIAO_TASK_READY_OR_NOT : "import_readyOrnot.action",// 提交报表数据源准备情况
 		SUBMIT_BAOBIAO_IMPORT : "import_importData.action",// 提交报表导入操作
 		SUBMIT_BAOBIAO_CALCULATE : "calculate/calc_calculate",// 提交报表计算操作
-		SUBMIT_BAOBIAO_CHECK : "",// 提交报表人工校验操作
+		SUBMIT_BAOBIAO_CHECK : "check/check_check.action",// 提交报表人工校验操作
 		SUBMIT_BAOBIAO_MAKE : "repo/repo_report.action",// 提交报表报备操作
 		SUBMIT_CREDENTIAL_META : "credential/meta_createCredential.action",// 提交原始凭证元数据
 		SUBMIT_EXPORT_TO_ORACLE : "summary/summary_expSumDetailData2Oracle.action"// 汇总查询结果导出到oracle

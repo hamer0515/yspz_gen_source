@@ -11,7 +11,7 @@ Ext.define('yspz_gen.view.task.gsum', {
 		var me = this, items = me._items, fields = [], rules = [];
 		for (var i in items.meta) {
 			fields.push({
-						boxLabel : Ext.util.Format.ellipsis(items.meta[i], 7),
+						boxLabel : Ext.util.Format.ellipsis(items.meta[i], 14),
 						name : "fields",
 						boxLabelAttrTpl : "title = \"" + items.meta[i] + "\"",
 						inputValue : i
@@ -69,6 +69,8 @@ Ext.define('yspz_gen.view.task.gsum', {
 								focus : function(i, The, eOpts) {
 									Ext.widget('window', {
 										_textarea : i,
+										width : 600,
+										height : 160,
 										layout : 'fit',
 										closable : false,
 										resizable : false,
@@ -78,12 +80,13 @@ Ext.define('yspz_gen.view.task.gsum', {
 											xtype : 'form',
 											bodyPadding : 5,
 											layout : 'anchor',
+											overflowY : "scroll",
 											defaults : {
 												anchor : '100%'
 											},
 											items : {
 												xtype : 'checkboxgroup',
-												columns : 6,
+												columns : 3,
 												vertical : true,
 												items : fields
 											},
@@ -136,6 +139,8 @@ Ext.define('yspz_gen.view.task.gsum', {
 								focus : function(i, The, eOpts) {
 									Ext.widget('window', {
 										_textarea : i,
+										width : 600,
+										height : 160,
 										layout : 'fit',
 										closable : false,
 										resizable : false,
@@ -145,12 +150,13 @@ Ext.define('yspz_gen.view.task.gsum', {
 											xtype : 'form',
 											bodyPadding : 5,
 											layout : 'anchor',
+											overflowY : "scroll",
 											defaults : {
 												anchor : '100%'
 											},
 											items : {
 												xtype : 'checkboxgroup',
-												columns : 6,
+												columns : 3,
 												vertical : true,
 												items : fields
 											},
@@ -216,24 +222,24 @@ Ext.define('yspz_gen.view.task.gsum', {
 												credentialId : rec.data.credentialId
 											}, undefined, undefined, function(
 													response) {
-												var res = items = Ext
+												var res = Ext
 														.decode(response.responseText), rules = [], checkboxgroup = form
 														.down("checkboxgroup");
-												if (Object.keys(res).length > 0 > 0) {
-													for (var j in items) {
+												if (Object.keys(res).length > 0) {
+													for (var j in res) {
 														rules.push({
-															boxLabel : items[j].id,
+															boxLabel : res[j].id,
 															name : "fields",
 															boxLabelAttrTpl : "title = \"汇总列："
 																	+ Ext.Object
-																			.getValues(items[j].group)
+																			.getValues(res[j].group)
 																			.join(" ,")
 																	+ "&#10;求和列："
 																	+ Ext.Object
-																			.getValues(items[j].sum)
+																			.getValues(res[j].sum)
 																			.join(" ,")
 																	+ "\"",
-															inputValue : items[j].id
+															inputValue : res[j].id
 														});
 													}
 													checkboxgroup.removeAll();

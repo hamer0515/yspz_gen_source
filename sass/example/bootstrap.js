@@ -72,8 +72,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.task.badlist": [],
   "Ext.locale.zh_CN.picker.Month": [],
   "Ext.ux.PreviewPlugin": [],
-  "yspz_gen.view.baobiao.task.add": [],
   "yspz_gen.view.task.gen": [],
+  "yspz_gen.view.baobiao.task.add": [],
   "yspz_gen.view.yspz.edit": [],
   "Ext.ux.ajax.SimXhr": [],
   "Ext.ux.event.RecorderManager": [],
@@ -272,11 +272,11 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.PreviewPlugin": [
     "plugin.preview"
   ],
-  "yspz_gen.view.baobiao.task.add": [
-    "widget.baobiao_task_add"
-  ],
   "yspz_gen.view.task.gen": [
     "widget.task_gen"
+  ],
+  "yspz_gen.view.baobiao.task.add": [
+    "widget.baobiao_task_add"
   ],
   "yspz_gen.view.yspz.edit": [
     "widget.yspz_edit"

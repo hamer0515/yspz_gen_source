@@ -1,0 +1,79 @@
+{
+	success : false,
+	msg : [{
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}, {
+				account : "1852",// 帐号
+				rule : "A02>0",// 原规则
+				rerule : "0>0",// 替换后规则
+				level : "warn"// 级别 warn,error
+			}]
+}

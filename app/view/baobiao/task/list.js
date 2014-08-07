@@ -70,32 +70,70 @@ Ext.define('yspz_gen.view.baobiao.task.list', {
 					_url : Ext.urls.GET_ALL_BAOBIAO_TASK,
 					_fields : fields,
 					_items : [{
-								xtype : "fieldcontainer",
-								fieldLabel : "交易日期",
-								layout : {
-									type : 'hbox',
-									defaultMargins : {
-										right : 10
+						xtype : "fieldcontainer",
+						layout : {
+							type : 'hbox',
+							defaultMargins : {
+								right : 10
+							}
+						},
+						items : [{
+							xtype : "fieldcontainer",
+							flex : 1,
+							fieldLabel : "交易日期",
+							layout : {
+								type : 'hbox',
+								defaultMargins : {
+									right : 10
+								}
+							},
+							items : [{
+								xtype : 'datefield',
+								name : 'begin_date',
+								flex : 1,
+								validator : function(startValue) {
+									if (startValue) {
+										var endValue = me
+												.down("datefield[name=\"end_date\"]")
+												.getRawValue();
+										if (endValue) {
+											var from = new Date(startValue);
+											var to = new Date(endValue);
+											if (from.getTime() - to.getTime() > 0) {
+												return "开始日期不可以大于结束日期";
+											}
+										}
 									}
+									return true;
 								},
-								items : [{
-											xtype : 'datefield',
-											name : 'begin_date',
-											// flex:1
-											width : 180
-										}, {
-											xtype : 'datefield',
-											name : 'end_date',
-											// flex:1
-											width : 180
-										}, {
-											xtype : 'numberfield',
-											// flex:1,
-											width : 516,
-											name : 'id',
-											fieldLabel : "任务ID"
-										}]
-							}],
+								listeners : {
+									validitychange : function(field, isValid,
+											eOpts) {
+										me.down("datefield[name=\"end_date\"]")
+												.isValid();
+									}
+								}
+							}, {
+								xtype : 'datefield',
+								name : 'end_date',
+								validator : function() {
+									return me
+											.down("datefield[name=\"begin_date\"]")
+											.isValid() ? true : "开始日期不可以小于结束日期";
+								},
+								flex : 1
+							}]
+						}, {
+							xtype : 'numberfield',
+							flex : 1,
+							allowDecimals : false,
+							allowExponential : false,
+							minValue : 1,
+							width : 516,
+							name : 'id',
+							fieldLabel : "任务ID"
+						}]
+					}],
 					_gcolumns : gcolumns,
 					gridConfig : {
 						tbar : ['-', {
@@ -103,7 +141,9 @@ Ext.define('yspz_gen.view.baobiao.task.list', {
 									iconCls : 'add',
 									text : '新建任务',
 									handler : function() {
-										Ext.widget("baobiao_task_add");
+										Ext.widget("baobiao_task_add", {
+													_panel : me
+												});
 									}
 								}, '-']
 					}

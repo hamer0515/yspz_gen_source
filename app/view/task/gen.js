@@ -78,7 +78,7 @@ Ext.define('yspz_gen.view.task.gen', {
 					var form = me.getForm(), items = [], records = me
 							.down('treepanel').getChecked();
 					if (records.length == 0) {
-						Ext.error('至少选择一个单据');
+						Ext.warn('至少选择一个单据');
 						return false;
 					}
 					return true;
@@ -126,7 +126,7 @@ Ext.define('yspz_gen.view.task.gen', {
 						var grid = me.down('grid'), gsm = grid
 								.getSelectionModel(), rows = gsm.getSelection(), items = [];
 						if (rows.length == 0) {
-							Ext.error('至少选择一个单据');
+							Ext.warn('至少选择一个单据');
 							return;
 						}
 						rows.forEach(function(element, index, array) {

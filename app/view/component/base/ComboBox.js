@@ -16,10 +16,10 @@ Ext.define('yspz_gen.view.component.base.ComboBox', {
 					if (result.length == 0) {
 						me.setValue('');
 					}
-				},
-				focus : function(me, The, eOpts) {
-					me.store.clearFilter();
 				}
+//				focus : function(me, The, eOpts) {
+//					me.store.clearFilter();
+//				}
 			},
 			valueField : 'id',
 			displayField : 'name',

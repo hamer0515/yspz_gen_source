@@ -8,6 +8,8 @@ Ext.define('overrides.Connection', {
 			 *            request
 			 * @return {Object} The response
 			 */
+			// 超时时间4个小时 4*60*60
+			// timeout : 14400,
 			onComplete : function(request, xdrResult) {
 				var me = this, options = request.options, result, success, response;
 
@@ -33,15 +35,16 @@ Ext.define('overrides.Connection', {
 						panel && panel.getEl().isMasked()
 								&& panel.getEl().unmask();
 					}
-					if (Ext.decode(response.responseText).success === 'forbidden') {
-						Ext.MessageBox.show({
-									title : '警告',
-									msg : '无权访问:' + options.url,
-									buttons : Ext.Msg.YES,
-									icon : Ext.Msg.WARNING
-								});
-					} 
-					//根据options中是否有action来判断是否是数据集load
+					// if (Ext.decode(response.responseText).success ===
+					// 'forbidden') {
+					// Ext.MessageBox.show({
+					// title : '警告',
+					// msg : '无权访问:' + options.url,
+					// buttons : Ext.Msg.YES,
+					// icon : Ext.Msg.WARNING
+					// });
+					// }
+					// 根据options中是否有action来判断是否是数据集load
 					else if (options.action
 							&& Ext.decode(response.responseText).success === false) {
 						Ext.error("访问url:" + options.url + ",原因:"
@@ -76,6 +79,15 @@ Ext.define('overrides.Connection', {
 					} else if (response.status != 200) {
 						Ext.MessageBox.show({
 									title : '错误',
+									fn : function() {
+										// 表单提交完成时去掉遮罩层
+										if (options.scope
+												&& options.scope._panel) {
+											var panel = options.scope._panel;
+											panel && panel.getEl().isMasked()
+													&& panel.getEl().unmask();
+										}
+									},
 									msg : response.status + ' '
 											+ response.statusText,
 									buttons : Ext.Msg.YES,

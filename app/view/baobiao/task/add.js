@@ -7,6 +7,8 @@ Ext.define("yspz_gen.view.baobiao.task.add", {
 			resizable : false,
 			modal : true,
 			autoShow : true,
+			// floating : true,
+			// constrain : true,
 			initComponent : function() {
 				var me = this;
 				me.items = {
@@ -40,19 +42,27 @@ Ext.define("yspz_gen.view.baobiao.task.add", {
 							var form = this.up("form");
 							if (form.isValid()) {
 								form.getEl().mask("操作中...");
-								form.getForm().submit({
-									success : function(f, action) {
-										Ext.info("任务创建成功", function() {
-													form.up("window").close();
-												});
-									},
-									failure : function(f, action) {
-										Ext
-												.error("任务创建失败："
-														+ action.result.msg);
-									},
-									_panel : form
-								});
+								Ext.asyncRequest(Ext.urls.ADD_BAOBIAO_TASK,
+										form.getValues(), function() {
+											form.up("window").close();
+											me._panel.down("grid").store
+													.reload();
+										}, undefined, undefined, form);
+								// form.getForm().submit({
+								// success : function(f, action) {
+								// Ext.info("任务创建成功", function() {
+								// form.up("window").close();
+								// me._panel.down("grid").store
+								// .reload();
+								// });
+								// },
+								// failure : function(f, action) {
+								// Ext
+								// .error("任务创建失败："
+								// + action.result.msg);
+								// },
+								// _panel : form
+								// });
 							}
 						}
 					}, {

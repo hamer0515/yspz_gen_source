@@ -53,7 +53,7 @@ Ext.define('yspz_gen.view.zjdz.task.reset', {
 					var grid = me.down('grid'), gsm = grid.getSelectionModel(), rows = gsm
 							.getSelection(), items = [];
 					if (rows.length == 0) {
-						Ext.error('至少选择一项');
+						Ext.warn('至少选择一项');
 						return;
 					}
 					Ext.Msg.confirm('确认', "是否确认生成" + rows[0].data.zjdz_date
