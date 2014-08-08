@@ -8,7 +8,7 @@ Ext.define('yspz_gen.view.task.gsum', {
 	modal : true,
 	autoShow : true,
 	initComponent : function() {
-		var me = this, items = me._items, fields = [], rules = [];
+		var me = this, items = me._items, fields = [], rules = [], tips = [];
 		for (var i in items.meta) {
 			fields.push({
 						boxLabel : Ext.util.Format.ellipsis(items.meta[i], 14),
@@ -21,14 +21,18 @@ Ext.define('yspz_gen.view.task.gsum', {
 			rules.push({
 						boxLabel : items.rules[j].id,
 						name : "fields",
-						boxLabelAttrTpl : "title = \"汇总列："
-								+ Ext.Object.getValues(items.rules[j].group)
-										.join(" ,")
-								+ "&#10;求和列："
-								+ Ext.Object.getValues(items.rules[j].sum)
-										.join(" ,") + "\"",
+						// boxLabelAttrTpl : "title = \"汇总列："
+						// + Ext.Object.getValues(items.rules[j].group)
+						// .join(" ,")
+						// + "&#10;求和列："
+						// + Ext.Object.getValues(items.rules[j].sum)
+						// .join(" ,") + "\"",
 						inputValue : items.rules[j].id
 					});
+			tips.push("汇总列："
+					+ Ext.Object.getValues(items.rules[j].group).join(" ,")
+					+ "<br/>求和列："
+					+ Ext.Object.getValues(items.rules[j].sum).join(" ,"));
 		}
 		me.items = {
 			xtype : 'form',
@@ -223,29 +227,60 @@ Ext.define('yspz_gen.view.task.gsum', {
 											}, undefined, undefined, function(
 													response) {
 												var res = Ext
-														.decode(response.responseText), rules = [], checkboxgroup = form
-														.down("checkboxgroup");
-												if (Object.keys(res).length > 0) {
-													for (var j in res) {
+														.decode(response.responseText), rules = [], radiogroup = form
+														.down("radiogroup");
+												// 清空tips
+												tips = [];
+												if (res.rules) {
+													for (var j in res.rules) {
 														rules.push({
-															boxLabel : res[j].id,
+															boxLabel : res.rules[j].id,
 															name : "fields",
-															boxLabelAttrTpl : "title = \"汇总列："
-																	+ Ext.Object
-																			.getValues(res[j].group)
-																			.join(" ,")
-																	+ "&#10;求和列："
-																	+ Ext.Object
-																			.getValues(res[j].sum)
-																			.join(" ,")
-																	+ "\"",
-															inputValue : res[j].id
+															// boxLabelAttrTpl :
+															// "title = \"汇总列："
+															// + Ext.Object
+															// .getValues(res.rules[j].group)
+															// .join(" ,")
+															// + "&#10;求和列："
+															// + Ext.Object
+															// .getValues(res.rules[j].sum)
+															// .join(" ,")
+															// + "\"",
+															inputValue : res.rules[j].id
 														});
+														tips
+																.push("汇总列："
+																		+ Ext.Object
+																				.getValues(res.rules[j].group)
+																				.join(" ,")
+																		+ "<br/>求和列："
+																		+ Ext.Object
+																				.getValues(res.rules[j].sum)
+																				.join(" ,"));
 													}
-													checkboxgroup.removeAll();
-													checkboxgroup.add(rules);
+													radiogroup.removeAll();
+													radiogroup.add(rules);
 													groupField.setValue("");
 													sumField.setValue("");
+													// initTip(radiogroup.items,
+													// tips);
+													// for (var i in tips) {
+													// Ext
+													// .create(
+													// 'Ext.tip.ToolTip',
+													// {
+													// target : radiogroup.items
+													// .get(parseInt(i))
+													// .getEl(),
+													// // title
+													// // :
+													// // 'Mouse
+													// // Track',
+													// width : 200,
+													// html : tips[i],
+													// trackMouse : true
+													// });
+													// }
 												} else {
 													Ext.error('获取单据信息失败:'
 															+ res.msg);
@@ -274,7 +309,7 @@ Ext.define('yspz_gen.view.task.gsum', {
 						for (var i in checked)
 							values.push(checked[i].getSubmitValue());
 					} else {
-						Ext.info("请选择一个求和汇总方案");
+						Ext.warn("请选择一个求和汇总方案");
 						return;
 					}
 					Ext.asyncRequest(Ext.urls.SUBMIT_YSPZ_SUMMARY, {
@@ -289,6 +324,21 @@ Ext.define('yspz_gen.view.task.gsum', {
 				}
 			}]
 		}
+		var initTip = function(collection, tips) {
+			if (collection.getCount() > 0) {
+				for (var i in tips) {
+					Ext.create('Ext.tip.ToolTip', {
+								target : collection.get(parseInt(i)).getEl(),
+								width : 350,
+								html : tips[i],
+								trackMouse : true
+							});
+				}
+			}
+		}
 		me.callParent(arguments);
+		me.down("radiogroup").on("afterlayout", function() {
+					initTip(me.down("radiogroup").items, tips);
+				})
 	}
 });
