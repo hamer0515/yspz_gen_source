@@ -28,7 +28,7 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 					text : "报备",
 					dataIndex : 'repo_status',
 					renderer : function(value) {
-						return ['未报备', '报备成功', '报备失败'][parseInt(value)];
+						return ['未报备', '报备中', '报备成功', '报备失败'][parseInt(value)];
 					},
 					flex : 1
 				}], fields = ['id', 'b_name', 'b_acct',
@@ -165,9 +165,9 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 																	msg
 																			+ (Ext
 																					.isString(res.msg)
-																			? ":"
-																					+ res.msg
-																			: ''),
+																					? ":"
+																							+ res.msg
+																					: ''),
 																	function() {
 																		me
 																				.down("form")._reloadData
@@ -184,7 +184,7 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 												height : 400,
 												layout : 'fit',
 												closable : false,
-												resizable : false,
+												// resizable : false,
 												modal : true,
 												autoShow : true,
 												title : msg,
@@ -198,6 +198,18 @@ Ext.define('yspz_gen.view.baobiao.task.edit', {
 													},
 													items : Ext.create(
 															'Ext.grid.Panel', {
+																viewConfig : {
+																	getRowClass : function(
+																			record) {
+																		var color, level = record.data.level;
+																		if (level === "error") {
+																			color = 'red';
+																		} else if (level === "warn") {
+																			color = 'yellow';
+																		}
+																		return color;
+																	}
+																},
 																store : Ext
 																		.create(
 																				'Ext.data.Store',
