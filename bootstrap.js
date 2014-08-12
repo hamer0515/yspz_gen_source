@@ -37,6 +37,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.zjdz.task.list": [],
   "overrides.Ext": [],
   "yspz_gen.view.verify.yspz_list": [],
+  "yspz_gen.view.baobiao.component.ruleType": [],
   "Ext.ux.form.MultiSelect": [
     "Ext.ux.Multiselect"
   ],
@@ -73,6 +74,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.store.FStatus": [],
   "Ext.ux.ajax.SimManager": [],
   "yspz_gen.store.Status": [],
+  "yspz_gen.view.baobiao.component.errorLevel": [],
   "Ext.ux.grid.filter.BooleanFilter": [],
   "yspz_gen.Application": [],
   "Ext.ux.TabScrollerMenu": [],
@@ -93,6 +95,7 @@ Ext.ClassManager.addNameAlternateMappings({
   ],
   "yspz_gen.view.component.base.ComboBox": [],
   "yspz_gen.view.component.acct_status": [],
+  "yspz_gen.view.baobiao.task.check_add": [],
   "Ext.ux.BoxReorderer": [],
   "Ext.ux.grid.filter.Filter": [],
   "Ext.ux.GroupTabRenderer": [],
@@ -102,6 +105,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.grid.filter.ListFilter": [],
   "yspz_gen.view.component.MyStore": [],
   "yspz_gen.view.baobiao.task.edit": [],
+  "yspz_gen.view.baobiao.component.Valid": [],
   "yspz_gen.view.zjdz.task.dz": [],
   "Ext.ux.dd.PanelFieldDragZone": [],
   "yspz_gen.view.task.gsum": [],
@@ -109,12 +113,15 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.bi.ProtoAddPanel": [],
   "yspz_gen.view.baobiao.task.mcheck": [],
   "yspz_gen.view.component.base.PagingInfo": [],
+  "yspz_gen.view.baobiao.task.check_list": [],
   "yspz_gen.view.component.bfj_acct": [],
   "Ext.ux.GMapPanel": [],
   "yspz_gen.view.component.Line": [],
   "yspz_gen.view.component.pay_cycle": [],
+  "yspz_gen.view.baobiao.component.fields": [],
   "Ext.ux.DataView.LabelEditor": [],
   "Ext.ux.GroupTabPanel": [],
+  "yspz_gen.view.baobiao.component.tables": [],
   "Ext.ux.grid.filter.StringFilter": [],
   "yspz_gen.view.component.rule": [],
   "yspz_gen.view.yspz.list": [],
@@ -122,10 +129,12 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.component.plugins.PageComboResizer": [],
   "Ext.ux.layout.Center": [],
   "yspz_gen.view.Panel": [],
+  "yspz_gen.view.baobiao.task.check_edit": [],
   "Ext.ux.DataView.Animated": [],
   "overrides.View": [],
   "yspz_gen.view.bi.BiPanel": [],
   "overrides.DateField": [],
+  "yspz_gen.view.baobiao.component.with0": [],
   "Ext.ux.statusbar.StatusBar": [
     "Ext.ux.StatusBar"
   ],
@@ -136,6 +145,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "yspz_gen.view.component.DataType": [],
   "Ext.ux.RowExpander": [],
   "Ext.ux.event.Player": [],
+  "yspz_gen.view.baobiao.component.cal": [],
   "yspz_gen.view.South": [],
   "yspz_gen.view.zjdz.task.adjust": [],
   "overrides.Connection": [],
@@ -210,6 +220,9 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.verify.yspz_list": [
     "widget.verify_yspz_list"
   ],
+  "yspz_gen.view.baobiao.component.ruleType": [
+    "widget.baobiao_component_ruleType"
+  ],
   "Ext.ux.form.MultiSelect": [
     "widget.multiselect",
     "widget.multiselectfield"
@@ -283,6 +296,9 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.store.FStatus": [],
   "Ext.ux.ajax.SimManager": [],
   "yspz_gen.store.Status": [],
+  "yspz_gen.view.baobiao.component.errorLevel": [
+    "widget.baobiao_component_errorLevel"
+  ],
   "Ext.ux.grid.filter.BooleanFilter": [
     "gridfilter.boolean"
   ],
@@ -327,6 +343,9 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.component.acct_status": [
     "widget.acct_status"
   ],
+  "yspz_gen.view.baobiao.task.check_add": [
+    "widget.baobiao_task_check_add"
+  ],
   "Ext.ux.BoxReorderer": [],
   "Ext.ux.grid.filter.Filter": [],
   "Ext.ux.GroupTabRenderer": [
@@ -348,6 +367,9 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.baobiao.task.edit": [
     "widget.baobiao_task_edit"
   ],
+  "yspz_gen.view.baobiao.component.Valid": [
+    "widget.valid"
+  ],
   "yspz_gen.view.zjdz.task.dz": [
     "widget.zjdz_task_dz"
   ],
@@ -365,6 +387,9 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.component.base.PagingInfo": [
     "widget.paginginfo"
   ],
+  "yspz_gen.view.baobiao.task.check_list": [
+    "widget.baobiao_task_check_list"
+  ],
   "yspz_gen.view.component.bfj_acct": [
     "widget.bfj_acct"
   ],
@@ -377,9 +402,15 @@ Ext.ClassManager.addNameAliasMappings({
   "yspz_gen.view.component.pay_cycle": [
     "widget.pay_cycle"
   ],
+  "yspz_gen.view.baobiao.component.fields": [
+    "widget.baobiao_component_fields"
+  ],
   "Ext.ux.DataView.LabelEditor": [],
   "Ext.ux.GroupTabPanel": [
     "widget.grouptabpanel"
+  ],
+  "yspz_gen.view.baobiao.component.tables": [
+    "widget.baobiao_component_tables"
   ],
   "Ext.ux.grid.filter.StringFilter": [
     "gridfilter.string"
@@ -396,12 +427,18 @@ Ext.ClassManager.addNameAliasMappings({
     "layout.ux.center"
   ],
   "yspz_gen.view.Panel": [],
+  "yspz_gen.view.baobiao.task.check_edit": [
+    "widget.baobiao_task_check_edit"
+  ],
   "Ext.ux.DataView.Animated": [],
   "overrides.View": [],
   "yspz_gen.view.bi.BiPanel": [
     "widget.bipanel"
   ],
   "overrides.DateField": [],
+  "yspz_gen.view.baobiao.component.with0": [
+    "widget.baobiao_component_with0"
+  ],
   "Ext.ux.statusbar.StatusBar": [
     "widget.statusbar"
   ],
@@ -418,6 +455,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Ext.ux.RowExpander": [],
   "Ext.ux.event.Player": [],
+  "yspz_gen.view.baobiao.component.cal": [
+    "widget.baobiao_component_cal"
+  ],
   "yspz_gen.view.South": [
     "widget.south"
   ],

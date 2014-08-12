@@ -41,7 +41,6 @@ Ext.define("yspz_gen.view.baobiao.task.add", {
 						handler : function() {
 							var form = this.up("form");
 							if (form.isValid()) {
-								form.getEl().mask("操作中...");
 								Ext.asyncRequest(Ext.urls.ADD_BAOBIAO_TASK,
 										form.getValues(), function() {
 											form.up("window").close();

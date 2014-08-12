@@ -104,9 +104,16 @@ Ext.define('overrides.Ext', {
 		GET_YSPZ_INFO_AND_RULES : "summary/summary_querySummaryRule.action",// 获得原始凭证信息及所有汇总方案
 		GET_BAOBIAO_BANK_STATUS_BY_TASK : "taskaccount_selectTaskAccountByID.action",// "baobiao/bank_status_by_task",//
 		// 获得银行帐号的状态，根据任务
+		GET_BAOBIAO_COMP_TABLES : "baobiao_comp_tables",
+		// 获得报表模块表格选择框控件的值
 		ADD_YSPZ_RULE : "summary/summary_createSummaryRule.action",// 添加原始凭证汇总方案
 		ADD_BAOBIAO_TASK : "task_createNewTask.action",// "baobiao/task_add",//
 		// 添加报表任务
+		ADD_BAOBIAO_TASK_CHECK : "ruleDB/ruleDB_insert.action",
+		// 添加报表人工校验规则
+		UPDATE_BAOBIAO_TASK_CHECK : "ruleDB/ruleDB_update.action",
+		// 更新人工校验规则
+		GET_ALL_BAOBIAO_TASK_CHECK_LIST : "ruleDB/ruleDB_query.action",// 获得报表校验规则列表
 		GET_RULE_INFO : "summary/summary_getSummaryRule.action",// 获得汇总方案信息
 		QUERY_TASK_STATUS : "credential/credentialAction_getCredentialStatus.action", // 查询原始凭证状态(用于生成导入任务的查询按钮)
 		SUBMIT_ZJDZ_TASK_DZ : "zjdz/task_dz",// 提交资金对账任务改写

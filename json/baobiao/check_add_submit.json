@@ -1,0 +1,12 @@
+{
+	type : "1",
+	level : "warn",
+	dbList : [{
+				table : "STATEMENT_1_1",
+				column : "sum(A02) as 表1_1的A02合计,A01 as 表1_1的A01合计"
+			}, {
+				table : "STATEMENT_1_2_1",
+				column : "bb04 as 表1_2_1的bb04,bb05 as 表1_2_1的bb05,acct_num ACCOUNT"
+			}],
+	rule : "表1_1的a01+表1_1的a02-表1_2_1的bb04-表1_2_1的bb05=0"
+}

@@ -78,7 +78,7 @@ Ext.define('yspz_gen.view.bi.ProtoAddPanel', {
 									groups.push(element._prefix);
 								});
 						var params = me.genValues(form.getValues(), groups);
-						// console.log(params);
+						console.log(params);
 						// console.log(params);
 						// form.submit({
 						// success : function(form, action) {

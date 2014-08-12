@@ -68,7 +68,8 @@ Ext.define('yspz_gen.view.task.list', {
 						tooltip : '汇总生成',
 						margin : '0 10 0 0',
 						getClass : function(v, meta, rec) {
-							if (rec.data.status == 4) {
+							if (rec.data.status == 4
+									&& parseInt(rec.data.goodCount) > 0) {
 								return 'good';
 							}
 							return 'hide';
